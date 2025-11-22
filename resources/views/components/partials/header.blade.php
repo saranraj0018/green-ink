@@ -21,7 +21,7 @@
         <!-- Menu -->
         <nav id="navbar-menu"
             class="col-span-12 md:col-span-6 hidden md:block mt-4 md:mt-0 ms-10">
-            <ul class="flex  justify-center flex-col md:flex-row gap-4 md:gap-6 text-sm font-medium bg-white border-green-600 border-1 rounded-3xl shadow-2xs py-3 px-3">
+            <ul class="flex  justify-center flex-col md:flex-row gap-4 md:gap-6 text-sm font-medium bg-white border-green-600 border rounded-3xl shadow-2xs py-3 px-3">
 
                 <li>
                     <a href="{{ route('home') }}"
@@ -69,6 +69,7 @@
         </div>
     </div>
 </section>
+
 
 <!-- Mobile menu toggle script -->
 <script>

@@ -1,8 +1,9 @@
  @vite(['resources/css/app.css', 'resources/js/app.js'])
 
  <!--footer section-->
- <section class="bg-[url('{{ asset('assets/greenbg.png') }}')] bg-cover bg-center h-screen" >
-    <div class=" max-w-6xl mx-auto py-5 px-5 ">
+ <!--bg-[url('{{ asset('assets/greenbg.png') }}')] bg-cover bg-center h-screen-->
+ <section>
+    <div class="max-w-6xl mx-auto py-5 px-5 ">
 <div class="grid grid-cols-12 gap-3">
     <div class="col-span-12 md:col-span-5  ">
         <img src="/assets/greeninklogo.png" class="w-50" alt="logo"/>

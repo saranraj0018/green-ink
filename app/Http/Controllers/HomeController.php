@@ -26,7 +26,7 @@ class HomeController extends Controller
             ],
         ];
 
-       return view('home.main', $this->data);
+     //  return view('home.main', $this->data);
 
     }
 
