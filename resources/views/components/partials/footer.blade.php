@@ -1,8 +1,8 @@
  @vite(['resources/css/app.css', 'resources/js/app.js'])
 
  <!--footer section-->
- <!--bg-[url('{{ asset('assets/greenbg.png') }}')] bg-cover bg-center h-screen-->
- <section>
+<section class="bg-[url('/assets/greenbg.png')] bg-cover bg-center bg-no-repeat 
+           relative max-w-7xl mx-auto text-center py-16 mt-10 px-4 z-10">
     <div class="max-w-6xl mx-auto py-5 px-5 ">
 <div class="grid grid-cols-12 gap-3">
     <div class="col-span-12 md:col-span-5  ">
@@ -98,4 +98,4 @@
     </div>
 
 
- </section>
+</section>

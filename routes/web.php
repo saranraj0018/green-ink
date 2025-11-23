@@ -14,11 +14,11 @@ Route::get('/', function () {
 })->name('home');
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about.main');
 })->name('about');
 
 Route::get('/Courses', function () {
-    return view('Courses');
+    return view('courses.main');
 })->name('Courses');
 
 Route::get('/Features', function () {
@@ -28,7 +28,27 @@ Route::get('/Features', function () {
 Route::get('/Contact', function () {
     return view('Contact');
 })->name('Contact');
+Route::get('/Carrier', function () {
+    return view('Carrier');
+})->name('Carrier');
+Route::get('/Store', function () {
+    return view('Store');
+})->name('Store');
+Route::get('/Blogs', function () {
+    return view('Blogs');
+})->name('Blogs');
+Route::get('/Contactus', function () {
+    return view('Contactus');
+})->name('ContactUs');
+Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'])
+    ->name('contact.submit');
 
+Route::get('/Events', function () {
+    return view('Events');
+})->name('Career');
+Route::get('/Career', function () {
+    return view('Career');
+})->name('Events');
 Route::get('/WebDevelopment', function () {
     return view('WebDevelopment');
 })->name('WebDevelopment');
@@ -54,12 +74,13 @@ Route::get('/homesection', function () {
 })->name('homesection');
 
 
+Route::get('/', [MentorController::class, 'index'])->name('home');
+
+
+//Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 
 
 
-use App\Http\Controllers\HomeController;
-
-Route::get('/', [HomeController::class, 'index'])->name('home');
 
 
 
