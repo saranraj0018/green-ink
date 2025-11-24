@@ -80,8 +80,28 @@ Route::get('/homesection', function () {
 //Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');
 
 
+Route::get('/register', function () {
+    return view('auth.register');
+})->name('register');
 
 
 
+//use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AuthController;
+
+Route::get('/login', [AuthController::class, 'login'])->name('login');
+Route::post('/send-otp', [AuthController::class, 'sendOtp'])->name('send.otp');
+Route::get('/verify-otp', [AuthController::class, 'verifyOtpPage'])->name('verify.otp.page');
+Route::post('/verify-otp', [AuthController::class, 'verifyOtp'])->name('verify.otp');
+
+// web.php
+Route::post('/register', [AuthController::class, 'register'])->name('register');
+
+
+Route::get('/verify-email', function () {
+    return view('auth.verify-email');
+})->name('verify.email');
+
+Route::post('/verify-otp', [OtpController::class, 'verify'])->name('verify.otp');
 
 

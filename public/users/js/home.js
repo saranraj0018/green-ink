@@ -65,3 +65,26 @@ $("#contactForm").on("submit", function (e) {
         alert("Please fill out all fields.");
     }
 });
+
+
+
+//login//
+  // Open Login Modal (Desktop & Mobile)
+  $("#openLogin, .openLoginBtn,").on("click", function () {
+      $("#loginModal").removeClass("hidden");
+  });
+
+  // Close Login Modal when clicking X
+  $("#closeModal").on("click", function () {
+      $("#loginModal").addClass("hidden");
+  });
+
+  // Close when clicking outside modal content
+  $(document).on("click", function (e) {
+      if ($(e.target).is("#loginModal")) {
+          $("#loginModal").addClass("hidden");
+      }
+  });
+
+  <script src="/user/js/home.js"></script>
+
