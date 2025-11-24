@@ -1,15 +1,15 @@
 <!-- banner section-->
-<img src="./assets/homebanner.png" class="" alt=""/>
+<img src="./assets/courses/couresebanner.png" class="" alt=""/>
 <!-- serach bar-->
  <section class="w-full py-12">
         <div class="max-w-3xl mx-auto text-center">
             <!-- Title -->
-            <h2 class="text-2xl font-semibold text-gray-900">
+            <h2 class="text-2xl font-semibold text-black">
                 Explore Our Categories
             </h2>
 
             <!-- Subtitle -->
-            <p class="text-gray-600 mt-2">
+            <p class="text-black font-normal mt-2">
                 Discover courses that will help you achieve your goals
             </p>
 
@@ -34,7 +34,4 @@
 
 
 
-
-<!-- achives-->
- 
 

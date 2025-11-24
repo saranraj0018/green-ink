@@ -22,7 +22,7 @@ Route::get('/Courses', function () {
 })->name('Courses');
 
 Route::get('/Features', function () {
-    return view('Features');
+    return view('Features.main');
 })->name('Features');
 
 Route::get('/Contact', function () {
@@ -74,7 +74,7 @@ Route::get('/homesection', function () {
 })->name('homesection');
 
 
-Route::get('/', [MentorController::class, 'index'])->name('home');
+//Route::get('/', [MentorController::class, 'index'])->name('home');
 
 
 //Route::get('/courses', [CourseController::class, 'index'])->name('courses.index');

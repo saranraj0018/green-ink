@@ -1,105 +1,187 @@
-<!--@extends('layouts.app')
+
 
 @section('content')
 
-<div class="max-w-7xl mx-auto px-4 py-10">
-
-    <!-- Filter Header -->
-   <!-- <div class="mb-6 flex items-center gap-2 text-green-600 font-semibold">
-        <span>🔎</span>
-        <span>Filter By Category</span>
-    </div>
-
-    <!-- Category Buttons -->
-    <!--<div class="flex flex-wrap gap-3 mb-10">
-        <button data-category="all"
-            class="category-btn px-6 py-2 rounded-full border border-green-400 text-green-600 hover:bg-green-50">
-            All Courses
-        </button>
-
-        @foreach ($categories as $cat)
-        <button data-category="{{ $cat->slug }}"
-            class="category-btn px-6 py-2 rounded-full border border-green-400 text-green-600 hover:bg-green-50">
-            {{ $cat->name }}
-        </button>
-        @endforeach
-
-        <button
-            class="px-6 py-2 rounded-full border border-green-400 text-green-600 hover:bg-green-50">
-            More
-        </button>
-    </div>
-
-    <!-- Courses Grid -->
-    <!--<div id="courseGrid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-        @foreach ($courses as $course)
-        <div class="course-card bg-white p-4 rounded-xl shadow hover:shadow-lg transition border border-gray-100"
-            data-category="{{ $course->category_slug }}">
-
-            <!-- Course Image -->
-           <!-- <img src="{{ $course->image }}" class="rounded-lg w-full h-40 object-cover">
-
-            <!-- Badge -->
-            <!--<div class="mt-3">
-                <span class="px-3 py-1 text-xs bg-green-100 text-green-700 rounded-full">
-                    {{ $course->category }}
-                </span>
-                @if($course->is_premium)
-                <span class="px-3 py-1 text-xs bg-yellow-400 text-white rounded-full float-right">
-                    premium
-                </span>
-                @endif
-            </div>
-
-            <!-- Title -->
-           <!-- <h3 class="font-semibold mt-3 text-gray-800">
-                {{ $course->title }}
-            </h3>
-
-            <!-- Stats -->
-            <!--<div class="mt-2 text-sm flex gap-4 text-gray-500">
-                <span>⭐ {{ $course->rating }}</span>
-                <span>👥 {{ number_format($course->students) }}</span>
-                <span>⏱️ {{ $course->hours }}hrs</span>
-            </div>
-
-            <!-- Price & Button -->
-            <!--<div class="mt-4 flex justify-between items-center">
-                <span class="text-green-700 font-bold text-lg">${{ $course->price }}</span>
-
-                <a href="/courses/{{ $course->id }}"
-                    class="px-5 py-2 bg-green-600 text-white text-sm rounded-full hover:bg-green-700">
-                    View Courses
-                </a>
-            </div>
-        </div>
-        @endforeach
-
-    </div>
+<section class="max-w-6xl mx-auto ">
+    <p class="text-sm text-green-800 font-semibold pb-5">Filter By Category</p>
+    <!-- Tabs Navigation -->
+<div class="flex space-x-4  mb-6">
+  <button class="tab-btn px-8 py-2 font-medium text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="all">
+    All Courses
+  </button>
+  <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="design">
+    Design
+  </button>
+  <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="marketing">
+   Marketing
+  </button>
+  <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" programming">
+   Programming
+  </button>
+   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="Management">
+   Management
+  </button>
+   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" software & Tech">
+   Software & Tech
+  </button>
+   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" aI & Machine Learning">
+  AI & Machine Learning
+  </button>
+   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" more">
+  More
+  </button>
 </div>
 
-<!-- jQuery Category Filter -->
+<!-- Tab Content -->
+<div id="tabContent">
+  <div class="tab-pane" data-content="all">
+    <div class="grid grid-cols-12 gap-5 mt-10">
+    <div class="col-span-12 md:col-span-4 rounded-3xl shadow-lg  ">
+     <img src="./assets/courses/Group 594.png" class="" alt=""/>
+     <div class="py-5 px-5">
+     <p class="text-sm font-normal text-[#014631]  py-2 px-8 rounded-3xl bg-[#DEF6EE] w-35 ">Programming</p>
+     <p class="text-sm font-semibold text-black text-justify pt-3">Complete Web Development Bootcamp</p>
+        <div class="flex gap-3 pt-3">
+            <p class="text-sm font-normal text-[#FFB100]">4.5</p>
+            <p class="text-sm font-normal text-[#FFB100]">25,000</p>
+         <p class="text-sm font-normal text-[#FFB100]">40hrs</p>
+        </div>
+        <div class="flex pt-4 justify-between">
+            <h5 class="text-lg font-normal text-[#02A171]">$49</h5>
+            <button type="button" class="text-center text-white font-semibold py-2 px-10 rounded-3xl bg-[#02A171]">View Courses</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-span-12 md:col-span-4 rounded-3xl shadow-lg  ">
+     <img src="./assets/courses/Rectangle 37.png" class="" alt=""/>
+     <div class="py-5 px-5">
+     <p class="text-sm font-normal text-[#014631]  py-2 px-8 rounded-3xl bg-[#DEF6EE] w-35 ">Programming</p>
+     <p class="text-sm font-semibold text-black text-justify pt-3">Complete Web Development Bootcamp</p>
+        <div class="flex gap-3 pt-3">
+            <p class="text-sm font-normal text-[#FFB100]">4.5</p>
+            <p class="text-sm font-normal text-[#FFB100]">25,000</p>
+         <p class="text-sm font-normal text-[#FFB100]">40hrs</p>
+        </div>
+        <div class="flex pt-4 justify-between">
+            <h5 class="text-lg font-normal text-[#02A171]">$49</h5>
+            <button type="button" class="text-center text-white font-semibold py-2 px-10 rounded-3xl bg-[#02A171]">View Courses</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-span-12 md:col-span-4 rounded-3xl shadow-lg  ">
+     <img src="./assets/courses/Rectangle 37.png" class="" alt=""/>
+     <div class="py-5 px-5">
+     <p class="text-sm font-normal text-[#014631]  py-2 px-8 rounded-3xl bg-[#DEF6EE] w-35 ">Programming</p>
+     <p class="text-sm font-semibold text-black text-justify pt-3">Complete Web Development Bootcamp</p>
+        <div class="flex gap-3 pt-3">
+            <p class="text-sm font-normal text-[#FFB100]">4.5</p>
+            <p class="text-sm font-normal text-[#FFB100]">25,000</p>
+         <p class="text-sm font-normal text-[#FFB100]">40hrs</p>
+        </div>
+        <div class="flex pt-4 justify-between">
+            <h5 class="text-lg font-normal text-[#02A171]">$49</h5>
+            <button type="button" class="text-center text-white font-semibold py-2 px-10 rounded-3xl bg-[#02A171]">View Courses</button>
+        </div>
+    </div>
+    </div>
+   </div>
+
+   <!-- add content-->
+
+   <div class="grid grid-cols-12 gap-5 mt-10">
+    <div class="col-span-12 md:col-span-4 rounded-3xl shadow-lg  ">
+     <img src="./assets/courses/Rectangle 37.png" class="" alt=""/>
+     <div class="py-5 px-5">
+     <p class="text-sm font-normal text-[#014631]  py-2 px-8 rounded-3xl bg-[#DEF6EE] w-35 ">Programming</p>
+     <p class="text-sm font-semibold text-black text-justify pt-3">Complete Web Development Bootcamp</p>
+        <div class="flex gap-3 pt-3">
+            <p class="text-sm font-normal text-[#FFB100]">4.5</p>
+            <p class="text-sm font-normal text-[#FFB100]">25,000</p>
+         <p class="text-sm font-normal text-[#FFB100]">40hrs</p>
+        </div>
+        <div class="flex pt-4 justify-between">
+            <h5 class="text-lg font-normal text-[#02A171]">$49</h5>
+            <button type="button" class="text-center text-white font-semibold py-2 px-10 rounded-3xl bg-[#02A171]">View Courses</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-span-12 md:col-span-4 rounded-3xl shadow-lg  ">
+     <img src="./assets/courses/Rectangle 37.png" class="" alt=""/>
+     <div class="py-5 px-5">
+     <p class="text-sm font-normal text-[#014631]  py-2 px-8 rounded-3xl bg-[#DEF6EE] w-35 ">Programming</p>
+     <p class="text-sm font-semibold text-black text-justify pt-3">Complete Web Development Bootcamp</p>
+        <div class="flex gap-3 pt-3">
+            <p class="text-sm font-normal text-[#FFB100]">4.5</p>
+            <p class="text-sm font-normal text-[#FFB100]">25,000</p>
+         <p class="text-sm font-normal text-[#FFB100]">40hrs</p>
+        </div>
+        <div class="flex pt-4 justify-between">
+            <h5 class="text-lg font-normal text-[#02A171]">$49</h5>
+            <button type="button" class="text-center text-white font-semibold py-2 px-10 rounded-3xl bg-[#02A171]">View Courses</button>
+        </div>
+    </div>
+    </div>
+    <div class="col-span-12 md:col-span-4 rounded-3xl shadow-lg  ">
+     <img src="./assets/courses/Rectangle 37.png" class="" alt=""/>
+     <div class="py-5 px-5">
+     <p class="text-sm font-normal text-[#014631]  py-2 px-8 rounded-3xl bg-[#DEF6EE] w-35 ">Programming</p>
+     <p class="text-sm font-semibold text-black text-justify pt-3">Complete Web Development Bootcamp</p>
+        <div class="flex gap-3 pt-3">
+            <p class="text-sm font-normal text-[#FFB100]">4.5</p>
+            <p class="text-sm font-normal text-[#FFB100]">25,000</p>
+         <p class="text-sm font-normal text-[#FFB100]">40hrs</p>
+        </div>
+        <div class="flex pt-4 justify-between">
+            <h5 class="text-lg font-normal text-[#02A171]">$49</h5>
+            <button type="button" class="text-center text-white font-semibold py-2 px-10 rounded-3xl bg-[#02A171]">View Courses</button>
+        </div>
+    </div>
+    </div>
+   </div>
+</div>
+  <div class="tab-pane hidden" data-content="design">Design Courses Here</div>
+  <div class="tab-pane hidden" data-content=" Programming">Development Courses Here</div>
+  <div class="tab-pane hidden" data-content="marketing">Marketing Courses Here</div>
+  <div class="tab-pane hidden" data-content="marketing">Management</div>
+  <div class="tab-pane hidden" data-content="marketing">Software & Tech</div>
+  <div class="tab-pane hidden" data-content="marketing"> AI & Machine Learning</div>
+  <div class="tab-pane hidden" data-content="marketing">More</div>
+</div>
+
+
+</section>
+
+ 
+
+<!-- JS -->
 <script>
-$(document).ready(function () {
-    
-    $(".category-btn").on("click", function () {
-        let category = $(this).data("category");
+  const tabs = document.querySelectorAll(".tab-btn");
+  const panes = document.querySelectorAll(".tab-pane");
 
-        $(".category-btn").removeClass("bg-green-600 text-white")
-            .addClass("text-green-600");
+  tabs.forEach(tab => {
+    tab.addEventListener("click", () => {
+      
+      // Remove active class from all buttons
+      tabs.forEach(btn => btn.classList.remove("text-green-600", "border-green-600", "border-b-2"));
+      tabs.forEach(btn => btn.classList.add("text-gray-600"));
 
-        $(this).addClass("bg-green-600 text-white");
+      // Add active to clicked button
+      tab.classList.add("text-green-600", "border-green-600", "border-b-2");
 
-        if (category === "all") {
-            $(".course-card").show();
-        } else {
-            $(".course-card").hide();
-            $(`.course-card[data-category="${category}"]`).show();
+      const target = tab.getAttribute("data-tab");
+
+      // Show content
+      panes.forEach(pane => {
+        pane.classList.add("hidden");
+        if (pane.getAttribute("data-content") === target) {
+          pane.classList.remove("hidden");
         }
+        if (target === "all") pane.classList.remove("hidden");
+      });
     });
-
-});
+  });
 </script>
 
-@endsection
+</section>
+
+    

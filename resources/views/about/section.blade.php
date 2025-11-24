@@ -1,7 +1,7 @@
 <!-- banner section-->
-<img src="./assets/homebanner.png" class="" alt=""/>
+<img src="./assets/about/aboutbanner .png" class="" alt="" />
 
-<div class="w-full bg-gray-100 flex justify-center py-16">
+<div class="w-full  flex justify-center py-16">
   <!-- Outer Card -->
   <div class="w-11/12 lg:w-4/5 rounded-3xl bg-gradient-to-br from-gray-100 to-gray-300 p-10 shadow-md relative overflow-hidden">
 
@@ -28,19 +28,29 @@
 </div>
 
 <!-- offer section-->
- <section class="max-w-6xl mx-auto py-5 bg-white">
-    <div class="grid grid-cols-12">
-        <div class="col-span-4">
-          <img src="" class="" alt="pic"/>
-        </div>
-        <div class="col-span-8">
-           <h2 class="text-xl text-green-700 font-semibold ">what we offer</h2>
-        </div>
+<section class="max-w-6xl mx-auto  px-8 bg-white">
+  <div class="grid grid-cols-12 gap-10">
+    <div class="col-span-12 md:col-span-4">
+      <img src="./assets/about/Group 279.png" class="" alt="pic" />
     </div>
- </section>
+    <div class="col-span-12 md:col-span-8">
+      <h2 class="text-xl text-[#008357] font-semibold ">what we offer</h2>
+      <div class="flex gap-2 py-2">
+        <img src="./assets/about/Vector.png" class="" alt="arrow" />
+        <p class="text-justify text-black font-normal">Learn. Grow. Transform.</p>
+      </div>
+      <p class="text-justify text-black font-normal py-2 text-sm">GreenInk Academy, we bridge the gap between your decision to succeed and your ultimate destination of government exam success. Established with a commitment to excellence, GreenInk Academy has become a benchmark institution for online government exam coaching in Coimbatore. We offer top-notch coaching to aspirants who are driven by a passion to excel and a determination to reach their goals.</p>
+      <p class="text-justify text-black font-normal pt-5 text-sm"><b>Wide Range of Courses:</b> From technology and design to business and personal development learn what matters most to you. </p>
+      <p class="text-justify text-black font-normal pt-5 text-sm"><b>Flexible Online Learning:</b> Learn at your own pace, from anywhere, on any device. </p>
+      <p class="text-justify text-black font-normal pt-5 text-sm"><b>Global Learning Community:</b> Connect with mentors and learners from across the world. </p>
+      <p class="text-justify text-black font-normal pt-5 text-sm"><b>Skill-Based Learning:</b> Each course is designed to build real-world skills you can apply immediately. </p>
 
- <!--vission and mission -->
- <div class="max-w-6xl mx-auto flex flex-col gap-10 py-10">
+    </div>
+  </div>
+</section>
+
+<!--vission and mission -->
+<div class="max-w-6xl mx-auto flex flex-col gap-10 py-10">
 
   <!-- 1. Our Vision -->
   <div class="relative w-[900px] bg-white rounded-xl  shadow-md p-6 flex items-center justify-between">
@@ -48,7 +58,7 @@
 
     <!-- Left Icon -->
     <div class="relative z-10 pl-4">
-      <img src="/mnt/data/heart-book-icon.png" alt="Vision Icon" class="w-14 h-14">
+      <img src="./assets/about/vision.png" alt="Vision Icon" class="w-14 h-14">
     </div>
 
     <!-- Text -->
@@ -71,7 +81,7 @@
 
     <!-- Right Icon -->
     <div class="relative z-10 pr-4">
-      <img src="/mnt/data/target-icon.png" alt="Mission Icon" class="w-14 h-14">
+      <img src="./assets/about/mission.png" alt="Mission Icon" class="w-14 h-14">
     </div>
 
     <!-- Text -->
@@ -95,7 +105,7 @@
 
     <!-- Left Icon -->
     <div class="relative z-10 pl-4">
-      <img src="/mnt/data/lightbulb-icon.png" alt="Values Icon" class="w-14 h-14">
+      <img src="./assets/about/value.png" alt="Values Icon" class="w-14 h-14">
     </div>
 
     <!-- Text -->
