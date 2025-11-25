@@ -19,7 +19,7 @@
         @php
             $courses = [
                 [
-                    'image' => 'assets/courses/course1.jpg',
+                    'image' => 'assets/courses/course1.png',
                     'category' => 'Technology',
                     'title' => 'Complete Web Development Bootcamp',
                     'instructor' => 'Dr. Angela Yu',
@@ -90,7 +90,7 @@
 
                     <!-- Course Image -->
                     <div class="relative">
-<img src="{{ asset('assets/Group 591.png') }}" class="rounded-xl w-full h-44 object-cover">
+<img src="{{ asset('assets/courses/course1.png') }}" class="rounded-xl w-full h-44 object-cover">
 
                         <span class="absolute top-3 right-3 bg-white px-3 py-1 rounded-full text-sm font-bold shadow-md flex items-center gap-1">
                             ⭐ {{ $course['rating'] }}

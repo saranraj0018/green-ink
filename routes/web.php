@@ -3,13 +3,6 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/my-page', function () {
-    return view('my-page');
-});
-Route::get('/', function () {
     return view('home');
 })->name('home');
 
@@ -105,3 +98,6 @@ Route::get('/verify-email', function () {
 Route::post('/verify-otp', [OtpController::class, 'verify'])->name('verify.otp');
 
 
+Route::get('/dashboard', function () {
+    return view('dashboard.main');
+})->name('dashboard');

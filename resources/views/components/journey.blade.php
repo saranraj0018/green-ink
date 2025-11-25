@@ -54,21 +54,21 @@
     </section>
 
     <!-- count section-->
-     <section class="py-16 bg-gradient-to-b from-white to-yellow-300 rounded-b-xl">
+     <section class="py-16 bg-gradient-to-b from-white to-[#F6CC6D] rounded-b-xl">
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
 <div>
-    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="500">0</h2>
+    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="500">500</h2>
     <p class="text-gray-700 mt-2 text-lg">Expert Courses</p>
 </div>
 
 <div>
-    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="100000">0</h2>
+    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="100000">100000</h2>
     <p class="text-gray-700 mt-2 text-lg">Active Learners</p>
 </div>
 
 <div>
-    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="95">0</h2>
+    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="95">95</h2>
     <p class="text-gray-700 mt-2 text-lg">Success Rate</p>
 </div>
 

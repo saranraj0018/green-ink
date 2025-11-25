@@ -28,22 +28,36 @@
 
         <img src="{{ asset('assets/greeninklogo.png') }}" class="h-20 mb-4">
 
-        <h2 class="text-2xl font-bold text-green-900 mb-2">Verify your Email</h2>
-        <p class="text-gray-500 text-sm mb-4">
+        <h2 class="text-2xl font-bold text-[#1B4D3E] mb-2">Verify your Email</h2>
+        <p class="text-black text-center text-sm mb-4">
             We've sent a 6-digit verification code to <br>
+            youremail@gmail.com
             <strong>{{ session('email') }}</strong>
         </p>
 
         <form action="{{ route('verify.otp') }}" method="POST" class="flex gap-2">
             @csrf
-            <input type="text" name="otp" maxlength="6"
-                class="border px-4 py-2 w-40 text-center tracking-widest text-xl">
-            <button type="submit"
-                class="bg-green-700 text-white px-6 py-2 rounded-lg ml-2 hover:bg-green-800">
-                Verify
-            </button>
+           
+           <!-- OTP Inputs -->
+            <form method="POST" action="{{ route('verify.otp') }}" >
+                @csrf
+                
+                <div class="flex gap-3 justify-center">
+                    @for ($i = 1; $i <= 6; $i++)
+                        <input 
+                            type="text" 
+                            name="otp[]" 
+                            maxlength="1"
+                            class="w-12 h-12 border-2 border-gray-300 rounded-lg text-center text-xl focus:border-green-600 focus:ring-2 focus:ring-green-400"
+                            required
+                        >
+                    @endfor
+                </div>
         </form>
+        <p class="text-center text-black text-sm py-3  font-normal">Enter the code to Sign in</p>
 
         <a href="#" class="text-green-600 text-sm mt-3">Resend OTP</a>
+
+        <p class="text-sm text-black font-normal bg-[#E2E2E2] rounded-3xl py-5 px-5 text-center w-100 my-6"><b>Tips </b>: check your spam folder if you don’t see the email. The code expires in 10 minutes</p>
     </div>
 </div>
