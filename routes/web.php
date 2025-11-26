@@ -98,6 +98,11 @@ Route::get('/verify-email', function () {
 Route::post('/verify-otp', [OtpController::class, 'verify'])->name('verify.otp');
 
 
+Route::get('/sidebar', function () {
+    return view('sidebar.main');
+})->name('sidebar');
+
+
 Route::get('/dashboard', function () {
     return view('dashboard.main');
 })->name('dashboard');
