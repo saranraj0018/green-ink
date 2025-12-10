@@ -106,3 +106,5 @@ Route::get('/sidebar', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.main');
 })->name('dashboard');
+
+require __DIR__ . '/admin.php';
