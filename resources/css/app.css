@@ -6,6 +6,17 @@
 @source '../**/*.js';
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji',
+        'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+
+    /* 💠 Primary & Secondary Colors */
+    --color-primary: #1B4D3E;      /* example */
+    --color-primary-light: #008357;      /* example */
+}
+
+
+@layer components {
+    .my-container {
+        @apply px-[1em] lg:px-[5em] xl:px-[5em] 2xl:px-[10em];
+    }
 }
