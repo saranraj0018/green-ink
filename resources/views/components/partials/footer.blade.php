@@ -1,12 +1,12 @@
 <footer class="my-container bg-cover bg-center bg-no-repeat pt-10 pb-5 space-y-3" style="background-image: url({{asset('assets/footerBg.png')}})">
-    <div class="grid grid-cols-12 gap-2 md:gap-18">
+    <div class="grid grid-cols-12 gap-2 lg:gap-18">
         <div class="col-span-12 md:col-span-4 space-y-3">
             <img src={{asset('assets/greeninklogo.png')}} alt="logo">
             <p class="text-sm font-medium">
                 Transform your career with world-class education. Learn industry experts and gain skills that matter.
             </p>
             <p class="text-lg font-semibold">
-                Follow us 
+                Follow us
             </p>
             <div class="flex gap-3">
                 <a href="#" class="instagram"></a>
@@ -29,7 +29,7 @@
             </div>
 
         </div>
-        
+
         <div class="col-span-12 md:col-span-3 space-y-3">
             <h3 class="text-lg font-semibold">
                 Top Courses
@@ -44,8 +44,8 @@
             </div>
 
         </div>
-        
-        
+
+
     </div>
     <div>
         <div class="flex flex-col md:flex-row justify-between">
@@ -62,7 +62,7 @@
             </div>
         </div>
     </div>
-    
+
 </footer>
 
 <script>
