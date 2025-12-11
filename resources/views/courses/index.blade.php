@@ -1,36 +1,7 @@
 
 
 @section('content')
-
 <section class="max-w-6xl mx-auto ">
-    <p class="text-sm text-green-800 font-semibold pb-5">Filter By Category</p>
-    <!-- Tabs Navigation -->
-<div class="flex space-x-4  mb-6">
-  <button class="tab-btn px-8 py-2 font-medium text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="all">
-    All Courses
-  </button>
-  <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="design">
-    Design
-  </button>
-  <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="marketing">
-   Marketing
-  </button>
-  <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" programming">
-   Programming
-  </button>
-   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab="Management">
-   Management
-  </button>
-   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" software & Tech">
-   Software & Tech
-  </button>
-   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" aI & Machine Learning">
-  AI & Machine Learning
-  </button>
-   <button class="tab-btn px-4 py-2 font-medium  text-green-600 hover:text-white rounded-3xl border border-green-600 hover:bg-[#008357] " data-tab=" more">
-  More
-  </button>
-</div>
 
 <!-- Tab Content -->
 <div id="tabContent">
