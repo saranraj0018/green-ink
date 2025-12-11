@@ -4,12 +4,6 @@
 
     <ul class="flex flex-col gap-3 mt-4 text-sm font-medium text-[#e4c094] ">
         <x-menu.item route="admin.dashboard" name="Dashboard" icon="fa-home" />
-
-            <x-slot:menus>
-
-            </x-slot:menus>
-
-
-
+        <x-menu.item route="view.category" name="Category" icon="fa-layer-group" />
     </ul>
 </aside>
