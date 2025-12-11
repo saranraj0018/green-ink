@@ -1,10 +1,10 @@
  <!-- achives-->
  <section  class="max-w-6xl mx-auto py-5">
     <h2 class="text-black text-lg font-medium">Hear Form Our Achievers</h2>
-    <div class="bg-[url('./assets/courses/achivesbanner.png')] 5 bg-green-400 rounded-3xl bg-cover bg-center bg-no-repeat relative max-w-7xl mx-auto text-center py-10 mt-10 px-10 z-10">
+    <div class="rounded-3xl bg-cover bg-center bg-no-repeat relative max-w-7xl mx-auto text-center py-10 mt-10 px-10 z-10" style="background-image:url('{{asset('assets/courses/test-bg.png')}}');">
 
       <div class="grid grid-cols-12 gap-10">
-        <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white ">
+        <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white bg-black/40">
             <div class="flex gap-5">
                 <img src="./assets/courses/Ellipse 5.png" class="" alt=""/>
                 <h2 class="text-white text-lg font-semibold pt-5">Pamir Roy</h2>
@@ -12,7 +12,7 @@
                 <p class="text-white text-justify text-sm py-2 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 
         </div>
-         <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white ">
+         <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white bg-black/40">
             <div class="flex gap-5">
                 <img src="./assets/courses/Ellipse 5.png" class="" alt=""/>
                 <h2 class="text-white text-lg font-semibold pt-5">Pamir Roy</h2>
@@ -20,7 +20,7 @@
                 <p class="text-white text-justify text-sm py-2 ">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. </p>
 
         </div>
-        <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white ">
+        <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white bg-black/40">
             <div class="flex gap-5">
                 <img src="./assets/courses/Ellipse 5.png" class="" alt=""/>
                 <h2 class="text-white text-lg font-semibold pt-5">Pamir Roy</h2>
