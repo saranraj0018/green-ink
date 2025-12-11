@@ -3,69 +3,33 @@
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
-    return view('home');
+    return view('home.main');
 })->name('home');
 
 Route::get('/about', function () {
     return view('about.main');
 })->name('about');
 
-Route::get('/Courses', function () {
+Route::get('/courses', function () {
     return view('courses.main');
 })->name('Courses');
 
-Route::get('/Features', function () {
+Route::get('/features', function () {
     return view('Features.main');
 })->name('Features');
 
-Route::get('/Contact', function () {
+Route::get('/contact', function () {
     return view('Contact');
-})->name('Contact');
-Route::get('/Carrier', function () {
-    return view('Carrier');
-})->name('Carrier');
-Route::get('/Store', function () {
-    return view('Store');
-})->name('Store');
-Route::get('/Blogs', function () {
-    return view('Blogs');
-})->name('Blogs');
-Route::get('/Contactus', function () {
-    return view('Contactus');
-})->name('ContactUs');
+})->name('contact');
+
+Route::get('/courses/all-courses', function () {
+    return view('all-courses.main');
+})->name('/courses/all-courses');
+
+
+
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'])
     ->name('contact.submit');
-
-Route::get('/Events', function () {
-    return view('Events');
-})->name('Career');
-Route::get('/Career', function () {
-    return view('Career');
-})->name('Events');
-Route::get('/WebDevelopment', function () {
-    return view('WebDevelopment');
-})->name('WebDevelopment');
-
-Route::get('/DataScience', function () {
-    return view('DataScience');
-})->name('DataScience');
-
-Route::get('/Business', function () {
-    return view('Business');
-})->name('Business');
-
-Route::get('/Design', function () {
-    return view('Design');
-})->name('Design');
-
-Route::get('/Design', function () {
-    return view('Design');
-})->name('Design');
-
-Route::get('/homesection', function () {
-    return view('homesection');
-})->name('homesection');
-
 
 //Route::get('/', [MentorController::class, 'index'])->name('home');
 

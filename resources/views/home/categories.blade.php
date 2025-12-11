@@ -1,13 +1,13 @@
 <!--banner-->
 
-<img src="/assets/homebanner.png"  alt="banner"/>
+<img src="/assets/homebanner.png" alt="banner" />
 
 
-<section class="py-12 bg-white">
-    <div class="container max-w-6xl mx-auto px-4">
-        
+<section class="my-10">
+    <div class="my-container space-y-5">
+
         <!-- Title -->
-        <h2 class="text-center text-xl  font-semibold text-gray-800 mb-10">
+        <h2 class="text-center text-2xl font-bold text-gray-800">
             Explore Top Categories
         </h2>
 
@@ -23,17 +23,17 @@
         @endphp
 
         <!-- Grid Cards -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
             @foreach ($categories as $category)
-                <div class="flex items-center gap-8 bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-
+                <div
+                    class="flex items-center gap-3 md:gap-14 bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
                     <div class="bg-green-50 p-4 rounded-full">
                         <img src="{{ asset($category['icon']) }}" class="h-12 w-12" alt="{{ $category['title'] }}">
                     </div>
 
-                    <div>
-                        <h3 class="text-lg font-semibold text-gray-800">{{ $category['title'] }}</h3>
-                        <p class="text-sm text-gray-600">{{ $category['courses'] }}</p>
+                    <div class="space-y-2">
+                        <h3 class="text-lg md:text-2xl font-semibold text-[#533B04]">{{ $category['title'] }}</h3>
+                        <p class="text-md font-medium">{{ $category['courses'] }}</p>
                     </div>
 
                 </div>
