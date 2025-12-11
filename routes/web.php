@@ -21,6 +21,13 @@ Route::get('/features', function () {
 Route::get('/contact', function () {
     return view('Contact');
 })->name('contact');
+
+Route::get('/courses/all-courses', function () {
+    return view('all-courses.main');
+})->name('/courses/all-courses');
+
+
+
 Route::post('/contact', [App\Http\Controllers\ContactController::class, 'submit'])
     ->name('contact.submit');
 

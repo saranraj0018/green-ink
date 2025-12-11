@@ -123,7 +123,7 @@
                             <span
                                 class="text-sm font-bold text-primary-light border border-primary-light rounded-3xl py-1 px-5">{{ $course['price'] }}</span>
 
-                            <a href="/courses"
+                            <a href="/courses/all-courses"
                                 class="px-4 py-1 text-white rounded-full hover:bg-green-700 transition text-sm" style="background: linear-gradient(180deg, #008357 0%, #39B28A 100%);">
                                 View Course
                             </a>
