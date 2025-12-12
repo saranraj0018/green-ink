@@ -23,6 +23,7 @@ return new class extends Migration
             $table->string('image')->nullable();           // Intro video URL or storage path
             $table->longText('course_overview')->nullable();
             $table->longText('learning_outcomes')->nullable();
+            $table->string('cover_video');
             $table->tinyInteger('status')->default(1)->comment('1-active, 2-inactive');
             $table->timestamps();
 
