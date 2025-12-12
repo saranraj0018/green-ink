@@ -7,11 +7,8 @@
                  <img src="./assets/greeninklogo.png" class="" alt="logo" />
              </div>
              <div class="flex">
-
                  <!-- Sidebar -->
                  <aside class="w-64 shadow h-screen pt-5">
-                    
-
                      <nav class="space-y-2">
                          <a href="/dashboard" class="block p-3 rounded-lg text-white text-sm font-normal hover:bg-[#FFB100]">Dashboard</a>
                          <a href="#" class="block p-3 rounded-lg text-white text-sm font-normal hover:bg-[#FFB100]">My Courses</a>
@@ -24,13 +21,6 @@
 
                      </nav>
                  </aside>
-
-
-
-
-
-
-
              </div>
          </div>
          <div class="col-span-10">
@@ -39,10 +29,6 @@
              <!-- NAVBAR -->
              <section class="bg-white/50 ">
                  <div class=" mx-auto px-4 md:px-5 py-4 flex items-center justify-between">
-
-
-
-
                      <!-- Mobile Menu Button -->
                      <button id="menu-toggle" class="md:hidden text-green-700 text-3xl font-bold">
                          ☰
@@ -71,7 +57,7 @@
                              @foreach ($menus as $route => $label)
                              <li>
                                  <a href="{{ route($route) }}"
-                                     class="px-3 py-2 rounded-md transition 
+                                     class="px-3 py-2 rounded-md transition
                             {{ request()->routeIs($route) ?
                                 ' text-green-700' :
                                 'text-green-700 hover:bg-green-50' }}">

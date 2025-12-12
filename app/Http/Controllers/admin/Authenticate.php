@@ -90,7 +90,7 @@ class Authenticate extends Controller
         $admin->name          = $request['name'];
         $admin->email         = $request['email'];
         $admin->password      = Hash::make($request['password']);;
-        $admin->role          = $request['role'];
+        $admin->role_id          = $request['role'];
         $admin->mobile_number = $request['mobile_number'];
         $admin->code          = $request['code'];
         $admin->save();
