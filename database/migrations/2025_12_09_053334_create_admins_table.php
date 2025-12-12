@@ -21,6 +21,8 @@ return new class extends Migration
             $table->string('code')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('role_id')->references('id')->on('roles')->onDelete('no action');
         });
     }
 

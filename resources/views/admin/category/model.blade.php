@@ -71,7 +71,7 @@
             <div class="absolute inset-0 bg-black/40" @click="open = false"></div>
             <div class="bg-white p-6 rounded-xl shadow-xl w-[400px] relative z-10">
                 <h2 class="text-lg font-bold mb-4 text-gray-800">Confirm Delete</h2>
-                <p class="text-gray-600 mb-6">Are you sure you want to delete this coupon?</p>
+                <p class="text-gray-600 mb-6">Are you sure you want to delete this category?</p>
                 <div class="flex justify-end gap-3">
                     <button @click="open = false"
                         class="px-4 py-1 border rounded-lg hover:bg-gray-100">Cancel</button>
