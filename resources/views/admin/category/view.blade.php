@@ -58,7 +58,7 @@
                                 <i class="fa-solid fa-pen-to-square"></i>
                             </button>
                             <!-- Delete -->
-                            @if ($cat->products->isEmpty())
+                            @if ($cat->courses->isEmpty())
                             <button class="text-red-600 hover:text-red-800 transition btnDeleteCategory" data-id="{{ $cat->id }}">
                                 <i class="fa-solid fa-delete-left"></i>
                             </button>
