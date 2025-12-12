@@ -16,7 +16,7 @@
         status: '1',
         image: '',
         video_files: [],
-        cover_video
+        cover_video: '',
     }
 }" x-cloak>
 
