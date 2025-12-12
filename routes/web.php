@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\CourseController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -10,9 +11,11 @@ Route::get('/about', function () {
     return view('about.main');
 })->name('about');
 
-Route::get('/courses', function () {
-    return view('courses.main');
-})->name('Courses');
+
+Route::get('/courses', [CourseController::class, 'index'])->name('courses');
+Route::get('/view-course', [CourseController::class, 'viewCourse'])->name('view_course');
+// web.php
+Route::post('/enroll/free', [CourseController::class, 'enrollFree'])->name('enroll.free')->middleware('auth');
 
 Route::get('/features', function () {
     return view('Features.main');
@@ -22,9 +25,9 @@ Route::get('/contact', function () {
     return view('Contact');
 })->name('contact');
 
-Route::get('/courses/all-courses', function () {
-    return view('all-courses.main');
-})->name('/courses/all-courses');
+// Route::get('/courses/all-courses', function () {
+//     return view('all-courses.main');
+// })->name('/courses/all-courses');
 
 
 

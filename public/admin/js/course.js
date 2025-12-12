@@ -22,6 +22,8 @@ $(function () {
            learning_outcomes: "",
            status: "1",
            image: "",
+           video_files: [],
+           cover_video: ""
        };
 
        $("#course_label").text("Add Course");
@@ -88,12 +90,12 @@ $(function () {
             {
                 id: "#learning_outcomes",
                 condition: (val) => val === "",
-                message: "Please Enter your Learning Outcomes",
+                message: "Learning Outcome is required",
             },
             {
                 id: "#description",
                 condition: (val) => val === "",
-                message: "Please Enter your Learning Outcomes",
+                message: "Description is required",
             },
         ];
 
