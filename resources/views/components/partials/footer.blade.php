@@ -50,7 +50,7 @@
     <div>
         <div class="flex flex-col md:flex-row justify-between">
             <p class="text-sm">
-                @ 2025 Greenlink Academy. All rights reserved.
+                @ 2025 GreenInk Academy. All rights reserved.
             </p>
             <div class="flex flex-col md:flex-row gap-2">
                 <a href="#" class="text-sm">

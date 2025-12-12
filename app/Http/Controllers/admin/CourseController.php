@@ -5,6 +5,7 @@ namespace App\Http\Controllers\admin;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Course;
+use App\Models\CourseVideo;
 use Illuminate\Http\Request;
 
 class CourseController extends Controller
@@ -19,6 +20,10 @@ class CourseController extends Controller
     public function courseSave(Request $request)
     {
         try {
+            // echo '<pre>';
+            // print_r($request->all());
+            // echo '</pre>';
+            // exit;
             $rules =
                 [
                     'title' => 'required|max:255',
@@ -75,6 +80,23 @@ class CourseController extends Controller
             }
 
             $course->save();
+
+            if ($request->hasFile('videos')) {
+                foreach ($request->file('videos') as $video) {
+                    $fileName = $video->getClientOriginalName();
+                    $path = $video->storeAs('course_videos', $fileName, 'public');
+                    // $filePath = $file->storeAs('student_upload_proof', $fileName, 'public');
+                    $exists = CourseVideo::where(['course_id' => $course->id, 'file_name' =>  $fileName, 'file_path' => $path])->first();
+                    if (!$exists) {
+                        $upload = new CourseVideo();
+                        $upload->course_id  = $course->id;
+                        $upload->file_name  = $fileName ?? null;
+                        $upload->file_path  = $path; // Original filename
+                        $upload->file_type  = $video->getClientMimeType();         // Public path
+                        $upload->save();
+                    }
+                }
+            }
 
             return response()->json([
                 'success' => true,

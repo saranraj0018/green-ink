@@ -16,6 +16,8 @@ class Guest
      */
     public function handle(Request $request, Closure $next): Response
     {
+        echo 'test0';
+        exit;
         if (Auth::guard('admin')->check()) {
             return redirect()->route('admin.dashboard');
         }
