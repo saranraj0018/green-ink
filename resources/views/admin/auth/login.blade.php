@@ -53,8 +53,7 @@
                 </div>
 
                 {{-- Submit button with loading --}}
-                <button type="submit"
-                    class="w-full bg-[#006400] text-white py-2 rounded-md flex items-center justify-center gap-2"
+                <button type="submit" class="w-full bg-[#006400] text-white py-2 rounded-md flex items-center justify-center gap-2"
                     :disabled="loading">
                     <span x-show="!loading">Sign In</span>
                     <span x-show="loading" class="flex items-center gap-2">

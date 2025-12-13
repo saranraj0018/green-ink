@@ -3,6 +3,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Greenink</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+ <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
@@ -10,7 +11,6 @@
 <section class="md:fixed md:top-0 bg-gray-200/90 shadow-sm z-100">
     <div class="mx-auto px-4 md:px-10 py-1">
         <div class="grid grid-cols-12 gap-1 md:gap-2">
-
             <!-- Logo -->
             <div class="col-span-8 lg:col-span-3">
                 <a href="/" class="flex items-center">
@@ -34,10 +34,7 @@
                     </button>
                 </div>
             </div>
-
         </div>
-
-
     </div>
 </section>
 
