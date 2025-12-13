@@ -14,9 +14,7 @@
         course_overview: '',
         learning_outcomes: '',
         status: '1',
-        image: '',
-        video_files: [],
-        cover_video: '',
+        image: ''
     }
 }" x-cloak>
 
@@ -139,31 +137,28 @@
                                         class="w-full max-h-[30vh] rounded-lg border border-gray-300 shadow-md object-cover" />
                                 </div>
                             </div>
+                            <div>
+                                <label class="block text-gray-700 font-medium mb-2">Upload Course Cover Video</label>
+
+                                <input type="file" name="cover_video" id="cover_video"
+                                    accept="video/mp4,video/mkv,video/webm"
+                                    class="form-input w-full border border-gray-300 rounded-lg p-2 cursor-pointer bg-gray-50">
+
+                                <!-- Preview area -->
+                                <ul id="cover_videoList" class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg border hidden">
+                                </ul>
+                            </div>
 
                             <!-- Video Upload (Multiple) -->
-                            <div class="col-span-2" x-data="{ video_files: [] }">
-    <label class="block text-gray-700 font-medium mb-2">Upload Course Videos</label>
-
-    <input type="file"
-        name="videos[]"
-        id="videos"
-        accept="video/mp4,video/mkv,video/webm"
-        multiple
-        @change="video_files = Array.from($event.target.files)"
-        class="form-input w-full border border-gray-300 rounded-lg p-2 cursor-pointer bg-gray-50">
-
-    <!-- Preview File List -->
-    <template x-if="video_files.length > 0">
-        <ul class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg border">
-            <template x-for="(video, index) in video_files" :key="index">
-                <li class="text-sm text-gray-700 flex items-center justify-between">
-                    <span x-text="video.name"></span>
-                </li>
-            </template>
-        </ul>
-    </template>
-</div>
-
+                            <div class="col-span-2">
+                                <label class="block text-gray-700 font-medium mb-2">Upload Course Videos</label>
+                                <input type="file" name="videos[]" id="videos"
+                                    accept="video/mp4,video/mkv,video/webm" multiple
+                                    class="form-input w-full border border-gray-300 rounded-lg p-2 cursor-pointer bg-gray-50">
+                                <!-- Preview area -->
+                                <ul id="videoList" class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg border hidden">
+                                </ul>
+                            </div>
                         </div>
                     </form>
                 </div>
@@ -183,5 +178,3 @@
         </div>
     </template>
 </div>
-
-
