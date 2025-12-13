@@ -26,10 +26,6 @@ class CashfreeController extends Controller
             ], 409);
         }
 
-
-
-
-
         $orderId = 'order_' . time();
 
         $url = env('CASHFREE_ENV') === 'sandbox'
@@ -51,9 +47,9 @@ class CashfreeController extends Controller
             "order_currency" => "INR",
             "customer_details" => [
                 "customer_id" => "1",
-                "customer_name" => "SARAN",
-                "customer_email" => "saran@gmail.com",
-                "customer_phone" => "9629035372",
+                "customer_name" => $request['name'],
+                "customer_email" => $request['email'],
+                "customer_phone" => $request['phone'],
             ],
             "order_meta" => [
                 "return_url" => route('cashfree.success') . "?order_id={order_id}&order_token={order_token}",
@@ -121,8 +117,6 @@ class CashfreeController extends Controller
 
         $responseData = json_decode($response);
 
-        //dd($responseData);
-
         // Update payment status in database
         $payment = Payment::where('order_id', $orderId)->first();
 
@@ -138,14 +132,14 @@ class CashfreeController extends Controller
             ]);
 
             if ($status === 1) {
-                return redirect('/')->with([
+                return redirect('/success/payment/page')->with([
                     'success' => 'Payment Successful!',
                     'payment' => $payment,
                 ]);
             }
         }
 
-        return redirect('/')->with('error', 'Payment verification failed for Order ID: ' . $orderId);
+        return redirect('/failure/payment/page')->with('error', 'Payment verification failed for Order ID: ' . $orderId);
 
     }
 

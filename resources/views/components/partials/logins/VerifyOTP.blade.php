@@ -30,5 +30,9 @@
             <div class="bg-[#EFEFEF] border border-[#E2E2E2] rounded-lg p-3 text-[12px] mt-2">
                 <b>Tips:</b> check your spam folder if you don’t see the email. The code expires in 10 minutes
             </div>
+            <button type="button" class="my-3 text-sm text-primary" @click="step = 'signinInstead'">
+                back
+            </button>
+        </form>
     </div>
 </div>

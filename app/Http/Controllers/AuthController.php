@@ -2,16 +2,49 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Mail;
+use Illuminate\Support\Facades\Validator;
 
 class AuthController extends Controller
 {
-    public function login()
+    public function register(Request $request)
     {
-        return view('login');
+        $validator = Validator::make($request->all(), [
+            'name' => 'required',
+            'email' => 'required|email',
+            'mobile_number' => 'required',
+        ]);
+
+        if ($validator->fails()) {
+            return response()->json([
+                'status' => 'validation_error',
+                'errors' => $validator->errors(),
+            ], 422);
+        }
+
+        $user = User::where('mobile_number', $request->mobile_number)->first();
+
+        if ($user) {
+            return response()->json([
+                'status' => 'user_exists',
+                'message' => 'Mobile number already exists. Please login.',
+            ], 409);
+        }
+
+        // Send OTP here (mock)
+        session([
+            'register_data' => $request->only('name', 'email', 'mobile_number'),
+            'register_otp' => rand(100000, 999999),
+        ]);
+
+        return response()->json([
+            'status' => 'otp_sent',
+        ]);
     }
+
 
     public function sendOtp(Request $request)
     {

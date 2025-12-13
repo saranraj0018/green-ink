@@ -68,7 +68,7 @@
     if (openDesktopBtn) openDesktopBtn.addEventListener('click', openPopup);
 
     // Close button
-    closeBtn.addEventListener('click', closePopup);
+    // closeBtn.addEventListener('click', closePopup);
 
     // Click outside modal to close
     modal.addEventListener('click', function(e) {
