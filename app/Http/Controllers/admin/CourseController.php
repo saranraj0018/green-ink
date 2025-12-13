@@ -20,10 +20,6 @@ class CourseController extends Controller
     public function courseSave(Request $request)
     {
         try {
-            // echo '<pre>';
-            // print_r($request->all());
-            // echo '</pre>';
-            // exit;
             $rules =
                 [
                     'title' => 'required|max:255',
@@ -67,6 +63,16 @@ class CourseController extends Controller
             $course->course_overview = $request['course_overview'];
             $course->learning_outcomes = $request['learning_outcomes'];
             $course->status = $request['status'];
+
+            if ($request->hasFile('cover_video')) {
+                $img_name = $request->file('cover_video')->getClientOriginalName();
+                $img_name = time() . '_' . $img_name;
+                $request->cover_video->storeAs('cover_videos/', $img_name, 'public');
+                $course->cover_video =  'cover_videos/' . $img_name;
+            } else if ($request->has('existing_cover_video')) {
+                // keep the existing cover video path
+                $course->cover_video = $request->existing_cover_video;
+            }
 
             // // handle image upload
             if ($request->hasFile('course_image')) {
