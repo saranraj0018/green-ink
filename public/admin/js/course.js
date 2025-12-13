@@ -1,35 +1,34 @@
 $(function () {
-   $(document).on("click", "#createCourseBtn", function () {
-       let modal = document.getElementById("courseModal");
-       let alpine = modal.__x.$data;
+    let allFiles = [];
+    $(document).on("click", "#createCourseBtn", function () {
+        let modal = document.getElementById("courseModal");
+        let alpine = modal.__x.$data;
 
+        alpine.open = true; // ← REQUIRED
+        alpine.previewUrl = "";
+        alpine.exiting_image = "";
 
-       alpine.open = true; // ← REQUIRED
-       alpine.previewUrl = "";
-       alpine.exiting_image = "";
+        // Reset form fields
+        alpine.form = {
+            course_id: 0,
+            category_id: "",
+            title: "",
+            type: "free",
+            amount: "",
+            hours: "",
+            star_point: "",
+            description: "",
+            course_overview: "",
+            learning_outcomes: "",
+            status: "1",
+            image: "",
+            video_files: [],
+            cover_video: "",
+        };
 
-       // Reset form fields
-       alpine.form = {
-           course_id: 0,
-           category_id: "",
-           title: "",
-           type: "free",
-           amount: "",
-           hours: "",
-           star_point: "",
-           description: "",
-           course_overview: "",
-           learning_outcomes: "",
-           status: "1",
-           image: "",
-           video_files: [],
-           cover_video: ""
-       };
-
-       $("#course_label").text("Add Course");
-       $("#save_course").text("Save");
-   });
-
+        $("#course_label").text("Add Course");
+        $("#save_course").text("Save");
+    });
 
     $(document).on("click", ".editCourseBtn", function () {
         let id = $(this).data("id");
@@ -108,9 +107,9 @@ $(function () {
             const result = validateField(field);
             if (!result) isValid = false;
         }
-        console.log('before');
+
         if (!isValid) return;
-        console.log("after");
+
         let formData = new FormData(this);
         sendRequest(
             "/admin/course-save",
@@ -156,8 +155,7 @@ $(function () {
     // ==== DELETE =====
     $(document).on("click", ".btnDeleteCourse", function () {
         let id = $(this).data("id");
-        let modalScope = document.querySelector("#deleteCourseModal").__x
-            .$data;
+        let modalScope = document.querySelector("#deleteCourseModal").__x.$data;
         modalScope.deleteId = id;
         modalScope.open = true;
     });
@@ -169,11 +167,7 @@ $(function () {
             "POST",
             function (res) {
                 if (res.success) {
-                    showToast(
-                        "Course deleted successfully!",
-                        "success",
-                        2000
-                    );
+                    showToast("Course deleted successfully!", "success", 2000);
                     reloadCourseList();
                 } else {
                     showToast(res.message, "error", 2000);
@@ -198,5 +192,72 @@ $(function () {
             $("#courseTableBody").html($tbody);
         });
     }
-});
 
+    $(document).on("change", "#videos", function () {
+        let files = Array.from(this.files);
+        // Add new files to allFiles, avoiding duplicates
+        files.forEach((file) => {
+            if (!allFiles.some((f) => f.name === file.name)) {
+                console.log("test0");
+                allFiles.push(file);
+            }
+        });
+
+        // Render preview
+        let list = $("#videoList");
+        list.empty();
+
+        if (allFiles.length > 0) {
+            list.removeClass("hidden");
+        }
+
+        allFiles.forEach((file, index) => {
+            console.log("test1");
+            list.append(`
+                <li class="text-sm text-gray-700 flex justify-between items-center">
+                    <span>${file.name}</span>
+                    <button type="button" class="remove-file text-red-500 text-xs ml-2" data-index="${index}">Remove</button>
+                </li>
+            `);
+        });
+
+        // Reset input to allow selecting same file again if needed
+        this.value = "";
+    });
+
+    // Remove file from preview
+    $(document).on("click", ".remove-file", function () {
+        let index = $(this).data("index");
+        allFiles.splice(index, 1);
+        $(this).parent().remove();
+
+        if (allFiles.length === 0) {
+            $("#videoList").addClass("hidden");
+        }
+    });
+
+      $(document).on("change", "#cover_video", function () {
+          let file = this.files[0]; // Only single file
+          let list = $("#cover_videoList");
+          list.empty();
+
+          if (file) {
+              list.removeClass("hidden");
+              list.append(`
+                <li class="text-sm text-gray-700 flex justify-between items-center">
+                    <span>${file.name}</span>
+                    <button type="button" id="removeVideo" class="text-red-500 text-xs ml-2">Remove</button>
+                </li>
+            `);
+          }
+
+          // Reset input to allow reselecting same file if removed
+          this.value = "";
+      });
+
+     // Remove video
+     $(document).on("click", "#removeVideo", function () {
+         $("#cover_videoList").empty().addClass("hidden");
+         $("#video").val(""); // clear input
+     });
+});

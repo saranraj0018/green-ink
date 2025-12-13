@@ -40,7 +40,7 @@ $(document).ready(function () {
 
 });
 //search bar//
-    
+
     $(document).ready(function () {
         $("#courseSearch").on("input", function () {
             console.log("Search: " + $(this).val());
@@ -67,9 +67,6 @@ $("#contactForm").on("submit", function (e) {
 });
 
 
-
-//login//
-  // Open Login Modal (Desktop & Mobile)
   $("#openLogin, .openLoginBtn,").on("click", function () {
       $("#loginModal").removeClass("hidden");
   });
@@ -86,5 +83,4 @@ $("#contactForm").on("submit", function (e) {
       }
   });
 
-  <script src="/user/js/home.js"></script>
 
