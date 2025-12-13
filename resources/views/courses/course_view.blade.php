@@ -63,43 +63,6 @@
               </div>
 
           </div>
-
-          {{-- <div class="col-span-12 md:col-span-4">
-              <div class="shadow-md border border-gray-200 p-4 rounded-3xl space-y-3">
-                  <img src={{ asset('assets/all-courses/video-thumb.png') }} alt="" class="w-full">
-                  <p class="font-medium text-xl text-primary-light">
-                      $ {{ $course->amount ?? '' }}
-                  </p>
-                  <div class="mx-8 space-y-3">
-                      <button class="bg-[#FFB100] px-2 py-1 rounded-full text-white w-full">
-                          Enroll Now
-                      </button>
-                      <button class="bg-white px-2 py-1 rounded-full text-[#FFB100] w-full border border-[#FFB100]">
-                          Add to Wishlist
-                      </button>
-                  </div>
-                  <p class="text-md font-medium">
-                      This course include :
-                  </p>
-                  <ul class="space-y-2 text-sm">
-                      <li>
-                          <div class="flex gap-2">
-                              <span class="play my-auto"></span> {{ $course->hours ?? '' }} hrs on-demand video
-                          </div>
-                      </li>
-                      <li>
-                          <div class="flex gap-2">
-                              <span class="doc my-auto"></span>Downloadable resources
-                          </div>
-                      </li>
-                      <li>
-                          <div class="flex gap-2">
-                              <span class="certificate my-auto"></span>Certificate of completion
-                          </div>
-                      </li>
-                  </ul>
-              </div>
-          </div> --}}
           <div class="col-span-12 md:col-span-4">
               <div class="shadow-md border border-gray-200 p-4 rounded-3xl space-y-3">
 
@@ -119,51 +82,18 @@
                   </p>
 
                   <!-- Buttons -->
-                  <div class="mx-8 space-y-3" x-data="{
-    userSignedIn: {{ auth()->check() ? 'true' : 'false' }},
-    courseType: '{{ $course->type }}',
-    enroll() {
-        if (!this.userSignedIn) {
-            // If user is not signed in
-            window.location.href = '{{ route('admin.login') }}';
-            return;
-        }
-
-        if (this.courseType === 'paid') {
-            // Trigger payment gateway
-            this.pay();
-        } else {
-            // Free course enrollment
-            this.enrollFree();
-        }
-    },
-    pay() {
-        // Call your payment gateway JS integration here
-        console.log('Redirecting to payment gateway...');
-        // Example: window.location.href = '/pay/{{ $course->id }}';
-    },
-    enrollFree() {
-        // Make AJAX request to enroll user
-        fetch('{{ route("enroll.free") }}', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'X-CSRF-TOKEN': '{{ csrf_token() }}'
-            },
-            body: JSON.stringify({ course_id: '{{ $course->id }}' })
-        }).then(res => res.json())
-          .then(data => {
-              if (data.success) alert('Enrolled successfully!');
-          });
-    }
-}">
-    <button @click="enroll()" class="bg-[#FFB100] px-2 py-1 rounded-full text-white w-full">
-        Enroll Now
-    </button>
-    <button class="bg-white px-2 py-1 rounded-full text-[#FFB100] w-full border border-[#FFB100]">
-        Add to Wishlist
-    </button>
-</div>
+                  <div class="mx-8 space-y-3">
+                      <form id="cashfreeForm" action="/cashfree/payments/store" method="POST" style="display:none;">
+                          <input type="hidden" value="{{ $course->id }}" name="course_id">
+                          @csrf
+                      </form>
+                <button id="payBtn" class="bg-[#FFB100] px-2 py-1 rounded-full text-white w-full">
+                    Enroll Now
+                </button>
+                <button class="bg-white px-2 py-1 rounded-full text-[#FFB100] w-full border border-[#FFB100]">
+                    Add to Wishlist
+                </button>
+            </div>
 
 
                   <!-- Course Details -->
@@ -193,6 +123,8 @@
   </section>
   <x-partials.footer />
 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <script src="https://sdk.cashfree.com/js/ui/2.0.0/cashfree.js"></script>
   <script>
       document.addEventListener("DOMContentLoaded", () => {
           const tick = `
@@ -244,4 +176,10 @@
           }
 
       });
+
+      document.getElementById("payBtn").addEventListener("click", function () {
+
+          document.getElementById("cashfreeForm").submit();
+      });
   </script>
+
