@@ -4,7 +4,10 @@ use App\Http\Controllers\Frontend\CourseController;
 use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\CashfreeController;
+Route::get('/', function () {
+    return view('home.main');
+})->name('home');
 
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
@@ -50,6 +53,9 @@ Route::get('/verify-email', function () {
 })->name('verify.email');
 
 Route::post('/verify-otp', [OtpController::class, 'verify'])->name('verify.otp');
+Route::post('/cashfree/payments/store', [CashfreeController::class, 'payment'])->name('cashfree.payment');
+Route::any('/cashfree/payments/success', [CashfreeController::class, 'success'])->name('cashfree.success');
+
 
 
 Route::get('/sidebar', function () {
@@ -60,5 +66,6 @@ Route::get('/sidebar', function () {
 Route::get('/dashboard', function () {
     return view('dashboard.main');
 })->name('dashboard');
+
 
 require __DIR__ . '/admin.php';
