@@ -6,7 +6,9 @@
             <li><a href="/about" class="hover:text-green-600">About</a></li>
             <li><a href="/courses" class="hover:text-green-600">Courses</a></li>
             <li><a href="/features" class="hover:text-green-600">features</a></li>
-            <li><a href="/contact" class="hover:text-green-600">contact</a></li>
+            <li><a href="/events" class="hover:text-green-600">Events</a></li>
+            <li><a href="/careers" class="hover:text-green-600">Careers</a></li>
+            <li><a href="/contact" class="hover:text-green-600">Contact</a></li>
         </ul>
 
         <!-- Mobile Hamburger -->
@@ -27,7 +29,7 @@
     <aside x-show="sidebarOpen" @click.outside="sidebarOpen = false" x-transition
         class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-6 lg:hidden">
 
-        <!-- Close Button -->     
+        <!-- Close Button -->
         <button @click="sidebarOpen = false" class="absolute right-4 top-4 text-gray-600 text-3xl">
             &times;
         </button>
@@ -37,7 +39,9 @@
             <li><a href="/about" class="block hover:text-green-600">About</a></li>
             <li><a href="/courses" class="block hover:text-green-600">Courses</a></li>
             <li><a href="/features" class="block hover:text-green-600">features</a></li>
-            <li><a href="/contact" class="block hover:text-green-600">contact</a></li>
+            <li><a href="/events" class="block hover:text-green-600">Events</a></li>
+            <li><a href="/careers" class="block hover:text-green-600">Careers</a></li>
+            <li><a href="/contact" class="block hover:text-green-600">Contact</a></li>
         </ul>
     </aside>
 </nav>

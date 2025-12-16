@@ -1,5 +1,5 @@
 @section('content')
-    <section class="max-w-6xl mx-auto ">
+    <section class="my-container">
 
         <div id="tabContent">
             <div class="tab-pane" data-content="all">

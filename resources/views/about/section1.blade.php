@@ -26,7 +26,7 @@
  </section>
 
  <section class="my-container my-10 space-y-3">
-    
+
         <h2 class="border border-[#573D00] rounded-full bg-[#FFD77B] text-xl font-medium text-[#573D00] px-3 py-1 w-max mx-auto">
             Expert Mentors / Trainers
         </h2>
@@ -59,7 +59,7 @@
                     </div>
                     <div class="border-l border-t border-b border-primary-light rounded-full px-2 py-1 text-md">
                         Cloud Computing
-                    </div>   
+                    </div>
                 </div>
                 <div class="flex justify-between">
                     <div class="mx-auto">
@@ -98,7 +98,7 @@
                     </div>
                     <div class="border-l border-t border-b border-primary-light rounded-full px-2 py-1 text-md">
                         Cloud Computing
-                    </div>   
+                    </div>
                 </div>
                 <div class="flex justify-between">
                     <div class="mx-auto">
@@ -137,7 +137,7 @@
                     </div>
                     <div class="border-l border-t border-b border-primary-light rounded-full px-2 py-1 text-md">
                         Cloud Computing
-                    </div>   
+                    </div>
                 </div>
                 <div class="flex justify-between">
                     <div class="mx-auto">
@@ -182,25 +182,24 @@
      <p class="text-center text-sm font-normal text-black py-2">
          Snapshots of our vibrant learning community
      </p>
-
-     <div class="grid grid-cols-12 py-2 gap-5">
-
-         <div class="col-span-3">
-             <img src="./assets/about/gallery1.png" alt="gallery pic" />
-             <img src="./assets/about/gallery3.png" class="pt-4" alt="gallery pic" />
+     
+     <div class="grid grid-cols-12 py-2 gap-2 md:gap-3">
+         <div class="col-span-12 md:col-span-3 space-y-3">
+             <img src="./assets/about/gallery1.png" alt="gallery pic" class="w-full "/>
+             <img src="./assets/about/gallery3.png" alt="gallery pic" class="w-full "/>
          </div>
 
-         <div class="col-span-6">
-             <img src="./assets/about/gallery2.png" alt="gallery pic" />
-             <div class="flex gap-4 pt-4">
-                 <img src="./assets/about/gallery5.png" alt="gallery pic" />
-                 <img src="./assets/about/gallery4.png" alt="gallery pic" />
+         <div class="col-span-12 md:col-span-6 space-y-3">
+             <img src="./assets/about/gallery2.png" alt="gallery pic" class="w-full "/>
+             <div class="flex gap-2 md:gap-4">
+                 <img src="./assets/about/gallery5.png" alt="gallery pic" class="w-full "/>
+                 <img src="./assets/about/gallery4.png" alt="gallery pic" class="w-full "/>
              </div>
          </div>
 
-         <div class="col-span-3">
-             <img src="./assets/about/gallery6.png" alt="gallery pic" />
-             <img src="./assets/about/gallery7.png" class="pt-4" alt="gallery pic" />
+         <div class="col-span-12 md:col-span-3 space-y-3">
+             <img src="./assets/about/gallery6.png" alt="gallery pic" class="w-full "/>
+             <img src="./assets/about/gallery7.png" alt="gallery pic" class="w-full "/>
          </div>
 
      </div>
@@ -214,7 +213,7 @@
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {
-  
+
     const star = `
     <svg xmlns="http://www.w3.org/2000/svg" width="14" height="13" viewBox="0 0 14 13" fill="none">
     <path d="M6.01662 0.472611C6.08652 0.330764 6.19474 0.211318 6.32901 0.127793C6.46329 0.0442679 6.61827 0 6.7764 0C6.93453 0 7.08951 0.0442679 7.22379 0.127793C7.35806 0.211318 7.46628 0.330764 7.53618 0.472611L9.17092 3.7853L12.8275 4.31638C12.9839 4.3391 13.1309 4.40515 13.2518 4.50705C13.3726 4.60895 13.4626 4.74265 13.5114 4.893C13.5602 5.04336 13.566 5.20438 13.5281 5.35785C13.4901 5.51131 13.41 5.6511 13.2968 5.7614L10.6507 8.34057L11.2758 11.9819C11.3025 12.1377 11.285 12.2978 11.2255 12.4442C11.1659 12.5906 11.0666 12.7174 10.9387 12.8103C10.8108 12.9031 10.6595 12.9584 10.5019 12.9698C10.3443 12.9812 10.1866 12.9482 10.0467 12.8747L6.77725 11.1552L3.50606 12.8747C3.3662 12.948 3.20863 12.9807 3.05115 12.9692C2.89366 12.9577 2.74252 12.9024 2.61479 12.8096C2.48706 12.7168 2.38783 12.5901 2.3283 12.4438C2.26877 12.2975 2.2513 12.1376 2.27788 11.9819L2.90213 8.33973L0.256045 5.7614C0.142796 5.6511 0.0626742 5.51131 0.0247433 5.35785C-0.0131876 5.20438 -0.00741339 5.04336 0.0414127 4.893C0.0902387 4.74265 0.180168 4.60895 0.301027 4.50705C0.421885 4.40515 0.56885 4.3391 0.725294 4.31638L4.38188 3.7853L6.01662 0.472611Z" fill="url(#paint0_linear_298_3351)"/>

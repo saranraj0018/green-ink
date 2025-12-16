@@ -1,8 +1,8 @@
 <!-- banner section-->
-<img src="./assets/courses/couresebanner.png" class="" alt=""/>
+<img src="./assets/courses/couresebanner.png" class="w-full" alt=""/>
 <!-- serach bar-->
  <section class="w-full py-12">
-        <div class="max-w-3xl mx-auto text-center">
+        <div class="my-container text-center">
             <!-- Title -->
             <h2 class="text-2xl font-semibold text-black">
                 Explore Our Categories
@@ -22,7 +22,7 @@
                         placeholder="Search Courses"
                         class="w-full py-4 pl-12 pr-4 rounded-full shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none border border-gray-200 text-gray-700"
                     />
-                    
+
                     <!-- Search Icon -->
                     <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 search">
                         🔍
@@ -33,7 +33,7 @@
     </section>
 
 
-    
+
 <script>
     document.addEventListener("DOMContentLoaded", () => {
 
