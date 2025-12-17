@@ -4,7 +4,9 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\admin\Dashboard;
 use App\Http\Controllers\admin\CategoryController;
 use App\Http\Controllers\admin\Authenticate;
+use App\Http\Controllers\Admin\CareerController;
 use App\Http\Controllers\admin\CourseController;
+use App\Http\Controllers\Admin\EventController;
 
 Route::prefix('admin')->group(function () {
 
@@ -27,6 +29,18 @@ Route::prefix('admin')->group(function () {
             Route::get('/list', 'view')->name('view.category');
             Route::post('/save', 'save')->name('save.category');
             Route::post('/delete', 'destroy')->name('delete.category');
+        });
+
+        Route::prefix('event')->controller(EventController::class)->group(function () {
+            Route::get('/list', 'view')->name('view.event');
+            Route::post('/save', 'save')->name('save.event');
+            Route::post('/delete', 'destroy')->name('delete.event');
+        });
+
+        Route::prefix('career')->controller(CareerController::class)->group(function () {
+            Route::get('/list', 'view')->name('view.career');
+            Route::post('/save', 'save')->name('save.career');
+            Route::post('/delete', 'destroy')->name('delete.career');
         });
 
         Route::get('/course-list', [CourseController::class, 'index'])->name('course_list');
