@@ -1,20 +1,27 @@
 <?php
 
 use App\Http\Controllers\Frontend\CourseController;
-use App\Http\Controllers\Frontend\RegisterController;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CareerController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CashfreeController;
-
-
+use App\Http\Controllers\EventController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::view('/about', 'about.main')->name('about');
 Route::view('/features', 'Features.main')->name('features');
 Route::view('/contact', 'Contact')->name('contact');
-Route::view('/events', 'events.main')->name('events');
-Route::view('/careers', 'careers.main')->name('careers');
+
+    // Event Routes
+Route::get('/events', [EventController::class, 'events'])->name('events');
+Route::post('/event-register', [EventController::class, 'store'])
+    ->name('event.register');
+
+    // Career Routes
+Route::get('/careers', [CareerController::class, 'index'])->name('careers');
+Route::post('/career/apply', [CareerController::class, 'store'])
+    ->name('career.apply');
 Route::view('/verify-email', 'auth.verify-email')->name('verify.email');
 Route::view('/dashboard', 'dashboard.main')->name('dashboard');
 

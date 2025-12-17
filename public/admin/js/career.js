@@ -11,6 +11,7 @@ $(function () {
         alpine.form = {
             career_id: 0,
             title: '',
+            department: '',
             description: '',
             mode: '',
             experience: '',
@@ -35,6 +36,7 @@ $(function () {
 
         alpine.form.career_id  = $(this).data("id");
         alpine.form.title      = $(this).data("title");
+        alpine.form.department = $(this).data("department");
         alpine.form.description= $(this).data("description");
         alpine.form.mode       = $(this).data("mode");
         alpine.form.experience = $(this).data("experience");
@@ -56,6 +58,7 @@ $(function () {
 
         let fields = [
             { id: "#title", msg: "Title required" },
+            { id: "#department", msg: "Department required" },
             { id: "#description", msg: "Description required" },
             { id: "#mode", msg: "Mode required" },
             { id: "#experience", msg: "Experience required" },

@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Career;
+use App\Models\CareerApplication;
 use Illuminate\Support\Facades\Auth;
 
 class CareerController extends Controller
@@ -17,12 +18,13 @@ class CareerController extends Controller
     }
 
     /**
-     * Create / Update (Event save structure same)
+     * Create / Update
      */
     public function save(Request $request)
     {
         $rules = [
             'title'       => 'required|string|max:255',
+            'department'  => 'required|string|max:255',
             'description' => 'required|string',
             'mode'        => 'required|string|max:255',
             'experience'  => 'required|string|max:255',
@@ -43,6 +45,7 @@ class CareerController extends Controller
 
 
         $career->title       = $request->title;
+        $career->department  = $request->department;
         $career->description = $request->description;
         $career->mode        = $request->mode;
         $career->experience  = $request->experience;
@@ -87,5 +90,12 @@ class CareerController extends Controller
             'success' => true,
             'message' => 'Career deleted successfully'
         ]);
+    }
+
+    public function index()
+    {
+        $applications = CareerApplication::latest()->paginate(10);
+
+        return view('admin.career.applications', compact('applications'));
     }
 }

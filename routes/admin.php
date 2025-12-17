@@ -35,12 +35,14 @@ Route::prefix('admin')->group(function () {
             Route::get('/list', 'view')->name('view.event');
             Route::post('/save', 'save')->name('save.event');
             Route::post('/delete', 'destroy')->name('delete.event');
+            Route::get('/registrations', 'index')->name('event.registrations');
         });
 
         Route::prefix('career')->controller(CareerController::class)->group(function () {
             Route::get('/list', 'view')->name('view.career');
             Route::post('/save', 'save')->name('save.career');
             Route::post('/delete', 'destroy')->name('delete.career');
+            Route::get('/applications', 'index')->name('career.applications');
         });
 
         Route::get('/course-list', [CourseController::class, 'index'])->name('course_list');
