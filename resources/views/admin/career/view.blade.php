@@ -57,6 +57,7 @@
                                     class="text-blue-600 editCareerBtn"
                                     data-id="{{ $career->id }}"
                                     data-title="{{ $career->title }}"
+                                    data-department="{{ $career->department }}"
                                     data-description="{{ $career->description }}"
                                     data-mode="{{ $career->mode }}"
                                     data-experience="{{ $career->experience }}"

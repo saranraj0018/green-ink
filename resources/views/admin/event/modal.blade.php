@@ -31,14 +31,14 @@
                     <label>Event Title</label>
                     <input type="text" id="title" name="title"
                            x-model="form.title"
-                           class="w-full border rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-600">
+                           class="form-input w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#006400]">
                 </div>
 
                 <div>
                     <label>Status</label>
                     <select id="status" name="status"
                             x-model="form.status"
-                            class="w-full border rounded p-2">
+                            class="form-input w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#006400]">
                         <option value="1">Active</option>
                         <option value="0">Inactive</option>
                     </select>
@@ -51,7 +51,7 @@
                 <textarea id="description" name="description"
                           x-model="form.description"
                           rows="3"
-                          class="w-full border rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-600"></textarea>
+                          class="form-input w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#006400]"></textarea>
             </div>
 
             <!-- Date + Mode -->
@@ -59,7 +59,7 @@
                 <div>
                     <label>Event Date</label>
                     <input type="date" id="event_date" name="event_date"
-                           class="w-full border rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-600">
+                           class="form-input w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#006400]">
                 </div>
 
                 <div>
@@ -67,7 +67,7 @@
                     <input type="text" id="mode" name="mode"
                            x-model="form.mode"
                            placeholder="Offline / Online / Hybrid"
-                           class="w-full border rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-600">
+                           class="form-input w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#006400]">
                 </div>
             </div>
 
@@ -76,13 +76,13 @@
                 <div>
                     <label>Start Time</label>
                     <input type="time" id="start_time" name="start_time"
-                           class="w-full border rounded p-2">
+                           class="form-input w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#006400]">
                 </div>
 
                 <div>
                     <label>End Time</label>
                     <input type="time" id="end_time" name="end_time"
-                           class="w-full border rounded p-2 focus:outline-none focus:ring-2 focus:ring-green-600">
+                           class="form-input w-full border border-gray-300 rounded-lg p-2 focus:outline-none focus:ring-2 focus:ring-[#006400]">
                 </div>
             </div>
 
@@ -90,13 +90,13 @@
             <div class="flex justify-end gap-3 pt-4">
                 <button type="button"
                         onclick="$('#eventModal').hide()"
-                        class="px-5 py-2 border rounded">
+                        class="px-5 py-2 rounded-lg border border-gray-300 hover:bg-gray-100"">
                     Cancel
                 </button>
 
                 <button type="submit"
                         id="save_event"
-                        class="bg-green-700 text-white px-5 py-2 rounded">
+                        class="bg-[#006400] text-white px-5 py-2 rounded-lg hover:bg-[#006400]">
                     Save
                 </button>
             </div>
