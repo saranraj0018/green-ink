@@ -1,5 +1,5 @@
 <section class="py-16 bg-white">
-    <div class="my-container max-w-7xl mx-auto">
+    <div class="my-container">
 
         <!-- Section Header -->
         <div class="text-center mb-12">
