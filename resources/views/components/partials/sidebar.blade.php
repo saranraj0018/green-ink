@@ -5,6 +5,8 @@
     <ul class="flex flex-col gap-3 mt-4 text-sm font-medium text-[#e4c094] ">
         <x-menu.item route="admin.dashboard" name="Dashboard" icon="fa-home"/>
         <x-menu.item route="view.category" name="Category" icon="fa-layer-group"/>
+        <x-menu.item route="view.event" name="Event" icon="fa-calendar-days"/>
+        <x-menu.item route="view.career" name="Career" icon="fa-briefcase"/>
         <x-menu.item route="course_list" name="Course" icon="fa-book-open"/>
     </ul>
 </aside>
