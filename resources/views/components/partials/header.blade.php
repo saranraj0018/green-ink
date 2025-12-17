@@ -3,7 +3,7 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Greenink</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
 
@@ -28,10 +28,10 @@
                         class="px-2 py-1 bg-primary border text-white rounded-full hover:bg-green-700 text-sm flex gap-1">
                         <span class="callIcon my-auto"></span> +91 8110967668
                     </button>
-                    <button id="openSignupDesktop"
+                    {{-- <button id="openSignupDesktop"
                         class="px-2 py-1 bg-primary border text-white rounded-full hover:bg-green-700 text-sm">
                         Sign In
-                    </button>
+                    </button> --}}
                 </div>
             </div>
         </div>

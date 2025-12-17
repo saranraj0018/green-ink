@@ -13,6 +13,8 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::view('/about', 'about.main')->name('about');
 Route::view('/features', 'Features.main')->name('features');
 Route::view('/contact', 'Contact')->name('contact');
+Route::view('/events', 'events.main')->name('events');
+Route::view('/careers', 'careers.main')->name('careers');
 Route::view('/verify-email', 'auth.verify-email')->name('verify.email');
 Route::view('/dashboard', 'dashboard.main')->name('dashboard');
 
