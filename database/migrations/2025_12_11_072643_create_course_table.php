@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->unsignedBigInteger('category_id');
             $table->string('title');
+            $table->string('instructor');
             $table->enum('type', ['free', 'paid'])->default('free');
             $table->decimal('amount', 10, 2)->nullable();        // Null when type = free
             $table->integer('hours')->nullable();               // Total course hours
