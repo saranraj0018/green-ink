@@ -1,180 +1,175 @@
-<div id="courseModal" x-data="{
-    previewUrl: '',
-    exiting_image: '',
-    open: false,
-    form: {
-        course_id: 0,
-        category_id: '',
-        title: '',
-        type: 'free',
-        amount: '',
-        hours: '',
-        star_point: '',
-        description: '',
-        course_overview: '',
-        learning_outcomes: '',
-        status: '1',
-        image: ''
-    }
-}" x-cloak>
+<div id="courseModal" class="fixed inset-0 bg-black/40 hidden z-50 flex items-center justify-center">
 
-    <template x-if="open">
-        <div class="fixed inset-0 flex items-center justify-center z-50">
-            <!-- Backdrop -->
-            <div class="absolute inset-0 bg-black/40" @click="open=false"></div>
-            <!-- Modal Box -->
-            <div class="bg-white rounded-2xl shadow-2xl w-[900px] max-w-[95%] max-h-[90vh] relative z-10 flex flex-col">
-                <h2 class="text-2xl font-bold p-6 pb-3 text-gray-800" id="course_label">Add Course</h2>
-                <!-- Scrollable Form Section -->
-                <div class="px-6 overflow-y-auto" style="max-height: 65vh;">
-                    <form id="courseForm" class="space-y-6 pt-4">
-                        <input type="hidden" name="course_id" x-model="form.course_id" />
-                        <input type="hidden" name="exiting_image" x-model="exiting_image" />
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+    <div class="bg-white rounded-2xl shadow-xl w-[900px] max-w-[95%] max-h-[90vh] overflow-y-auto">
 
-                            <!-- Course Title -->
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Course Title</label>
-                                <input type="text" name="title" x-model="form.title" id="title"
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2"
-                                    placeholder="Enter course title">
-                            </div>
-
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Category</label>
-                                <select name="category_id" id="category_id" x-model="form.category_id"
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2">
-                                    <option value="" selected disabled>Select Category</option>
-                                    @foreach ($category as $cat)
-                                        <option value="{{ $cat->id }}">{{ $cat->name }}</option>
-                                    @endforeach
-                                </select>
-                            </div>
-
-                            <!-- Type + Amount -->
-                            <div class="flex items-center gap-3">
-                                <div class="w-full">
-                                    <label class="block text-gray-700 font-medium mb-2">Course Type</label>
-                                    <select name="type" x-model="form.type" id="type"
-                                        class="form-input w-full border border-gray-300 rounded-lg p-2">
-                                        <option value="free">Free</option>
-                                        <option value="paid">Paid</option>
-                                    </select>
-                                </div>
-
-                                <div class="w-full">
-                                    <label class="block text-gray-700 font-medium mb-2">Amount (₹)</label>
-                                    <input type="number" name="amount" x-model="form.amount" id="amount"
-                                        :disabled="form.type === 'free'"
-                                        class="form-input w-full border border-gray-300 rounded-lg p-2">
-                                </div>
-                            </div>
-
-                            <!-- Hours + Star -->
-                            <div class="flex items-center gap-3">
-                                <div class="w-full">
-                                    <label class="block text-gray-700 font-medium mb-2">Course Hours</label>
-                                    <input type="number" name="hours" x-model="form.hours" id="hours"
-                                        class="form-input w-full border border-gray-300 rounded-lg p-2">
-                                </div>
-
-                                <div class="w-full">
-                                    <label class="block text-gray-700 font-medium mb-2">Star Rating</label>
-                                    <input type="number" step="0.1" name="star_point" x-model="form.star_point"
-                                        id="star_point" class="form-input w-full border border-gray-300 rounded-lg p-2">
-                                </div>
-                            </div>
-
-                            <!-- Description -->
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Description</label>
-                                <textarea name="description" x-model="form.description" id="description"
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2" rows="3"></textarea>
-                            </div>
-
-                            <!-- Course Overview -->
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Course Overview</label>
-                                <textarea name="course_overview" x-model="form.course_overview" id="course_overview"
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2" rows="3"></textarea>
-                            </div>
-
-                            <!-- Learning Outcomes -->
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">What You'll Learn</label>
-                                <textarea name="learning_outcomes" x-model="form.learning_outcomes" id="learning_outcomes"
-                                    placeholder="Add bullet points separated by new lines"
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2" rows="3"></textarea>
-                            </div>
-
-                            <!-- Status -->
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Status</label>
-                                <select name="status" x-model="form.status" id="status"
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2">
-                                    <option value="1">Active</option>
-                                    <option value="2">Inactive</option>
-                                </select>
-                            </div>
-
-                            <!-- Image -->
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Course Image</label>
-                                <input type="file" name="course_image" id="course_image" accept=".png, .jpg, .jpeg"
-                                    x-ref="fileInput"
-                                    @change="
-                                       const file = $refs.fileInput.files[0];
-                                       if (file) {
-                                           const reader = new FileReader();
-                                           reader.onload = e => { previewUrl = e.target.result }
-                                           reader.readAsDataURL(file);
-                                       }
-                                   "
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2 cursor-pointer bg-gray-50">
-
-                                <div class="mt-4 flex justify-center overflow-hidden">
-                                    <img :src="previewUrl" x-show="previewUrl"
-                                        class="w-full max-h-[30vh] rounded-lg border border-gray-300 shadow-md object-cover" />
-                                </div>
-                            </div>
-                            <div>
-                                <label class="block text-gray-700 font-medium mb-2">Upload Course Cover Video</label>
-
-                                <input type="file" name="cover_video" id="cover_video"
-                                    accept="video/mp4,video/mkv,video/webm"
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2 cursor-pointer bg-gray-50">
-
-                                <!-- Preview area -->
-                                <ul id="cover_videoList" class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg border hidden">
-                                </ul>
-                            </div>
-
-                            <!-- Video Upload (Multiple) -->
-                            <div class="col-span-2">
-                                <label class="block text-gray-700 font-medium mb-2">Upload Course Videos</label>
-                                <input type="file" name="videos[]" id="videos"
-                                    accept="video/mp4,video/mkv,video/webm" multiple
-                                    class="form-input w-full border border-gray-300 rounded-lg p-2 cursor-pointer bg-gray-50">
-                                <!-- Preview area -->
-                                <ul id="videoList" class="mt-3 space-y-1 bg-gray-100 p-3 rounded-lg border hidden">
-                                </ul>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-
-                <!-- Fixed Footer Buttons -->
-                <div class="flex justify-end gap-3 p-4 rounded-2xl bg-white">
-                    <button type="button" @click="open=false"
-                        class="px-5 py-2 rounded-lg border border-gray-300 hover:bg-gray-100">
-                        Cancel
-                    </button>
-                    <button type="submit" form="courseForm"
-                        class="bg-[#006400] text-white px-5 py-2 rounded-lg hover:bg-[#006400]">
-                        Save
-                    </button>
-                </div>
-            </div>
+        <div class="p-6 flex justify-between items-center">
+            <h2 id="course_label" class="text-xl font-bold">Add Course</h2>
+            <button id="closeModal" class="text-xl font-bold">&times;</button>
         </div>
-    </template>
+
+        <form id="courseForm" class="p-6 space-y-4" enctype="multipart/form-data">
+
+            <input type="hidden" id="course_id" name="course_id">
+            <input type="hidden" id="exiting_image" name="exiting_image">
+            <input type="hidden" name="exiting_cover_video" id="exiting_cover_video">
+            <input type="hidden" name="exiting_course_videos" id="exiting_course_videos">
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                <!-- Title -->
+                <div>
+                    <label class="block mb-1 font-medium">Course Title</label>
+                    <input id="title" name="title" type="text"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                </div>
+
+                <!-- Category -->
+                <div>
+                    <label class="block mb-1 font-medium">Category</label>
+                    <select id="category_id" name="category_id"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                        <option value="">Select Category</option>
+                        @foreach ($category as $cat)
+                            <option value="{{ $cat->id }}">{{ $cat->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+
+                <!-- Type -->
+                <div>
+                    <label class="block mb-1 font-medium">Course Type</label>
+                    <select id="type" name="type"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                        <option value="free">Free</option>
+                        <option value="paid">Paid</option>
+                    </select>
+                </div>
+
+                <!-- Amount -->
+                <div>
+                    <label class="block mb-1 font-medium">Amount</label>
+                    <input id="amount" name="amount" type="number"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                </div>
+
+                <!-- Hours -->
+                <div>
+                    <label class="block mb-1 font-medium">Hours</label>
+                    <input id="hours" name="hours" type="number"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                </div>
+
+                <!-- Star -->
+                <div>
+                    <label class="block mb-1 font-medium">Star Rating</label>
+                    <input id="star_point" name="star_point" type="number" step="0.1"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                </div>
+                <div>
+                    <label class="block mb-1 font-medium">Course Instructor</label>
+                    <input id="instructor" name="instructor" type="text"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                </div>
+                <!-- Description -->
+                <div class="col-span-2">
+                    <label class="block mb-1 font-medium">Description</label>
+                    <textarea id="description" name="description" class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2"></textarea>
+                </div>
+
+                <!-- Overview -->
+                <div class="col-span-2">
+                    <label class="block mb-1 font-medium">Course Overview</label>
+                    <textarea id="course_overview" name="course_overview"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2"></textarea>
+                </div>
+
+                <!-- Learning -->
+                <div class="col-span-2">
+                    <label class="block mb-1 font-medium">What You'll Learn</label>
+                    <textarea id="learning_outcomes" name="learning_outcomes"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2"></textarea>
+                </div>
+
+                <!-- Status -->
+                <div>
+                    <label class="block mb-1 font-medium">Status</label>
+                    <select id="status" name="status"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+                        <option value="1">Active</option>
+                        <option value="2">Inactive</option>
+                    </select>
+                </div>
+
+                <!-- Image -->
+                <div>
+                    <label class="block mb-1 font-medium">Course Image</label>
+                    <input type="file" id="course_image" name="course_image"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+
+                    <!-- Preview -->
+                    <div id="imagePreview" class="mt-2 hidden">
+                        <img id="previewImg" class="w-full max-h-40 object-cover rounded">
+                        <button type="button" id="removeImage" class="mt-2 text-red-600 text-sm">Remove Image</button>
+                    </div>
+                </div>
+
+                <div>
+                    <label class="block mb-1 font-medium">Course Cover Video</label>
+                    <input type="file" id="cover_video" name="cover_video" accept="video/mp4,video/mkv,video/webm"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+
+                    <!-- Preview -->
+                    <div id="coverVideoPreview" class="mt-2 hidden">
+                        <p id="coverVideoName" class="text-sm text-gray-700"></p>
+                        <button type="button" id="removeCoverVideo" class="text-red-600 text-sm mt-1">
+                            Remove Cover Video
+                        </button>
+                    </div>
+                </div>
+                <div class="col-span-2">
+                    <label class="block mb-1 font-medium">Course Videos</label>
+                    <input type="file" id="course_videos" name="videos[]" multiple
+                        accept="video/mp4,video/mkv,video/webm"
+                        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+
+                    <!-- Preview List -->
+                    <ul id="courseVideoList" class="mt-2 space-y-2 bg-gray-100 p-3 rounded hidden">
+                    </ul>
+                </div>
+
+            </div>
+
+            <!-- Buttons -->
+            <div class="flex justify-end gap-3 pt-4">
+                <button type="button" id="closeModalBtn"
+                    class="px-4 py-2 border border-gray-300 hover:bg-gray-100 rounded">
+                    Cancel
+                </button>
+                <button type="submit" class="px-4 py-2 bg-green-700 text-white rounded">
+                    Save Course
+                </button>
+            </div>
+
+        </form>
+    </div>
+</div>
+
+
+<div id="deleteCourseModal" class="fixed inset-0 bg-black/50 hidden flex items-center justify-center z-50">
+
+    <div class="bg-white rounded-lg w-96 p-6">
+        <h2 class="text-lg font-semibold mb-4">Delete Course</h2>
+        <p class="text-gray-600 mb-6">
+            Are you sure you want to delete this course?
+        </p>
+
+        <div class="flex justify-end gap-3">
+            <button id="cancelDelete" class="px-4 py-2 border rounded">
+                Cancel
+            </button>
+            <button id="confirmDelete" class="px-4 py-2 bg-red-600 text-white rounded">
+                Delete
+            </button>
+        </div>
+    </div>
 </div>
