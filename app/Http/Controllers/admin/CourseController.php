@@ -134,13 +134,12 @@ class CourseController extends Controller
 
                     $fileName = time() . '_' . $video->getClientOriginalName();
                     $path = $video->storeAs('course_videos', $fileName, 'public');
-
-                    CourseVideo::create([
-                        'course_id' => $course->id,
-                        'file_name' => $fileName,
-                        'file_path' => $path,
-                        'file_type' => $video->getClientMimeType(),
-                    ]);
+                    $course_video = new CourseVideo();
+                    $course_video->course_id = $course->id;
+                    $course_video->file_name = $fileName;
+                    $course_video->file_path = $path;
+                    $course_video->file_type = $video->getClientMimeType();
+                    $course_video->save();
                 }
             }
 
@@ -163,46 +162,45 @@ class CourseController extends Controller
     }
 
     public function courseDelete(Request $request)
-{
-    try {
+    {
+        try {
 
-        $course = Course::findOrFail($request->id);
+            $course = Course::findOrFail($request->id);
 
-        /* DELETE COURSE IMAGE */
-        if ($course->image && Storage::disk('public')->exists($course->image)) {
-            Storage::disk('public')->delete($course->image);
-        }
-
-        /* DELETE COVER VIDEO */
-        if ($course->cover_video && Storage::disk('public')->exists($course->cover_video)) {
-            Storage::disk('public')->delete($course->cover_video);
-        }
-
-        /* DELETE COURSE VIDEOS */
-        $videos = CourseVideo::where('course_id', $course->id)->get();
-
-        foreach ($videos as $video) {
-            if (Storage::disk('public')->exists($video->file_path)) {
-                Storage::disk('public')->delete($video->file_path);
+            /* DELETE COURSE IMAGE */
+            if ($course->image && Storage::disk('public')->exists($course->image)) {
+                Storage::disk('public')->delete($course->image);
             }
-            $video->delete();
+
+            /* DELETE COVER VIDEO */
+            if ($course->cover_video && Storage::disk('public')->exists($course->cover_video)) {
+                Storage::disk('public')->delete($course->cover_video);
+            }
+
+            /* DELETE COURSE VIDEOS */
+            $videos = CourseVideo::where('course_id', $course->id)->get();
+
+            foreach ($videos as $video) {
+                if (Storage::disk('public')->exists($video->file_path)) {
+                    Storage::disk('public')->delete($video->file_path);
+                }
+                $video->delete();
+            }
+
+            /* DELETE COURSE */
+            $course->delete();
+
+            return response()->json([
+                'success' => true,
+                'message' => 'Course deleted successfully'
+            ]);
+        } catch (\Exception $e) {
+
+            return response()->json([
+                'success' => false,
+                'message' => 'Failed to delete course',
+                'error' => $e->getMessage()
+            ], 500);
         }
-
-        /* DELETE COURSE */
-        $course->delete();
-
-        return response()->json([
-            'success' => true,
-            'message' => 'Course deleted successfully'
-        ]);
-
-    } catch (\Exception $e) {
-
-        return response()->json([
-            'success' => false,
-            'message' => 'Failed to delete course',
-            'error' => $e->getMessage()
-        ], 500);
     }
-}
 }
