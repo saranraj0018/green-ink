@@ -47,7 +47,7 @@ Route::prefix('admin')->group(function () {
 
         Route::get('/course-list', [CourseController::class, 'index'])->name('course_list');
         Route::post('/course-save', [CourseController::class, 'courseSave'])->name('course_save');
-        Route::get('/course-delete', [CourseController::class, 'courseDelete'])->name('course_delete');
+        Route::post('/course-delete', [CourseController::class, 'courseDelete'])->name('course_delete');
 
     });
 
