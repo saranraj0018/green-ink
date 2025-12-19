@@ -1,5 +1,5 @@
 <!-- banner section-->
-<img src="./assets/about/aboutBanner.png" class="" alt="" />
+<img src="./assets/about/aboutBanner.png" class="w-full" alt="" />
 
 <div class="my-10 my-container">
     <div class="bg-cover bg-center bg-no-repeat p-8 rounded-3xl"
@@ -21,7 +21,7 @@
 <section class="my-container my-10">
     <div class="grid grid-cols-12 md:gap-10">
         <div class="col-span-12 md:col-span-6">
-            <img src="./assets/about/babu.png" class="" alt="pic" />
+            <img src="./assets/about/babu.png" class="w-full" alt="pic" />
         </div>
         <div class="col-span-12 md:col-span-6 my-auto">
             <h2 class="text-2xl text-primary-light font-semibold ">what we offer</h2>

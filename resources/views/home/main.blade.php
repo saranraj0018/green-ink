@@ -2,7 +2,7 @@
 
   @include('home.categories')
   @include('home.founder')
-  @include('home.courses')
+  @include('home.courses',['courses' => $course])
   <div class="my-container my-10 py-44 bg-cover bg-center bg-no-repeat space-y-4"
       style="background-image: url('{{ asset('assets/inspiringBg.png') }}');">
       <h2 class="text-white text-5xl text-center font-semibold">
