@@ -10,4 +10,9 @@ class Course extends Model
     {
         return $this->belongsTo(Category::class, 'category_id');
     }
+
+    public function get_videos()
+    {
+        return $this->hasMany(CourseVideo::class, 'course_id');
+    }
 }

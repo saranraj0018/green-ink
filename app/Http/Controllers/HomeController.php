@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Course;
 use App\Models\User;
 use Exception;
 use Illuminate\Http\Request;
@@ -78,7 +79,9 @@ class HomeController extends Controller
             }
         }
 
-        return view('home.main');
+        $this->data['course'] = Course::with('get_category')->get();
+
+        return view('home.main')->with($this->data);
     }
 
      public function index()
