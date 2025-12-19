@@ -7,6 +7,8 @@ use App\Models\Payment;
 use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Log;
+use App\Mail\PaymentInvoiceMail;
+use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
 class CashfreeController extends Controller
@@ -74,7 +76,7 @@ class CashfreeController extends Controller
 
         $responseData = json_decode($response, true);
 
-        if (!isset($responseData['payment_session_id'])) {
+        if (!isset($responseData['order_token'])) {
             dd($responseData); // debug if order fails
         }
 
@@ -132,6 +134,7 @@ class CashfreeController extends Controller
             ]);
 
             if ($status === 1) {
+                Mail::to($payment->email)->send(new PaymentInvoiceMail($payment));
                 return redirect('/success/payment/page')->with([
                     'success' => 'Payment Successful!',
                     'payment' => $payment,
