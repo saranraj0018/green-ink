@@ -42,7 +42,7 @@
                     <div class="p-4">
                         <span
                             class="inline-block mt-4 px-3 py-1 bg-[#FFB100] text-white rounded-full text-xs font-semibold">
-                            {{ $course->get_category->name ?? '' }}
+                            {{ $course->get_category?->name ?? '' }}
                         </span>
 
                         <!-- Course Title -->

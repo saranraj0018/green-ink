@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
+use App\Models\EventRegistration;
 use Illuminate\Support\Facades\Auth;
 
 class EventController extends Controller
@@ -89,4 +90,14 @@ class EventController extends Controller
             'message' => 'Event deleted successfully'
         ]);
     }
+
+ public function index()
+    {
+        $registrations = EventRegistration::with('event')
+            ->latest()
+            ->paginate(10);
+
+        return view('admin.event.registrations', compact('registrations'));
+    }
+    
 }
