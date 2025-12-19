@@ -53,18 +53,28 @@
                             </td>
                             <td class="px-4 py-3 flex justify-center gap-4">
                                 <!-- Edit -->
-                                <button class="text-blue-600 hover:text-blue-800 transition editCourseBtn"
-                                    data-id="{{ $course->id }}" data-title="{{ $course->title }}"
-                                    data-status="{{ $course->status }}"
-                                    data-image="{{ $course->image ? asset('storage/' . $course->image) : '' }}">
+                                <button class="text-blue-600 editCourseBtn" data-id="{{ $course->id }}"
+                                    data-title="{{ $course->title }}"
+                                    data-image="{{ $course->image ? asset('storage/' . $course->image) : '' }}"
+                                    data-category="{{ $course->category_id }}" data-type="{{ $course->type }}"
+                                    data-amount="{{ $course->amount }}" data-hours="{{ $course->hours }}"
+                                    data-star="{{ $course->star_point }}"
+                                    data-description="{{ $course->description }}"
+                                    data-overview="{{ $course->course_overview }}"
+                                    data-outcomes="{{ $course->learning_outcomes }}"
+                                    data-status="{{ $course->status }}" data-cover_video="{{ $course->cover_video }}"
+                                    data-course_videos="{{ $course->get_videos }}"
+                                    data-instructor="{{ $course->instructor }}">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </button>
                                 <!-- Delete -->
-                                {{-- @if ($cat->products->isEmpty())
-                            <button class="text-red-600 hover:text-red-800 transition btnDeleteCourse" data-id="{{ $cat->id }}">
-                                <i class="fa-solid fa-delete-left"></i>
-                            </button>
-                            @endif --}}
+                                {{-- @if ($cat->products->isEmpty()) --}}
+                                <button class="btnDeleteCourse text-red-600 hover:text-red-800 transition"
+                                    data-id="{{ $course->id }}">
+                                   <i class="fa-solid fa-delete-left">  </i>
+                                </button>
+
+                                {{-- @endif --}}
                             </td>
                         </tr>
                     @endforeach
