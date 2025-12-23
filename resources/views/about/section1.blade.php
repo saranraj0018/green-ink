@@ -1,23 +1,38 @@
  <section class="my-container py-3">
-     <h2 class="text-center text-lg font-bold text-primary-light">What Makes Us Different</h2>
+     <h2 class="text-center text-lg font-bold text-primary-light">AI-Powered Personalized For PRACTICE
+</h2>
+<p class="text-center text-black text-sm my-2">GreenInk’s AI-integrated LMS transforms practice into smart learning:</p>
 
      <div class="grid grid-cols-12 py-5 gap-5">
-         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg">Personalised Learning System</h2>
-             <p class="text-center text-black font-normal text-sm py-2">Tailored guidance, smart tracking and unlimited practice where every student gets a unique success path.</p>
+         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-5 px-5 rounded-2xl">
+             <!--<h2 class="text-center text-black font-medium text-lg">Personalised Learning System</h2>-->
+             <p class="text-center text-black font-normal text-sm py-2">Practice as much as you want - Unlimited exercises tailored to you</p>
          </div>
-         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg"> Expert Mentors</h2>
-             <p class="text-center text-black font-normal text-sm py-2">Learn from qualified educators and exam-cleared professionals who guide you step by step.</p>
+         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-5 px-5 rounded-2xl">
+            <!-- <h2 class="text-center text-black font-medium text-lg"> Expert Mentors</h2>-->
+             <p class="text-center text-black font-normal text-sm py-2">Personalized reports - Track repeated mistakes and weak areas
+</p>
          </div>
-         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg">Smart Assessments & Instant Reports</h2>
-             <p class="text-center text-black font-normal text-sm py-2"> Concept-based tests, recall drills and performance reports show exactly where to improve.</p>
+         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-5 px-5 rounded-2xl">
+             <!--<h2 class="text-center text-black font-medium text-lg">Smart Assessments & Instant Reports</h2>-->
+             <p class="text-center text-black font-normal text-sm py-2"> Active recall system - Reinforce learning efficiently</p>
          </div>
-         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg">Flexible Online Learning</h2>
-             <p class="text-center text-black font-normal text-sm py-2">Live classes, audio lessons and self-paced study, fit exam prep into any routine with ease.</p>
+         <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-5 px-5 rounded-2xl">
+            <!-- <h2 class="text-center text-black font-medium text-lg">Flexible Online Learning</h2>-->
+             <p class="text-center text-black font-normal text-sm py-2">Cognitive-level tracking - Ensures concepts are understood deeply
+</p>
          </div>
+     </div>
+     <div class="grid grid-cols-12 py-1 gap-5">
+        <div class="col-span-12 md:col-span-4 bg-[#CBE3DB] py-5 px-5 rounded-2xl">
+              <p class="text-center text-black font-normal text-sm py-2">Interactive games - Keep your brain sharp and engaged</p>
+        </div>
+          <div class="col-span-12 md:col-span-4 bg-[#CBE3DB] py-5 px-5 rounded-2xl">
+              <p class="text-center text-black font-normal text-sm py-2"> Downloadable & audible notes - Study anywhere, anytime</p>
+        </div>
+          <div class="col-span-12 md:col-span-4 bg-[#CBE3DB] py-5 px-5 rounded-2xl">
+              <p class="text-center text-black font-normal text-sm py-2"> Bilingual content - Learn in English or Tamil</p>
+        </div>
      </div>
  </section>
 
