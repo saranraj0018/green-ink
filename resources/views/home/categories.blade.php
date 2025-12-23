@@ -1,46 +1,204 @@
 <!-- Banner -->
-<img src="/assets/homebanner.png" alt="banner" class="w-full" />
+<img src="/assets/hero-banner.png" alt="banner" class="w-full" />
 
+<!-- Tabs Wrapper -->
 <section class="my-10">
-    <div class="my-container space-y-5">
 
-        <h2 class="text-center text-2xl font-bold text-gray-800">
-            Explore Top Categories
-        </h2>
-
-        @php
-            $categories = [
-                ['icon' => 'development', 'title' => 'Development', 'courses' => '150+ Courses'],
-                ['icon' => 'DataScience', 'title' => 'Data Science', 'courses' => '150+ Courses'],
-                ['icon' => 'Business', 'title' => 'Business', 'courses' => '150+ Courses'],
-                ['icon' => 'development2', 'title' => 'Development', 'courses' => '150+ Courses'],
-                ['icon' => 'marketing', 'title' => 'Marketing', 'courses' => '150+ Courses'],
-                ['icon' => 'development3', 'title' => 'Development', 'courses' => '150+ Courses'],
-            ];
-        @endphp
-
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-            @foreach ($categories as $category)
-                <div
-                    class="flex items-center gap-3 md:gap-14 bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
-                    <div class="bg-green-50 p-4 rounded-full">
-                        <span class="{{ $category['icon'] }}"></span>
-                    </div>
-
-                    <div class="space-y-2">
-                        <h3 class="text-lg md:text-2xl font-semibold text-[#533B04]">
-                            {{ $category['title'] }}
-                        </h3>
-                        <p class="text-md font-medium">
-                            {{ $category['courses'] }}
-                        </p>
-                    </div>
-                </div>
-            @endforeach
-        </div>
-
+    <!-- Tabs -->
+    <div class="md:flex justify-center mx-auto w-max bg-yellow-500 rounded-full p-1 space-x-4">
+        <button class="tab-btn active-tab px-2 py-1 font-semibold text-sm text-primary" data-tab="tab1">Non-Technical
+            Exams</button>
+        <button class="tab-btn px-2 py-1 font-semibold text-sm text-primary" data-tab="tab2">Technical Exams</button>
+        <button class="tab-btn px-2 py-1 font-semibold text-sm text-primary" data-tab="tab3">Seasonal /
+            Notification-Based Courses</button>
+        <button class="tab-btn px-2 py-1 font-semibold text-sm text-primary" data-tab="tab4">Green Ink - Junior
+            IAS</button>
     </div>
+
+    <!-- TAB CONTENT 1 -->
+    <div id="tab1" class="tab-content block">
+        <section class="my-10">
+            <div class="my-container space-y-5">
+
+                <h2 class="text-center text-2xl font-bold text-gray-800">
+                    Non-Technical Exams
+                </h2>
+                <p class="text-center text-sm md:text-lg text-gray-600">
+                    Coaching for TNPSC, Banking, SSC, Railways, <br>TET & TNUSRB with concept clarity, exam-oriented
+                    practice and personalised support.
+                </p>
+
+                @php
+                    $categories = [
+                        [
+                            'icon' => 'development',
+                            'title' => 'TNPSC (Group I, II, IIA, IV)',
+                            'courses' => 'Complete syllabus coverage, test series, revision plans & 1-to-1 guidance.',
+                        ],
+                        [
+                            'icon' => 'DataScience',
+                            'title' => 'Banking (IBPS | SBI | Others)',
+                            'courses' =>
+                                'Aptitude speed, mock tests & interview readiness for national-level recruitment.',
+                        ],
+                        [
+                            'icon' => 'Business',
+                            'title' => 'SSC (Central government staff selection exams)',
+                            'courses' => 'Foundation strengthening, accuracy training & time-managed revision.',
+                        ],
+                        [
+                            'icon' => 'development2',
+                            'title' => 'Railways (RRB)',
+                            'courses' => 'Pattern analysis, regular practice & performance-based mocks.',
+                        ],
+                        [
+                            'icon' => 'marketing',
+                            'title' => 'TET (Teacher Eligibility Test)',
+                            'courses' => 'Pedagogy, child psychology & exam-specific preparation.',
+                        ],
+                        [
+                            'icon' => 'development3',
+                            'title' => 'TNUSRB (Police, Jail Warder, and Fire & Rescue Services exams)',
+                            'courses' => 'Written tests, physical test guidance & mental readiness.',
+                        ],
+                    ];
+                @endphp
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    @foreach ($categories as $category)
+                        <div
+                            class="flex items-center gap-3 md:gap-8 bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                            <div class="bg-green-50 p-4 rounded-full">
+                                <span class="{{ $category['icon'] }}"></span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="text-[13px] font-semibold text-[#533B04]">
+                                    {{ $category['title'] }}
+                                </h3>
+                                <p class="text-sm font-medium">
+                                    {{ $category['courses'] }}
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- TAB CONTENT 2 -->
+    <div id="tab2" class="tab-content hidden p-6">
+        <section class="my-10">
+            <div class="my-container space-y-5">
+                <p class="text-center text-sm md:text-lg text-gray-600">
+                    Specialised training for Engineering & Diploma-based exams with core subjects, numerical
+                    problem-solving & exam strategies.
+                </p>
+
+                @php
+                    $categories = [
+                        ['icon' => 'development', 'title' => 'Engineering', 'courses' => '150+ Courses'],
+                        ['icon' => 'DataScience', 'title' => 'Diploma-based exams', 'courses' => '150+ Courses'],
+                    ];
+                @endphp
+
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                    @foreach ($categories as $category)
+                        <div
+                            class="flex items-center gap-3 md:gap-8 bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
+                            <div class="bg-green-50 p-4 rounded-full">
+                                <span class="{{ $category['icon'] }}"></span>
+                            </div>
+
+                            <div class="space-y-2">
+                                <h3 class="text-[13px] font-semibold text-[#533B04]">
+                                    {{ $category['title'] }}
+                                </h3>
+                                <p class="text-sm font-medium">
+                                    {{ $category['courses'] }}
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+
+            </div>
+        </section>
+    </div>
+
+    <!-- TAB CONTENT 3 -->
+    <div id="tab3" class="tab-content hidden p-6 text-center">
+        <div class="my-container">
+            <div class="grid grid-cols-12 gap-3">
+                <div class="col-span-12 md:col-span-4">
+                    <img src="/assets/2nd-img.png" alt="2ndimg">
+                </div>
+                <div class="col-span-12 md:col-span-8 flex flex-col justify-center items-center">
+                    <p class="text-2xl font-medium">
+                        Fast-track, high-intensity coaching for fresh government exam notifications within short
+                        timelines.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="tab4" class="tab-content hidden p-6 text-center">
+        <div class="my-container">
+            <div class="grid grid-cols-12 gap-3">
+                <div class="col-span-12 md:col-span-4">
+                    <img src="/assets/2nd-img.png" alt="2ndimg">
+                </div>
+                <div class="col-span-12 md:col-span-8 flex flex-col justify-center items-center">
+                    <p class="text-2xl font-medium">
+                        Foundation program for school & college aspirants to build reasoning, discipline, and early
+                        civil-services awareness.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </section>
+
+<!-- Tab JS -->
+<script>
+    const tabBtns = document.querySelectorAll(".tab-btn");
+    const tabContents = document.querySelectorAll(".tab-content");
+
+    tabBtns.forEach(btn => {
+        btn.addEventListener("click", () => {
+
+            tabBtns.forEach(b => b.classList.remove("active-tab"));
+            btn.classList.add("active-tab");
+
+            const tab = btn.getAttribute("data-tab");
+
+            tabContents.forEach(content => {
+                content.classList.add("hidden");
+                content.classList.remove("block");
+            });
+
+            document.getElementById(tab).classList.add("block");
+            document.getElementById(tab).classList.remove("hidden");
+
+        });
+    });
+</script>
+
+<!-- Style for Active Tab -->
+<style>
+    .active-tab {
+        background: white;
+        border-radius: 50px;
+    }
+</style>
+
+
+
+
+
 
 <script>
     document.addEventListener("DOMContentLoaded", () => {

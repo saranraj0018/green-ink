@@ -1,6 +1,6 @@
 <x-partials.header />
 <!-- banner section-->
-<img src={{ asset('assets/contactBanner.png') }} class="w-full" alt="" />
+<img src="/assets/contactBanner.png" class="w-full" alt="" />
 
 <div class="my-container my-14 ">
 
@@ -12,6 +12,42 @@
         </p>
     </div>
     <div class="grid grid-cols-12 gap-3 md:gap-5">
+        <div class="col-span-12 md:col-span-6 bg-cover bg-center bg-no-repeat p-5 rounded-2xl"
+            style="background-image:url({{ asset('assets/cbg.png') }}) ">
+            <h3 class="text-2xl font-semibold text-primary mb-5">Contact Information</h3>
+            <p class="text-primary mb-6">
+                We're here to help! Reach out through any of these channels and our team will get back to you promptly.
+            </p>
+
+            <!-- Email Card -->
+            <div class="flex items-start gap-4 bg-white/30 border border-[#DBDBDB] rounded-xl p-5 shadow-sm mb-6">
+                <img src="/assets/email.png" class="w-10 h-10">
+                <div>
+                    <h4 class="font-semibold">Email Us</h4>
+                    <p class="text-gray-600">admin@greeninkcce.com</p>
+                </div>
+            </div>
+
+            <!-- Call Card -->
+            <div class="flex items-start gap-4 bg-white/30 border  border-[#DBDBDB] rounded-xl p-5 shadow-sm mb-6">
+                <img src="/assets/phone.png" class="w-10 h-10">
+                <div>
+                    <h4 class="font-semibold">Call Us</h4>
+                    <p class="text-gray-600">+91 8110967668 / 9345191031 </p>
+                </div>
+            </div>
+
+            <!-- Visit Card -->
+            <div class="flex items-start gap-4 bg-white/30 border border-[#DBDBDB]  rounded-xl p-5 shadow-sm">
+                <img src="/assets/location.png" class="w-10 h-10">
+                <div>
+                    <h4 class="font-semibold">Visit Us</h4>
+                    <p class="text-gray-600">AIC RAISE, Rathinam Techzone Campus, Pollachi Main road, Eachanari,
+                        Coimbatore 641021.</p>
+                </div>
+            </div>
+
+        </div>
         <div class="col-span-12 md:col-span-6">
             <h3 class="text-2xl font-semibold mb-6">Send us a message</h3>
             <form id="contactForm" action="{{ route('contact.submit') }}" method="POST">
@@ -37,40 +73,7 @@
                 </button>
             </form>
         </div>
-        <div class="col-span-12 md:col-span-6">
-            <h3 class="text-2xl font-semibold text-black mb-5">Contact Information</h3>
-            <p class="text-black mb-6">
-                We're here to help! Reach out through any of these channels and our team will get back to you promptly.
-            </p>
 
-            <!-- Email Card -->
-            <div class="flex items-start gap-4 bg-white border border-[#DBDBDB] rounded-xl p-5 shadow-sm mb-6">
-                <img src="./assets/email.png" class="w-10 h-10">
-                <div>
-                    <h4 class="font-semibold">Email Us</h4>
-                    <p class="text-gray-600">Support@greenlinkacademy.com</p>
-                </div>
-            </div>
-
-            <!-- Call Card -->
-            <div class="flex items-start gap-4 bg-white border  border-[#DBDBDB] rounded-xl p-5 shadow-sm mb-6">
-                <img src="./assets/phone.png" class="w-10 h-10">
-                <div>
-                    <h4 class="font-semibold">Call Us</h4>
-                    <p class="text-gray-600">+1 (555) 123-4567</p>
-                </div>
-            </div>
-
-            <!-- Visit Card -->
-            <div class="flex items-start gap-4 bg-white border border-[#DBDBDB]  rounded-xl p-5 shadow-sm">
-                <img src="./assets/location.png" class="w-10 h-10">
-                <div>
-                    <h4 class="font-semibold">Visit Us</h4>
-                    <p class="text-gray-600">123 Learning Street, Education City, EC 1235</p>
-                </div>
-            </div>
-
-        </div>
     </div>
 
 
@@ -80,7 +83,8 @@
 <!-- looking and answer-->
 
 <section class="my-container">
-    <div class="bg-gray-100 rounded-3xl my-10 py-10">
+    <div class="bg-gray-100 rounded-3xl my-10 py-10 bg-center bg-no-repeat lg:mx-28"
+        style="background-image:url({{ asset('assets/cbbg.png') }}) ">
         <h2 class="text-4xl text-center font-semibold text-[#008357]">Looking for Answer</h2>
         <p class="text-center text-lg font-normal text-black py-5">Check out our section for quick to common questions.
         </p>

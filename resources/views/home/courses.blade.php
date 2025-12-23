@@ -4,11 +4,13 @@
         <!-- Section Header -->
         <div class="text-center mb-12">
             <span class="px-4 py-2 bg-[#F4F4F4] rounded-full text-sm font-medium border-t-2 border-primary-light">
-                Featured Courses
+               Why choose GreenInk Academy?
+
             </span>
 
             <h2 class="text-2xl md:text-3xl font-bold mt-5 text-gray-800">
-                START YOUR LEARNING JOURNEY
+             Personalised Mentorship System (PMS)
+
             </h2>
 
             <p class="text-gray-600 mt-2">
@@ -16,9 +18,18 @@
             </p>
         </div>
 
+        <div class="grid grid-cols-12 gap-3">
+            <div class="col-span-12 md:col-span-6">
+                <img src="/assets/infog1.png" alt="">
+            </div>
+            <div class="col-span-12 md:col-span-6">
+                <img src="/assets/infog2.png" alt="">
+            </div>
+        </div>
+
 
         <!-- Courses Grid -->
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        {{-- <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
 
             @foreach ($courses as $course)
                 <div class="bg-white rounded-2xl shadow-md hover:shadow-xl transition-all border border-gray-200">
@@ -75,7 +86,7 @@
                 </div>
             @endforeach
 
-        </div>
+        </div> --}}
     </div>
 </section>
 

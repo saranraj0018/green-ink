@@ -7,7 +7,7 @@
          <div class="grid grid-cols-12 gap-3">
              <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white bg-black/40">
                  <div class="flex gap-5">
-                     <img src="./assets/courses/Ellipse 5.png" class="" alt="" />
+                     <img src="/assets/courses/Ellipse 5.png" class="" alt="" />
                      <h2 class="text-white text-lg font-semibold pt-5">Pamir Roy</h2>
                  </div>
                  <p class="text-white text-justify text-sm py-2 ">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -17,7 +17,7 @@
              </div>
              <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white bg-black/40">
                  <div class="flex gap-5">
-                     <img src="./assets/courses/Ellipse 5.png" class="" alt="" />
+                     <img src="/assets/courses/Ellipse 5.png" class="" alt="" />
                      <h2 class="text-white text-lg font-semibold pt-5">Pamir Roy</h2>
                  </div>
                  <p class="text-white text-justify text-sm py-2 ">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -27,7 +27,7 @@
              </div>
              <div class="col-span-12 md:col-span-4 px-10 py-10 rounded-r-3xl  border border-white bg-black/40">
                  <div class="flex gap-5">
-                     <img src="./assets/courses/Ellipse 5.png" class="" alt="" />
+                     <img src="/assets/courses/Ellipse 5.png" class="" alt="" />
                      <h2 class="text-white text-lg font-semibold pt-5">Pamir Roy</h2>
                  </div>
                  <p class="text-white text-justify text-sm py-2 ">Lorem ipsum dolor sit amet, consectetur adipiscing
@@ -46,7 +46,7 @@
      <h2 class="text-center text-xl font-semibold text-black">Partners with<span
              class="text-center text-xl font-semibold text-[#008357]"> Top Institutions</span> to produce <span
              class="text-center text-xl font-semibold text-[#008357]">Best Quality Education</span></h2>
-     <img src="./assets/courses/image 84 (1).png" class=" py-5" alt="parterns" />
+     <img src="/assets/courses/image 84 (1).png" class=" py-5" alt="parterns" />
  </section>
 
  <!--end scetion-->
