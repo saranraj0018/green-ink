@@ -2,27 +2,52 @@
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-6 pt-10">
                 <div class="flex gap-6 ">
-            <img src="/assets/features/book.png" class="w-6 h-6 mt-4" alt="" />
-      <h2 class="text-black text-xl font-semibold pt-3">Free course from Top Universities</h2>
+            <img src="/assets/features/icon8.png" class="w-6 h-6 mt-4" alt="" />
+      <h2 class="text-black text-xl font-semibold pt-3">Weekly Mentor Support</h2>
            </div>
-           <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Find Free courses from the Best Universities</p>
+
+           <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Fixed mentor call every week</p>
+           </div>
+            <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Extra support whenever needed</p>
+           </div>
+            <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Focused on correcting mistakes and improving performance</p>
+           </div>
+            <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Builds confidence and removes doubts</p>
+           </div>
+
            <div class="flex gap-6 pt-2">
-            <img src="/assets/features/self.png" class="w-6 h-6 mt-4" alt="" />
-      <h2 class="text-black text-xl font-semibold pt-3">Self-faced Learning</h2>
+            <img src="/assets/features/icon9.png" class="w-6 h-6 mt-4" alt="" />
+      <h2 class="text-black text-xl font-semibold pt-3">Structured Academic System</h2>
            </div>
-           <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Learn at your own place anytime, anywhere</p>
-           <div class="flex gap-6 pt-2">
-            <img src="/assets/features/learn.png" class="w-6 h-6 mt-4" alt="" />
-      <h2 class="text-black text-xl font-semibold pt-3">Earn Certification</h2>
+
+          <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Syllabus completed as per strict schedule</p>
            </div>
-           <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Earn certification and recognization with top universities</p>
-           <div class="flex gap-6 pt-2">
-            <img src="/assets/features/university.png" class="w-6 h-6 mt-3" alt="" />
-      <h2 class="text-black text-xl font-semibold pt-3">Get University Credits</h2>
+            <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Bilingual teaching (English + Tamil)</p>
            </div>
-           <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Get university credits and get them transferred to your degree</p>
+            <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Each batch follows a structured test plan</p>
+           </div>
+            <div class="flex gap-3 pt-2 ">
+            <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+      <p class="text-black text-sm font-normal pt-3 ">Includes weekly, unit, monthly revision, full-length, mock  and grand mock tests
+s</p>
+           </div>
+
             </div>
-            <div class="col-span-6">
+            <div class="col-span-6 py-10">
                <img src="/assets/features/Group 335.png" class="" alt="pic"/>
             </div>
         </div>
