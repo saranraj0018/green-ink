@@ -3,24 +3,20 @@
 
      <div class="grid grid-cols-12 py-5 gap-5">
          <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg">Interactive Learning</h2>
-             <p class="text-center text-black font-normal text-sm py-2">Engaging video lessons, real-world projects, and
-                 expert mentors.</p>
+             <h2 class="text-center text-black font-medium text-lg">Personalised Learning System</h2>
+             <p class="text-center text-black font-normal text-sm py-2">Tailored guidance, smart tracking and unlimited practice where every student gets a unique success path.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg"> Learn Anytime</h2>
-             <p class="text-center text-black font-normal text-sm py-2">Study at your own pace day or night, wherever you
-                 are.</p>
+             <h2 class="text-center text-black font-medium text-lg"> Expert Mentors</h2>
+             <p class="text-center text-black font-normal text-sm py-2">Learn from qualified educators and exam-cleared professionals who guide you step by step.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg">Everyone's Welcome</h2>
-             <p class="text-center text-black font-normal text-sm py-2"> Students, professionals, homemakers anyone who
-                 wants to grow.</p>
+             <h2 class="text-center text-black font-medium text-lg">Smart Assessments & Instant Reports</h2>
+             <p class="text-center text-black font-normal text-sm py-2"> Concept-based tests, recall drills and performance reports show exactly where to improve.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-[#CBE3DB] py-10 px-10 rounded-2xl">
-             <h2 class="text-center text-black font-medium text-lg">Skill First Approach</h2>
-             <p class="text-center text-black font-normal text-sm py-2">Learn what's relevant and in demand in today's
-                 world.</p>
+             <h2 class="text-center text-black font-medium text-lg">Flexible Online Learning</h2>
+             <p class="text-center text-black font-normal text-sm py-2">Live classes, audio lessons and self-paced study, fit exam prep into any routine with ease.</p>
          </div>
      </div>
  </section>
@@ -28,7 +24,7 @@
  <section class="my-container my-10 space-y-3">
 
         <h2 class="border border-[#573D00] rounded-full bg-[#FFD77B] text-xl font-medium text-[#573D00] px-3 py-1 w-max mx-auto">
-            Expert Mentors / Trainers
+           MEET OUR EXPERT MENTORS/TRAINERS
         </h2>
         <h3 class="text-center font-medium text-xl">
             LEARN FROM INDUSTRY LEADERS
@@ -45,10 +41,11 @@
                     4.9
                 </div>
                 <h3 class="text-center text-lg font-medium">
-                    Dr.Sarah Mitchell
+                    Sylendra Babu
+
                 </h3>
                 <p class="text-center text-sm">
-                    Senior Software Architect
+                    IPS — Leadership Mentor
                 </p>
                 <div class="flex flex-wrap gap-2 justify-center">
                     <div class="border-l border-t border-b border-primary-light rounded-full px-2 py-1 text-md">
@@ -84,10 +81,11 @@
                     4.9
                 </div>
                 <h3 class="text-center text-lg font-medium">
-                    Dr.Sarah Mitchell
+                   Mohan Kumar
+
                 </h3>
                 <p class="text-center text-sm">
-                    Senior Software Architect
+                    Central Government Exams Expert
                 </p>
                 <div class="flex flex-wrap gap-2 justify-center">
                     <div class="border-l border-t border-b border-primary-light rounded-full px-2 py-1 text-md">
@@ -123,10 +121,10 @@
                     4.9
                 </div>
                 <h3 class="text-center text-lg font-medium">
-                    Dr.Sarah Mitchell
+                    Ilayaraja Kannan
                 </h3>
                 <p class="text-center text-sm">
-                    Senior Software Architect
+                    Civil Services Strategist
                 </p>
                 <div class="flex flex-wrap gap-2 justify-center">
                     <div class="border-l border-t border-b border-primary-light rounded-full px-2 py-1 text-md">
@@ -163,15 +161,9 @@
  <section class="w-full mx-auto py-5 bg-cover bg-center bg-no-repeat"
      style="background-image: url('{{ asset('assets/about/ab2bg.png') }}');">
      <div class="my-container py-10">
-         <h2 class="text-center text-2xl font-semibold text-primary-light">“Empower Through Knowledge” Professional &
-             Warm Tone</h2>
-         <p class="text-center text-sm font-medium text-black pt-2">Welcome to GreenInk Academy</p>
-         <p class="text-center text-sm font-normal text-black pt-2">GreenInk Academy is an online learning hub built to
-             empower individuals through the power of knowledge and technology. We exist to create learning
-             opportunities that help people transform their future.  Whether you're a student preparing for your career
-             or a professional upskilling for new challenges we've got the right course for you. GreenInk Academy is
-             built on one simple idea learning should be simple, flexible, and inspiring.  We're not just another online
-             course platform we're a learning space designed for dreamers, doers, and lifelong learners.</p>
+         <h2 class="text-center text-2xl font-semibold text-primary-light">Welcome to GreenInk Academy, where knowledge transforms futures!</h2>
+         <p class="text-center text-sm font-medium text-black pt-2">Whether you’re preparing, restarting or upskilling, this is where dreamers become achievers!</p>
+         <p class="text-center text-sm font-normal text-black pt-2">We are a student-centric online learning institution offering expert faculty, structured guidance and smart educational technology.Our programs are flexible, exam-oriented and designed to build confidence, clarity, and real-world results.</p>
      </div>
 
  </section>
@@ -182,24 +174,24 @@
      <p class="text-center text-sm font-normal text-black py-2">
          Snapshots of our vibrant learning community
      </p>
-     
+
      <div class="grid grid-cols-12 py-2 gap-2 md:gap-3">
          <div class="col-span-12 md:col-span-3 space-y-3">
-             <img src="./assets/about/gallery1.png" alt="gallery pic" class="w-full "/>
-             <img src="./assets/about/gallery3.png" alt="gallery pic" class="w-full "/>
+             <img src="/assets/about/gallery1.png" alt="gallery pic" class="w-full "/>
+             <img src="/assets/about/gallery3.png" alt="gallery pic" class="w-full "/>
          </div>
 
          <div class="col-span-12 md:col-span-6 space-y-3">
-             <img src="./assets/about/gallery2.png" alt="gallery pic" class="w-full "/>
+             <img src="/assets/about/gallery2.png" alt="gallery pic" class="w-full "/>
              <div class="flex gap-2 md:gap-4">
-                 <img src="./assets/about/gallery5.png" alt="gallery pic" class="w-full "/>
-                 <img src="./assets/about/gallery4.png" alt="gallery pic" class="w-full "/>
+                 <img src="/assets/about/gallery5.png" alt="gallery pic" class="w-full "/>
+                 <img src="/assets/about/gallery4.png" alt="gallery pic" class="w-full "/>
              </div>
          </div>
 
          <div class="col-span-12 md:col-span-3 space-y-3">
-             <img src="./assets/about/gallery6.png" alt="gallery pic" class="w-full "/>
-             <img src="./assets/about/gallery7.png" alt="gallery pic" class="w-full "/>
+             <img src="/assets/about/gallery6.png" alt="gallery pic" class="w-full "/>
+             <img src="/assets/about/gallery7.png" alt="gallery pic" class="w-full "/>
          </div>
 
      </div>

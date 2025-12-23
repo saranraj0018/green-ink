@@ -2,28 +2,28 @@
         <div class="grid grid-cols-12 gap-5">
             <div class="col-span-6 pt-10">
                 <div class="flex gap-6 ">
-            <img src="./assets/features/book.png" class="w-6 h-6 mt-4" alt="" />
+            <img src="/assets/features/book.png" class="w-6 h-6 mt-4" alt="" />
       <h2 class="text-black text-xl font-semibold pt-3">Free course from Top Universities</h2>
            </div>
            <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Find Free courses from the Best Universities</p>
            <div class="flex gap-6 pt-2">
-            <img src="./assets/features/self.png" class="w-6 h-6 mt-4" alt="" />
+            <img src="/assets/features/self.png" class="w-6 h-6 mt-4" alt="" />
       <h2 class="text-black text-xl font-semibold pt-3">Self-faced Learning</h2>
            </div>
            <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Learn at your own place anytime, anywhere</p>
            <div class="flex gap-6 pt-2">
-            <img src="./assets/features/learn.png" class="w-6 h-6 mt-4" alt="" />
+            <img src="/assets/features/learn.png" class="w-6 h-6 mt-4" alt="" />
       <h2 class="text-black text-xl font-semibold pt-3">Earn Certification</h2>
            </div>
            <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Earn certification and recognization with top universities</p>
            <div class="flex gap-6 pt-2">
-            <img src="./assets/features/university.png" class="w-6 h-6 mt-3" alt="" />
+            <img src="/assets/features/university.png" class="w-6 h-6 mt-3" alt="" />
       <h2 class="text-black text-xl font-semibold pt-3">Get University Credits</h2>
            </div>
            <p class="text-black text-justify font-normal text-sm pt-3 ps-12">Get university credits and get them transferred to your degree</p>
             </div>
             <div class="col-span-6">
-               <img src="./assets/features/Group 335.png" class="" alt="pic"/>
+               <img src="/assets/features/Group 335.png" class="" alt="pic"/>
             </div>
         </div>
      </section>
