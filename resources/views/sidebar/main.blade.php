@@ -4,7 +4,7 @@
      <div class="grid grid-cols-12  p-0">
          <div class="col-span-2 bg-[#1B4D3E] py-3 px-3">
              <div class="bg-white py-2 px-3 rounded-lg">
-                 <img src="./assets/greeninklogo.png" class="" alt="logo" />
+                 <img src="/assets/greeninklogo.png" class="" alt="logo" />
              </div>
              <div class="flex">
                  <!-- Sidebar -->

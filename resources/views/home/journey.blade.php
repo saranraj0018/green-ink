@@ -6,13 +6,13 @@
 
             <!-- Badge -->
             <div class="inline-flex items-center gap-2 bg-white shadow px-5 py-2 rounded-full mb-6">
-                <span class="text-green-600 font-semibold text-sm">Start Your Journey Today</span>
+                <span class="text-green-600 font-semibold text-sm">Start Your Learning Journey Today!</span>
             </div>
 
             <!-- Heading -->
-            <h1 class="text-4xl md:text-5xl font-bold text-green-700 leading-tight">
-                Join 100,000+ Learners Building <br> Their Future
-            </h1>
+            <h2 class="text-4xl md:text-5xl font-bold text-green-700 leading-tight">
+               Join the First Tech-Enabled <br>Institute Shaping Exam Success
+            </h2>
 
             <!-- Subtitle -->
             <p class="text-gray-600 mt-4 max-w-3xl mx-auto">
@@ -24,22 +24,30 @@
 
                 <div class="flex gap-3 items-start">
                     <span class="GreenTick"></span>
-                    <p class="text-gray-700">Lifetime access to all courses materials</p>
+                    <p class="text-gray-700">24/7 Mentor Support & Guidance</p>
                 </div>
 
                 <div class="flex gap-3 items-start">
                     <span class="GreenTick"></span>
-                    <p class="text-gray-700">24/7 mentor support and guidance</p>
+                    <p class="text-gray-700">Industry-Experienced Trainers</p>
                 </div>
 
                 <div class="flex gap-3 items-start">
                     <span class="GreenTick"></span>
-                    <p class="text-gray-700">Industry-recognized certifications</p>
+                    <p class="text-gray-700">Personal Mentorship with Exam-Cleared Faculty</p>
                 </div>
 
                 <div class="flex gap-3 items-start">
                     <span class="GreenTick"></span>
-                    <p class="text-gray-700">Real-world projects and assignments</p>
+                    <p class="text-gray-700">Structured & Result-Driven Curriculum</p>
+                </div>
+                <div class="flex gap-3 items-start">
+                    <span class="GreenTick"></span>
+                    <p class="text-gray-700">Flexible Online Learning for Any Background</p>
+                </div>
+                <div class="flex gap-3 items-start">
+                    <span class="GreenTick"></span>
+                    <p class="text-gray-700">Perfect for Students, Working Professionals & Homemakers</p>
                 </div>
             </div>
 
@@ -55,21 +63,29 @@
 
     <!-- count section-->
      <section class="py-16 bg-linear-to-b from-white to-[#F6CC6D] rounded-b-xl">
+
+         <h2 class="text-4xl md:text-5xl font-bold text-yellow-900 leading-tight text-center">
+               GREENINK ACADEMY
+            </h2>
+              <p class="my-3 max-w-3xl mx-auto text-center">
+                Learn Smart. Learn Anytime. Learn Your Way!
+            </p>
+
     <div class="container mx-auto px-6">
         <div class="grid grid-cols-1 md:grid-cols-3 gap-10 text-center">
 <div>
-    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="500">500</h2>
+    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="20">20 </h2>
     <p class="text-gray-700 mt-2 text-lg">Expert Courses</p>
 </div>
 
 <div>
-    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="100000">100000</h2>
+    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="1500">1500</h2>
     <p class="text-gray-700 mt-2 text-lg">Active Learners</p>
 </div>
 
 <div>
-    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="95">95</h2>
-    <p class="text-gray-700 mt-2 text-lg">Success Rate</p>
+    <h2 class="text-5xl font-extrabold text-yellow-900 counter" data-target="7500">7500</h2>
+    <p class="text-gray-700 mt-2 text-lg">Trained students</p>
 </div>
 
 

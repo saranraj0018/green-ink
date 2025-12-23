@@ -1,5 +1,5 @@
 <!-- banner section-->
-<img src="./assets/courses/couresebanner.png" class="w-full" alt=""/>
+<img src="/assets/courses/couresebanner.png" class="w-full" alt=""/>
 <!-- serach bar-->
  <section class="w-full py-12">
         <div class="my-container text-center">
