@@ -27,7 +27,7 @@
 
     <!-- Sidebar -->
     <aside x-show="sidebarOpen" @click.outside="sidebarOpen = false" x-transition
-        class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-6 lg:hidden">
+        class="fixed top-0 left-0 h-full w-64 bg-white shadow-lg p-6 lg:hidden z-1000">
 
         <!-- Close Button -->
         <button @click="sidebarOpen = false" class="absolute right-4 top-4 text-gray-600 text-3xl">

@@ -12,23 +12,15 @@ $(document).ready(function () {
                 step: function () {
                     let value = Math.floor(this.countNum);
 
-                    // Display while counting
-                    if (target >= 1000) {
-                        // show 1k, 2k, 50k, etc
-                        $this.text(Math.floor(value / 1000) + "k+");
-                    } else if (target === 95) {
-                        // success rate shows percentage
+                    // Show percentage only for 95
+                    if (target === 95) {
                         $this.text(value + "%");
                     } else {
-                        // normal numbers
                         $this.text(value + "+");
                     }
                 },
                 complete: function () {
-                    // Final correct display
-                    if (target >= 1000) {
-                        $this.text(Math.floor(target / 1000) + "k+");
-                    } else if (target === 95) {
+                    if (target === 95) {
                         $this.text(target + "%");
                     } else {
                         $this.text(target + "+");
@@ -39,6 +31,7 @@ $(document).ready(function () {
     });
 
 });
+
 //search bar//
 
     $(document).ready(function () {
@@ -82,5 +75,3 @@ $("#contactForm").on("submit", function (e) {
           $("#loginModal").addClass("hidden");
       }
   });
-
-

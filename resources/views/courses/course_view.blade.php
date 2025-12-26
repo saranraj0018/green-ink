@@ -3,7 +3,7 @@
 <section class="mt-5 md:mt-44 lg:mt-34">
     <div class="my-container">
         <div class="rounded-2xl bg-cover py-10 md:py-20 bg-center bg-no-repeat px-6 md:px-20"
-             style="background-image: url('{{ asset('assets/all-courses/all-courses-bg.png') }}')">
+            style="background-image: url('{{ asset('assets/all-courses/all-courses-bg.png') }}')">
             <h2 class="text-white text-2xl font-medium">
                 Courses
             </h2>
@@ -122,37 +122,27 @@
                         </div>
                     </li>
                 </ul>
-
-
             </div>
-
             <!-- Payment Modal -->
-
         </div>
-
     </div>
-
-
 </section>
 
 <!-- PAYMENT MODAL -->
-<div id="paymentModal"
-     class="fixed inset-0 hidden bg-black bg-opacity-50 items-center justify-center z-50">
-
+<div id="paymentModal" class="fixed inset-0 hidden bg-[#0000008f] bg-opacity-50 items-center justify-center z-50">
     <div class="bg-white w-96 p-6 rounded-xl space-y-4">
         <h2 class="text-lg font-semibold text-center">Enter Your Details</h2>
 
         <div>
             <label class="text-sm">Full Name</label>
             <input id="pay_name" name="pay_name" class="w-full border rounded px-3 py-2">
-            <p class="text-red-500 text-xs mt-1 nameError" ></p>
+            <p class="text-red-500 text-xs mt-1 nameError"></p>
         </div>
 
         <div>
             <label class="text-sm">Email</label>
             <input id="pay_email" type="email" class="w-full border rounded px-3 py-2">
             <p class="text-red-500 text-xs mt-1 emailError"></p>
-
         </div>
 
         <div>
@@ -162,13 +152,11 @@
         </div>
 
         <div class="flex gap-3 pt-3">
-            <button id="closeModal"
-                    class="w-1/2 border py-2 rounded">
+            <button id="closeModal" class="w-1/2 border py-2 rounded">
                 Cancel
             </button>
 
-            <button id="confirmPay"
-                    class="w-1/2 bg-[#FFB100] text-white py-2 rounded">
+            <button id="confirmPay" class="w-1/2 bg-[#FFB100] text-white py-2 rounded">
                 Pay Now
             </button>
         </div>
@@ -181,17 +169,17 @@
 <script>
     document.addEventListener("DOMContentLoaded", () => {
 
-        $('#payBtn').on('click', function () {
+        $('#payBtn').on('click', function() {
             $('#paymentModal').removeClass('hidden').addClass('flex');
         });
 
         // CLOSE MODAL
-        $('#closeModal').on('click', function () {
+        $('#closeModal').on('click', function() {
             $('#paymentModal').addClass('hidden').removeClass('flex');
         });
 
         // CONFIRM PAYMENT
-        $('#confirmPay').on('click', function () {
+        $('#confirmPay').on('click', function() {
 
 
             let hasError = false;
@@ -199,7 +187,6 @@
             const name = $('#pay_name').val().trim();
             const email = $('#pay_email').val().trim();
             const phone = $('#pay_phone').val().trim();
-
 
             // Name validation
             if (!name) {
@@ -214,7 +201,6 @@
                 $('.emailError').text('Enter a valid email');
                 hasError = true;
             }
-
             // Phone validation
             if (!phone) {
                 $('.mobileError').text('Phone number is required');
@@ -288,8 +274,5 @@
         }
 
     });
-
-
 </script>
 <x-partials.footer />
-
