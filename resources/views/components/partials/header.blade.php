@@ -8,7 +8,7 @@
 
 
 <!-- NAVBAR -->
-<section class="md:fixed md:top-0 bg-gray-200/90 shadow-sm z-100">
+<section class="lg:fixed md:top-0 bg-gray-200/90 shadow-sm z-100">
     <div class="mx-auto px-4 md:px-10 py-1">
         <div class="grid grid-cols-12 gap-1 md:gap-2">
             <!-- Logo -->
@@ -18,16 +18,16 @@
                 </a>
             </div>
 
-            <div class="col-span-4 lg:col-span-7 my-auto">
+            <div class="col-span-4 md:col-span-1 lg:col-span-7 my-auto">
                 @include('components.partials.nav')
             </div>
 
-            <div class="col-span-12 lg:col-span-2 my-auto">
+            <div class="col-span-12 md:col-span-3 lg:col-span-2 my-auto">
                 <div class="flex gap-1 my-auto justify-end">
-                    <button
+                    <a href="tel:+91 84287 75012"
                         class="px-2 py-1 bg-primary border text-white rounded-full hover:bg-green-700 text-sm flex gap-1">
-                        <span class="callIcon my-auto"></span> +91 8110967668
-                    </button>
+                        <span class="callIcon my-auto"></span> +91 84287 75012
+                    </a>
                     {{-- <button id="openSignupDesktop"
                         class="px-2 py-1 bg-primary border text-white rounded-full hover:bg-green-700 text-sm">
                         Sign In
