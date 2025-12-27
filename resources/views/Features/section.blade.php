@@ -5,49 +5,49 @@
  <section class="my-container py-10">
      <div class="grid grid-cols-12 gap-5">
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon.png" class="" alt="icon" />
+             <img src="/assets/features/icon.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">AI-Powered Smart Practice</h2>
              <p class="text-white text-sm">Our intelligent LMS adapts to your performance with unlimited practice,
                  instant feedback, and smart improvement tracking.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon1.png" class="" alt="icon" />
+             <img src="/assets/features/icon1.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">Concept-Based & Exam-Oriented Learning</h2>
              <p class="text-white text-sm">We focus on why answers work, not rote learning - building clarity,
                  confidence, and long-term understanding.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon2.png" class="" alt="icon" />
+             <img src="/assets/features/icon2.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">Structured Mentorship & Progress Tracking</h2>
              <p class="text-white text-sm">There should be weekly mentor meetings, performance reports and controlled
                  revisions in order to guarantee constant improvement and responsibility.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon3.png" class="" alt="icon" />
+             <img src="/assets/features/icon3.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">Multi-modal & Bilingual Learning.</h2>
              <p class="text-white text-sm">Bilingual (English + Tamil) classes, recorded classes and audio are available
                  for studying anytime, anywhere.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon4.png" class="" alt="icon" />
+             <img src="/assets/features/icon4.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">System of research-based learning.</h2>
              <p class="text-white text-sm">supported by data, research, and study of the preparation and the real
                  learning process of all students.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon5.png" class="" alt="icon" />
+             <img src="/assets/features/icon5.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">Structured Daily Study Plan</h2>
              <p class="text-white text-sm">Students receive clear daily learning tasks so they know what to study, when
                  to study, and how much to study.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon6.png" class="" alt="icon" />
+             <img src="/assets/features/icon6.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">Personalised Learning Path</h2>
              <p class="text-white text-sm">Each student is given an individualized study plan depending on his/her
                  strengths, weaknesses and career objectives - not a universal method.</p>
          </div>
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
-             <img src="/assets/Features/icon7.png" class="" alt="icon" />
+             <img src="/assets/features/icon7.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">Smart Revision System</h2>
              <p class="text-white text-sm">Revision plans based on memory science help students retain concepts longer
                  and revise efficiently before exams.</p>

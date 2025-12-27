@@ -201,8 +201,8 @@
 
  <!--gallery-->
  <section class="my-container py-10 bg-white">
-     <h2 class="text-center text-lg font-semibold text-black">Gallery</h2>
-     <p class="text-center text-sm font-normal text-black py-2">
+     <h2 class="text-center text-lg md:text-5xl font-bold text-primary-light">GALLERY</h2>
+     <p class="text-center text-sm font-normal text-gray-500 py-2">
          Snapshots of our vibrant learning community
      </p>
 
@@ -227,8 +227,8 @@
 
      </div>
      <div class="flex justify-center my-3">
-         <button type="button"
-             class="text-center text-lg text-white font-medium py-2 px-10 bg-[#202020] rounded-3xl">See more</button>
+         <a href="/contact"
+             class="text-center text-lg text-white font-medium py-2 px-10 bg-[#202020] rounded-3xl">Connect with us</a>
      </div>
  </section>
 
