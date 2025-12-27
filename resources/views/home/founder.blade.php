@@ -15,23 +15,10 @@
                 Tamil Orator & Motivational Speaker
             </p>
             <p class="text-sm border-l-3 border-primary ps-2">
-                "Education is not just about knowledge it's about transformation. Every student deserves the tools and guidance to unlock their true potential."
+                "Education is not just about knowledge it's about transformation. Every student deserves the tools and
+                guidance to unlock their true potential."
             </p>
-            <div class="grid grid-cols-12 gap-3 mt-5 md:mt-8">
-                <div class="col-span-12 md:col-span-4">
-                    <div class="flex gap-2 bg-[#DEF6EE] p-2 rounded-lg">
-                        <span class="bg-primary p-3 rounded-xl experience"></span>
-                        <div>
-                            <p class="text-md">
-                                Experience
-                            </p>
-                            <p class="text-md font-medium">
-                                10+ Years
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
             <h3 class="text-xl font-medium">
                 RJ Anandhi
             </h3>
@@ -39,23 +26,9 @@
                 Popular Tamil RJ & Motivational Host
             </p>
             <p class="text-sm border-l-3 border-primary ps-2">
-                "Education is not just about knowledge it's about transformation. Every student deserves the tools and guidance to unlock their true potential."
+                "Success in studies isn’t about being perfect, it’s about being consistent"
             </p>
-            <div class="grid grid-cols-12 gap-3 mt-5 md:mt-8">
-                <div class="col-span-12 md:col-span-4">
-                    <div class="flex gap-2 bg-[#DEF6EE] p-2 rounded-lg">
-                        <span class="bg-primary p-3 rounded-xl experience"></span>
-                        <div>
-                            <p class="text-md">
-                                Experience
-                            </p>
-                            <p class="text-md font-medium">
-                                10+ Years
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+
         </div>
     </div>
 </div>
