@@ -53,7 +53,7 @@
 
         <!-- CTA Button -->
         <div class="mt-10">
-            <a href="#"
+            <a href="/courses"
                 class="bg-green-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-green-700 transition">
                 Get Started
             </a>

@@ -7,15 +7,15 @@
 <!-- Slider -->
 <div class="swiper mySwiper w-full relative">
     <div class="swiper-wrapper">
-        <div class="swiper-slide">
+        <a href="/courses" class="swiper-slide">
             <img src="/assets/hero-banner.png" alt="banner">
-        </div>
-        <div class="swiper-slide">
+        </a>
+        <a href="/courses" class="swiper-slide">
             <img src="/assets/banner2.png" alt="banner">
-        </div>
-        <div class="swiper-slide">
+        </a>
+        <a href="/courses" class="swiper-slide">
             <img src="/assets/banner3.png" alt="banner">
-        </div>
+        </a>
     </div>
 
     <!-- Navigation -->

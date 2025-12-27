@@ -1,12 +1,9 @@
 <!-- banner section-->
-
 <img src="/assets/about-background.png" class="w-full" alt="" />
-
 <div class="my-10 my-container">
     <div class="grid grid-cols-12 gap-3 my-10 ">
         <div class="col-span-12 md:col-span-6">
             <img src="/assets/about/about-pic.png" class="w-full" alt="pic" />
-
         </div>
         <div class="col-span-12 md:col-span-6 my-auto">
             <h2 class="text-xl md:text-3xl font-semibold text-primary mb-5 text-white bg-primary rounded-3xl py-5 md:py-10 px-2">
@@ -22,32 +19,25 @@
                         <div class="flex gap-3 pt-2">
                             <img src="/assets/features/circle.png" class="w-3 h-3 mt-4" alt="" />
                             <p class="text-sm font-normal pt-3">With 6+ years of expertise</p>
-
                         </div>
                         <div class="flex gap-3 pt-2">
                             <img src="/assets/features/circle.png" class="w-3 h-3 mt-4" alt="" />
                             <p class="text-sm font-normal pt-3">5,000+ students reached</p>
-
                         </div>
                     </div>
                     <div class="col-span-12 md:col-span-6">
                         <div class="flex gap-3 pt-2">
                             <img src="/assets/features/circle.png" class="w-3 h-3 mt-4" alt="" />
                             <p class="text-sm font-normal pt-3">1,500+ trained aspirants across Tamil Nadu</p>
-
                         </div>
                         <div class="flex gap-3 pt-2">
                             <img src="/assets/features/circle.png" class="w-3 h-3 mt-4" alt="" />
                             <p class="text-sm font-normal pt-3">Grown to 200+ students in a batch</p>
-
                         </div>
                     </div>
-
                 </div>
             </div>
-
         </div>
-
     </div>
 </div>
 
