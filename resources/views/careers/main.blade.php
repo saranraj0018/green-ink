@@ -2,4 +2,5 @@
 <img src="assets/careers/Careerbanner.png" alt="">
 @include("careers.careers")
 @include("careers.keypoints")
+@include('reading_community')
 <x-partials.footer />

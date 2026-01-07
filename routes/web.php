@@ -12,6 +12,7 @@ Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::view('/about', 'about.main')->name('about');
 Route::view('/features', 'Features.main')->name('features');
 Route::view('/contact', 'Contact')->name('contact');
+Route::view('/subscription', 'subscription.main')->name('subscription');
 Route::view('/store', 'store.main')->name('store');
 Route::view('/cart', 'cart.main')->name('cart');
 Route::view('/checkout-page', 'cart.checkout.main')->name('checkout-page');

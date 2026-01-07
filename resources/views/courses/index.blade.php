@@ -1,51 +1,127 @@
-@section('content')
-    <section class="my-container">
+@php
+    $course = collect([
+        (object) [
+            'id' => 1,
+            'image' => '/assets/courses/course1.png',
+            'type' => 'paid',
+            'title' => 'UI / UX Design Masterclass',
+            'description' =>
+                'Lorem ipsum dolor sit amet consectetur adipiscing elit. Consequat adipiscing elit quisque faucibus ex sapien.',
+            'star_point' => 4.8,
+            'hours' => 24,
+            'amount' => 49,
+            'get_category' => (object) [
+                'name' => 'Design',
+            ],
+        ],
+        (object) [
+            'id' => 2,
+            'image' => '/assets/courses/course1.png',
+            'type' => 'free',
+            'title' => 'Laravel for Beginners',
+            'description' =>
+                'Lorem ipsum dolor sit amet consectetur adipiscing elit. Consequat adipiscing elit quisque faucibus ex sapien.',
+            'star_point' => 4.6,
+            'hours' => 18,
+            'amount' => 0,
+            'get_category' => (object) [
+                'name' => 'Development',
+            ],
+        ],
+    ]);
+@endphp
 
-        <div id="tabContent">
-            <div class="tab-pane" data-content="all">
-                <div class="grid grid-cols-12 gap-5 mt-10">
-                    @foreach ($course as $courses)
-                        <div class="col-span-12 md:col-span-4 rounded-3xl shadow-lg  ">
-                            <div class="relative">
-                                <img src="{{ asset('storage/' . $courses->image) }}" alt="Event"
-                                     class="rounded-t-2xl w-full">
-                                @if ($courses->type == 'paid')
-                                    <span
-                                        class= "absolute top-3 right-3 bg-[#FFC31F] text-green-900 px-3 text-sm py-1 rounded-full">
-                                        Premium
+
+
+@section('content')
+    <section class="my-container mt-10">
+        <div class="grid grid-cols-12 gap-6">
+
+            @foreach ($course as $courses)
+                <div class="col-span-12 lg:col-span-6">
+                    <div class="grid grid-cols-12 rounded-2xl gap-4 items-center"
+                        style="background: linear-gradient(114deg, #FFF 40.52%, #FFEDC3 69.26%);">
+
+                        <!-- Image -->
+                        <div class="col-span-12 md:col-span-4 relative">
+                            <img src="/assets/courses/course1.png" class="w-full h-full object-cover rounded-xl"
+                                alt="{{ $courses->title }}">
+
+                            @if ($courses->type == 'paid')
+                                <span
+                                    class="absolute top-2 right-2 bg-[#FFC31F] text-[#014631]
+                                       text-xs px-4 py-1 rounded-full font-medium">
+                                    Premium
+                                </span>
+                            @endif
+                        </div>
+
+                        <!-- Content -->
+                        <div class="col-span-12 md:col-span-8 p-4">
+                            <h3 class="text-lg font-semibold text-[#014631] leading-snug">
+                                {{ $courses->title }}
+                            </h3>
+
+                            <p class="text-sm text-primary mt-1 leading-relaxed">
+                                {{ $courses->description }}
+                            </p>
+
+                            <div class="flex gap-3 mt-3">
+                                <div
+                                    class="flex items-center gap-4 text-xs text-gray-600 bg-white/40 rounded-lg w-max p-1 border border-white">
+                                    <span class="flex items-center gap-1 text-[#014631]">
+                                        ⭐ {{ $courses->star_point }}
                                     </span>
-                                @endif
+                                    <span class="flex items-center gap-1">
+                                        👤 25,000
+                                    </span>
+                                    <span class="flex items-center gap-1">
+                                        ⏱ {{ $courses->hours }}hrs
+                                    </span>
+                                </div>
+                                <span class="text-lg font-semibold text-[#014631] my-auto">
+                                    ${{ $courses->amount }}
+                                </span>
                             </div>
 
-                            <div class="py-5 px-5">
-                                <p
-                                    class="text-sm font-normal text-[#014631]  text-center py-2 px-10 rounded-3xl bg-[#DEF6EE] ">
-                                    {{ $courses->get_category->name ?? '' }}</p>
-                                <p class="text-sm font-semibold text-black text-justify pt-3">{{ $courses->title ?? '' }}
-                                </p>
-                                <div class="flex gap-3 pt-3">
-                                    <p class="text-sm font-normal text-[#FFB100]"><i class="fa fa-star"
-                                                                                     aria-hidden="true"></i> {{ $courses->star_point ?? '' }}</p>
-                                    <p class="text-sm font-normal text-[#FFB100]"><i class="fa fa-user"
-                                                                                     aria-hidden="true"></i> 0 </p>
-                                    <p class="text-sm font-normal text-[#FFB100]"><i class="fa fa-clock"
-                                                                                     aria-hidden="true"></i> {{ $courses->hours ?? '' }}hrs</p>
-                                </div>
-                                <div class="flex pt-4 justify-between">
-                                    <h5 class="text-lg font-normal text-[#02A171]">${{ $courses->amount ?? '' }}</h5>
-                                    <a href="{{ route('view_course', ['id' => encrypt($courses->id)]) }}"
-                                       class="text-center text-white font-semibold py-2 px-10 rounded-3xl bg-[#02A171]">
-                                        View Courses
-                                    </a>
 
-                                </div>
+                            <!-- Footer -->
+                            <div class="flex justify-end mt-4">
+
+
+                                <a href="{{ route('view_course', ['id' => encrypt($courses->id)]) }}"
+                                    class="flex items-center gap-2 bg-white text-[#014631]
+                                      text-sm font-semibold px-3 py-1 rounded-full shadow">
+                                    View course
+                                    <span
+                                        class="w-6 h-6 flex items-center justify-center
+                                           rounded-full bg-[#FFC31F] arrow">
+                                    </span>
+                                </a>
                             </div>
                         </div>
-                        <!-- add content-->
-                    @endforeach
-                </div>
-            </div>
-        </div>
 
+                    </div>
+                </div>
+            @endforeach
+
+        </div>
     </section>
 
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const arrow = `
+          <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 13 13" fill="none">
+        <path d="M2.17241 2.95468C2.17241 4.1567 2.17241 4.7572 2.36814 5.23146C2.49811 5.54585 2.68884 5.83151 2.92939 6.07206C3.16995 6.31261 3.4556 6.50334 3.76999 6.63331C4.24426 6.82905 4.84475 6.82905 6.04677 6.82905H10.2876M8.12271 9.31128L10.0632 7.37128C10.213 7.22154 10.2881 7.02529 10.2881 6.82905C10.2881 6.72832 10.2682 6.62859 10.2296 6.53555C10.191 6.44251 10.1345 6.35799 10.0632 6.28681L8.12322 4.34681" stroke="#1B4D3E" stroke-width="0.919913" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        `;
+
+            const tickElements = document.getElementsByClassName('arrow');
+
+            for (let i = 0; i < tickElements.length; i++) {
+                tickElements[i].innerHTML = arrow;
+            }
+
+        });
+    </script>

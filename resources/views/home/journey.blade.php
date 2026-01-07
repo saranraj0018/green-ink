@@ -94,7 +94,7 @@
             Coming Soon
         </h2>
         <div class="grid grid-cols-12 gap-3 md:gap-10">
-            <div class="col-span-12 md:col-span-6 bg-[#795501] p-5 rounded-lg">
+            <div class="col-span-12 md:col-span-6 p-5 rounded-lg" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%);">
                 <h3 class="text-xl font-medium text-white">
                     GREEN INK - JR IAS
                 </h3>
@@ -105,7 +105,7 @@
                     Build the foundation early. Dream big. Start your IAS journey now!
                 </p>
             </div>
-            <div class="col-span-12 md:col-span-6 bg-[#795501] p-5 rounded-lg">
+            <div class="col-span-12 md:col-span-6 p-5 rounded-lg" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%);">
                 <h3 class="text-xl font-medium text-white">
                     GREEN INK - JR IAS
                 </h3>
@@ -118,7 +118,7 @@
             </div>
         </div>
         <div class="flex justify-center mt-5">
-            <a href="/about" class="bg-[#795501] py-1 px-2 rounded-2xl text-white text-sm">
+            <a href="/about" class="py-1 px-3 rounded-2xl text-white text-sm" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%);">
                 Click Here to Explore More
             </a>
         </div>
