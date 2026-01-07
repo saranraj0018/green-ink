@@ -1,6 +1,6 @@
 <x-partials.header />
 <!-- banner section-->
-<img src="/assets/contactBanner.png" class="w-full" alt="" />
+<img src="/assets/cont-banner.png" class="w-full" alt="" />
 
 <div class="my-container my-14 ">
 
