@@ -1,6 +1,6 @@
      <section class="my-container py-8">
          <div class="grid grid-cols-12 gap-2 md:gap-5">
-             <div class="col-span-12 md:col-span-12 pt-10">
+             <div class="col-span-12 md:col-span-7 pt-10">
                  <div class="flex gap-6 ">
                      <img src="/assets/features/icon8.png" class="w-6 h-6 mt-4" alt="" />
                      <h2 class="text-black text-xl font-semibold pt-3">Weekly Mentor Support</h2>
@@ -48,10 +48,20 @@
                  </div>
 
              </div>
-             <div class="col-span-12 md:col-span-12 py-10">
-                 <img src="/assets/features/Group 335.png" class="" alt="pic" />
+             <div class="col-span-12 md:col-span-5 py-10">
+                 <img src="/assets/features/fct.png" alt="pic" />
              </div>
          </div>
+     </section>
+     <section class="my-container my-10 py-10 bg-[#fafafa] space-y-3">
+        <h2 class="text-2xl text-center font-medium">
+            Our Collaborations
+        </h2>
+        <p class="text-center text-sm">
+            Lorem ipsum dolor sit amet consectetur adipiscing elit.<br> Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+        </p>
+        <img src="/assets/features/collaborations.png" class="w-full md:w-4/5 mx-auto mt-3" alt="" />
+
      </section>
 
      <!--end section-->

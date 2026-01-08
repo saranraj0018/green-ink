@@ -20,10 +20,10 @@
 
         <div class="grid grid-cols-12 gap-3">
             <div class="col-span-12 md:col-span-6">
-                <img src="/assets/infog1.png" alt="">
+                <img src="/assets/info1.png" alt="">
             </div>
             <div class="col-span-12 md:col-span-6">
-                <img src="/assets/infog2.png" alt="">
+                <img src="/assets/info2.png" alt="">
             </div>
         </div>
 
