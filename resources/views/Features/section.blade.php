@@ -1,9 +1,11 @@
  <!-- banner section-->
- <img src="/assets/Features/featuresbanner.png" class="" alt="" />
+<a href="/feature">
+ <img src="/assets/Features/featureBan.png" class="" alt="" />
+</a>
 
  <!-- second section-->
  <section class="my-container py-10">
-     <div class="grid grid-cols-12 gap-5">
+     {{-- <div class="grid grid-cols-12 gap-5">
          <div class="col-span-12 md:col-span-3 bg-linear-to-b from-[#1B4D3E] to-[#009C6D] rounded-3xl pt-8 pb-8 px-5">
              <img src="/assets/features/icon.png" class="" alt="icon" />
              <h2 class="text-white text-lg font-semibold pt-5">AI-Powered Smart Practice</h2>
@@ -52,7 +54,8 @@
              <p class="text-white text-sm">Revision plans based on memory science help students retain concepts longer
                  and revise efficiently before exams.</p>
          </div>
-     </div>
+     </div> --}}
+     <img src="/assets/features/feat-info.png" alt="" class="w-full md:w-3/4 mx-auto">
  </section>
 
  <!-- --->

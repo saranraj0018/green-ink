@@ -1,13 +1,16 @@
 <nav x-data="{ sidebarOpen: false }">
     <div class="container mx-auto p-2 lg:p-4 flex items-center justify-end lg:justify-between">
         <!-- Desktop Menu -->
-        <ul class="hidden lg:flex space-x-6 text-primary-light font-medium border border-primary-light mx-auto rounded-3xl py-2 px-4">
+        <ul
+            class="hidden lg:flex space-x-6 text-primary-light font-medium border border-primary-light mx-auto rounded-3xl py-2 px-4">
             <li><a href="/" class="hover:text-green-600">Home</a></li>
             <li><a href="/about" class="hover:text-green-600">About</a></li>
             <li><a href="/courses" class="hover:text-green-600">Courses</a></li>
+            <li><a href="/store" class="hover:text-green-600">Store</a></li>
             <li><a href="/features" class="hover:text-green-600">features</a></li>
             <li><a href="/events" class="hover:text-green-600">Events</a></li>
             <li><a href="/careers" class="hover:text-green-600">Careers</a></li>
+            <li><a href="/subscription" class="hover:text-green-600">Subscription</a></li>
             <li><a href="/contact" class="hover:text-green-600">Contact</a></li>
         </ul>
 
@@ -38,9 +41,11 @@
             <li><a href="/" class="block hover:text-green-600">Home</a></li>
             <li><a href="/about" class="block hover:text-green-600">About</a></li>
             <li><a href="/courses" class="block hover:text-green-600">Courses</a></li>
+            <li><a href="/store" class="block hover:text-green-600">Store</a></li>
             <li><a href="/features" class="block hover:text-green-600">features</a></li>
             <li><a href="/events" class="block hover:text-green-600">Events</a></li>
             <li><a href="/careers" class="block hover:text-green-600">Careers</a></li>
+            <li><a href="/subscription" class="block hover:text-green-600">Subscription</a></li>
             <li><a href="/contact" class="block hover:text-green-600">Contact</a></li>
         </ul>
     </aside>

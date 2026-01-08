@@ -118,10 +118,7 @@
 <!--slider -->
 
 <section class="my-container py-5">
-    <h2 class="text-center text-xl font-semibold text-black">Partners with<span
-            class="text-center text-xl font-semibold text-[#008357]"> Top Institutions</span> to produce <span
-            class="text-center text-xl font-semibold text-[#008357]">Best Quality Education</span></h2>
-    <img src="/assets/courses/image 84 (1).png" class=" py-5" alt="parterns" />
+    @include('courses.logoSlider')
 </section>
 
 <!--end scetion-->
