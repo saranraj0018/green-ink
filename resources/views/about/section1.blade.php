@@ -1,25 +1,47 @@
 @php
     $mentors = [
         [
-            'img' => '/assets/about/profile.png',
+            'img' => '/assets/about/sylendra.png',
             'role' => 'Mentor',
-            'name' => 'Dr. Sarah Mitchell',
-            'designation' => 'Senior Software Architect',
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit.',
-            'star' => 4.9,
-            'students' => '25,000+ Students',
-            'courses' => '8+ Courses',
+            'name' => 'Sylendra Babu IPS',
+            'designation' => 'Ex-DGP, Tamil Nadu',
+            'description' =>
+                'A guiding force at GreenInk, Sylendra Babu sir inspires aspirants through powerful webinars and mentoring sessions—instilling discipline, clarity, and the mindset to aim higher.',
+            // 'star' => 4.9,
+            // 'students' => '25,000+ Students',
+            // 'courses' => '8+ Courses',
+        ],
+        [
+            'img' => '/assets/about/mohan.png',
+            'role' => 'Ex-Banker | Guest Faculty - RBI & Indian Bank',
+            'name' => 'Mohan Kumar',
+            'designation' => 'Research Scientist',
+            'description' =>
+                'With service at BOI, IPPB, and BOM—and a Finance Ministry award to his credit—Mohan Kumar sir has designed GreenInk’s Central Government Exams curriculum, mentoring students to crack exams with confidence.',
+            // 'star' => 4.9,
+            // 'students' => '25,000+ Students',
+            // 'courses' => '8+ Courses',
         ],
         [
             'img' => '/assets/about/profile.png',
-            'role' => 'Trainer',
-            'name' => 'Prof. Emily',
+            'role' => 'Author | Competitive Exams Expert',
+            'name' => 'Ilayaraja Kannan',
             'designation' => 'Research Scientist',
-            'description' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit.',
-            'star' => 4.9,
-            'students' => '25,000+ Students',
-            'courses' => '8+ Courses',
+            'description' =>
+                ' Renowned TNPSC author and mentor to 200+ government officers, Ilayaraja Kannan sir brings deep exam insight and proven strategies to help aspirants excel. Recipient of the Dr. A.P.J. Abdul Kalam Award.',
+            // 'star' => 4.9,
+            // 'students' => '25,000+ Students',
+            // 'courses' => '8+ Courses',
         ],
+    ];
+    $galleryImages = [
+        '/assets/about/gallery1.png',
+        '/assets/about/gallery2.png',
+        '/assets/about/gallery3.png',
+        '/assets/about/gallery4.png',
+        '/assets/about/gallery5.png',
+        '/assets/about/gallery6.png',
+        '/assets/about/gallery7.png',
     ];
 @endphp
 
@@ -66,31 +88,29 @@
 <section class="my-container py-10" style="background: linear-gradient(0deg, #F8FFFE 0%, #FDD57B 100%);">
     <h2 class="text-center text-xl md:text-3xl font-bold text-primary">Featured on Television
     </h2>
-    <p class="text-center text-black text-[16px] my-2">Lorem ipsum dolor sit amet consectetur adipiscing elit.
-        <br>Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in
-        id.
+    <p class="text-center text-black text-[16px] my-2">A trusted name in competitive exam coaching—recognized on TV for
+        impact, innovation, and results that matter.
     </p>
     <div class="grid grid-cols-12 gap-3 md:gap-5 mt-10">
         <div class="col-span-12 md:col-span-2 bg-white rounded-2xl p-4 my-auto">
             <p class="text-[15px]">
-                GreenInk Academy was featured on Vijay Super Channel, showcasing our dedication to transforming education and empowering students across the nation.
+                GreenInk Academy was featured on Vijay Super Channel, showcasing our dedication to transforming
+                education and empowering students across the nation.
             </p>
         </div>
         <div class="col-span-12 md:col-span-4">
             <img src="/assets/about/vijay1.png" class="w-6/7 mx-auto" alt="pic" />
         </div>
         <div class="col-span-12 md:col-span-4">
-            <img src="/assets/about/vijay2.png" class="w-6/7 mx-auto" alt="pic" />
+            <img src="/assets/about/news7.png" class="w-6/7 mx-auto" alt="pic" />
         </div>
         <div class="col-span-12 md:col-span-2 bg-white rounded-2xl p-4 my-auto">
             <p class="text-[15px]">
-                GreenInk Academy was featured on Vijay Super Channel, showcasing our dedication to transforming education and empowering students across the nation.
+                GreenInk Academy was featured on Vijay Super Channel, showcasing our dedication to transforming
+                education and empowering students across the nation.
             </p>
         </div>
-
     </div>
-
-
 </section>
 
 <section class="my-container my-10 space-y-3">
@@ -113,8 +133,8 @@
                     <!-- Profile Image -->
                     <div class="relative z-10">
                         <span
-                            class="absolute left-40 bg-green-900 text-white text-sm px-8 py-1
-                    rounded-tl-xl rounded-br-xl z-50">
+                            class="absolute left-30 bg-green-900 text-white text-sm px-8 py-1
+                    rounded-tl-xl rounded-br-xl z-50 w-max">
                             {{ $mentor['role'] }}
                         </span>
                         <div class="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 rounded-xl"></div>
@@ -136,7 +156,7 @@
                             {{ $mentor['description'] }}
                         </p>
 
-                        <!-- Rating -->
+                        {{-- <!-- Rating -->
                         <div class="flex items-center gap-2 mt-3 bg-[#FFD77B] rounded-full px-3 py-1 w-max">
                             <span class="starIcon"></span>
                             <span class="text-sm font-medium">{{ $mentor['star'] }}</span>
@@ -152,7 +172,7 @@
                                 <span class="courses"></span>
                                 <span class="text-[#BE8400]">{{ $mentor['courses'] }}</span>
                             </div>
-                        </div>
+                        </div> --}}
                     </div>
 
                 </div>
@@ -178,39 +198,70 @@
 
 </section>
 
+
 <!--gallery-->
 <section class="my-container py-10 bg-white">
-    <h2 class="text-center text-lg md:text-5xl font-bold text-primary-light">GALLERY</h2>
-    <p class="text-center text-sm font-normal text-gray-500 py-2">
+    <h2 class="text-center text-lg md:text-5xl font-bold text-primary-light">
+        GALLERY
+    </h2>
+    <p class="text-center text-sm text-gray-500 py-2">
         Snapshots of our vibrant learning community
     </p>
 
-    <div class="grid grid-cols-12 py-2 gap-2 md:gap-3">
-        <div class="col-span-12 md:col-span-3 space-y-3">
-            <img src="/assets/about/gallery1.png" alt="gallery pic" class="w-full " />
-            <img src="/assets/about/gallery3.png" alt="gallery pic" class="w-full " />
-        </div>
-
-        <div class="col-span-12 md:col-span-6 space-y-3">
-            <img src="/assets/about/gallery2.png" alt="gallery pic" class="w-full " />
-            <div class="flex gap-2 md:gap-4">
-                <img src="/assets/about/gallery5.png" alt="gallery pic" class="w-1/2 md:w-full " />
-                <img src="/assets/about/gallery4.png" alt="gallery pic" class="w-1/2 md:w-full " />
+    <!-- Masonry -->
+    <div class="columns-2 md:columns-3 gap-4 py-6">
+        @foreach ($galleryImages as $index => $image)
+            <div class="mb-4 break-inside-avoid">
+                <img src="{{ $image }}" onclick="openGallery({{ $index }})"
+                    class="w-full rounded-xl cursor-zoom-in transition hover:opacity-90" alt="Gallery image" />
             </div>
-        </div>
-
-        <div class="col-span-12 md:col-span-3 space-y-3">
-            <img src="/assets/about/gallery6.png" alt="gallery pic" class="w-full " />
-            <img src="/assets/about/gallery7.png" alt="gallery pic" class="w-full " />
-        </div>
-
+        @endforeach
     </div>
-    <div class="flex justify-center my-3">
-        <a href="/contact"
-            class="text-center text-lg text-white font-medium py-2 px-10 bg-[#202020] rounded-3xl">Connect with us</a>
+    <div class="flex justify-center my-6">
+        <a href="/contact" class="text-lg text-white font-medium py-2 px-10 bg-[#202020] rounded-3xl">
+            Connect with us
+        </a>
     </div>
 </section>
+<!-- Lightbox -->
+<div id="lightbox" class="fixed inset-0 bg-black/95 hidden z-10000 flex items-center justify-center">
 
+    <!-- Close -->
+    <button onclick="closeGallery()" class="absolute top-6 right-6 text-white text-4xl leading-none hover:opacity-70">
+        &times;
+    </button>
+
+    <!-- Image Wrapper -->
+    <div class="max-w-[95vw] max-h-[90vh] flex items-center justify-center">
+        <img id="lightboxImg" class="object-contain max-w-full max-h-full rounded-lg shadow-2xl"
+            alt="Gallery Preview" />
+    </div>
+</div>
+
+<script>
+    const images = @json($galleryImages);
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+
+    function openGallery(index) {
+        lightbox.classList.remove('hidden');
+        lightboxImg.src = images[index];
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeGallery() {
+        lightbox.classList.add('hidden');
+        lightboxImg.src = '';
+        document.body.style.overflow = 'auto';
+    }
+
+    // Close on background click
+    lightbox.addEventListener('click', (e) => {
+        if (e.target === lightbox) {
+            closeGallery();
+        }
+    });
+</script>
 
 
 <script>

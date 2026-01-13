@@ -1,7 +1,7 @@
  <!-- banner section-->
-<a href="/feature">
- <img src="/assets/Features/featureBan.png" class="" alt="" />
-</a>
+ <a href="/feature">
+     <img src="/assets/Features/frs-banner.png" class="" alt="" />
+ </a>
 
  <!-- second section-->
  <section class="my-container py-10">
@@ -55,7 +55,7 @@
                  and revise efficiently before exams.</p>
          </div>
      </div> --}}
-     <img src="/assets/features/feat-info.png" alt="" class="w-full md:w-3/4 mx-auto">
+     <img src="/assets/features/feature-info.png" alt="" class="w-full md:w-3/4 mx-auto">
  </section>
 
  <!-- --->

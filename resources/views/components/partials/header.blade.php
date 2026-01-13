@@ -12,13 +12,13 @@
     <div class="mx-auto px-4 md:px-10 py-1">
         <div class="grid grid-cols-12 gap-1 md:gap-2">
             <!-- Logo -->
-            <div class="col-span-8 lg:col-span-3">
+            <div class="col-span-8 lg:col-span-2">
                 <a href="/" class="flex items-center">
-                    <img src="{{ asset('assets/greeninklogo.png') }}" alt="logo" class="w-full md:w-4/5">
+                    <img src="{{ asset('assets/greeninklogo.png') }}" alt="logo" class="w-full">
                 </a>
             </div>
 
-            <div class="col-span-4 md:col-span-1 lg:col-span-7 my-auto">
+            <div class="col-span-4 md:col-span-1 lg:col-span-8 my-auto">
                 @include('components.partials.nav')
             </div>
 
@@ -26,7 +26,7 @@
                 <div class="flex gap-1 my-auto justify-end">
                     <a href="tel:+91 84287 75012"
                         class="px-2 py-1 bg-primary border text-white rounded-full hover:bg-green-700 text-sm flex gap-1">
-                        <span class="callIcon my-auto"></span> +91 84287 75012
+                        <span class="callIcon my-auto"></span><span class="my-auto">+91 84287 75012</span>
                     </a>
                     <a href="/cart" class="rounded-full p-2 bg-[#f2f2f2]">
                         <span class="BagIcon"></span>
@@ -38,6 +38,20 @@
                 </div>
             </div>
         </div>
+    </div>
+    <div class="py-0.5 my-container" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%), linear-gradient(90deg, #00BC7D 0%, #096 100%);">
+        <marquee
+        behavior="scroll"
+        direction="left"
+        scrollamount="5"
+        onmouseover="this.stop();"
+        onmouseout="this.start();"
+        style="font-family: 'Poppins', sans-serif; font-size:15px; color:#fff;"
+        >
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam maiores dolores neque esse accusamus expedita facere cumque id, minus perferendis, dolorum rerum delectus, alias recusandae. Maxime sint totam maiores iusto.
+        </marquee>
+
+
     </div>
 </section>
 

@@ -5,7 +5,7 @@
         </div>
         <div class="col-span-12 md:col-span-7 space-y-3 md:me-20 my-auto">
             <h2 class="text-3xl font-medium">
-                Meet our Founders
+                Meet our Ambassador
             </h2>
             <hr class="w-20 border-2 border-primary">
             <h3 class="text-xl font-medium">
@@ -15,9 +15,12 @@
                 Tamil Orator & Motivational Speaker
             </p>
             <p class="text-sm border-l-3 border-primary ps-2">
-                "Education is not just about knowledge it's about transformation. Every student deserves the tools and
-                guidance to unlock their true potential."
+                Bharathi Baskar, GreenInk’s proud Brand Ambassador, is a renowned orator, motivational speaker, and writer who has inspired lakhs of students and aspirants across India.
             </p>
+            <p class="text-sm border-l-3 border-primary ps-2">
+                She is the recipient of prestigious honours such as the Rajeev-Mooppanar Award and Tamil Sundar Award for her contributions to education and public speaking. Widely admired for her impactful presence on Pattimandram, she motivates learners to think boldly, aim higher, and achieve excellence—values that perfectly align with GreenInk’s mission.
+            </p>
+
         </div>
     </div>
 </div>
