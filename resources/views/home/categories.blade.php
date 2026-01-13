@@ -8,7 +8,7 @@
 <div class="swiper mySwiper w-full relative">
     <div class="swiper-wrapper">
         <a href="/courses" class="swiper-slide">
-            <img src="/assets/hero-banner.png" alt="banner">
+            <img src="/assets/banner1.png" alt="banner">
         </a>
         <a href="/courses" class="swiper-slide">
             <img src="/assets/banner2.png" alt="banner">

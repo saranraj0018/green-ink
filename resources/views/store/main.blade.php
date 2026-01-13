@@ -1,5 +1,5 @@
   <x-partials.header />
-  <img src="/assets/store/store.png" alt="" class="lg:mt-3">
+  <img src="/assets/store/str-banner.png" alt="" class="lg:mt-3">
   @include('store.books')
 
 
