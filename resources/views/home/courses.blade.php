@@ -4,7 +4,7 @@
         <!-- Section Header -->
         <div class="text-center mb-12">
             <span class="px-4 py-2 bg-[#F4F4F4] rounded-full text-sm font-medium border-t-2 border-primary-light">
-               Why choose GreenInk Academy?
+               What makes GreenInk different: AI-Powered Practice with Expert-Led Live Classes
 
             </span>
 
