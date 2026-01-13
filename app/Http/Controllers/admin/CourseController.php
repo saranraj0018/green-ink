@@ -32,6 +32,7 @@ class CourseController extends Controller
                 'category_id' => 'required',
                 'type' => 'required',
                 'hours' => 'required',
+                'members' => 'required',
                 'star_point' => 'required',
                 'description' => 'required',
                 'course_overview' => 'required',
@@ -63,6 +64,7 @@ class CourseController extends Controller
             $course->type = $request['type'];
             $course->amount = $request['amount'] ?? 0;
             $course->hours = $request['hours'];
+            $course->members = $request['members'];
             $course->star_point = $request['star_point'];
             $course->description = $request['description'] ?? 0;
             $course->hours = $request['hours'];

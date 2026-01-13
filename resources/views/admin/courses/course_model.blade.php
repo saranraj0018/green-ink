@@ -59,6 +59,12 @@
                         class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
                 </div>
 
+                <div>
+    <label class="block mb-1 font-medium">Members</label>
+    <input id="members" name="members" type="number"
+        class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
+</div>
+
                 <!-- Star -->
                 <div>
                     <label class="block mb-1 font-medium">Star Rating</label>
