@@ -58,6 +58,7 @@
                                     data-image="{{ $course->image ? asset('storage/' . $course->image) : '' }}"
                                     data-category="{{ $course->category_id }}" data-type="{{ $course->type }}"
                                     data-amount="{{ $course->amount }}" data-hours="{{ $course->hours }}"
+                                     data-members="{{ $course->members }}"
                                     data-star="{{ $course->star_point }}"
                                     data-description="{{ $course->description }}"
                                     data-overview="{{ $course->course_overview }}"

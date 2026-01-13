@@ -54,6 +54,7 @@ $(function () {
         $("#type").val($(this).data("type"));
         $("#amount").val($(this).data("amount"));
         $("#hours").val($(this).data("hours"));
+        $("#members").val($(this).data("members"));
         $("#star_point").val($(this).data("star"));
         $("#description").val($(this).data("description"));
         $("#course_overview").val($(this).data("overview"));
@@ -199,6 +200,7 @@ $(function () {
             { id: "#category_id", message: "Please Select Category" },
             { id: "#type", message: "Please Select Course Type" },
             { id: "#hours", message: "Course Hours is required" },
+            { id: "#members", message: "Members count is required" },
             { id: "#star_point", message: "Star Point is required" },
             { id: "#course_overview", message: "Course Overview is required" },
             { id: "#instructor", message: "Course Instructor is required" },
