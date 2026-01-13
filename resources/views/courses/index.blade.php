@@ -1,88 +1,64 @@
-@php
-    $course = collect([
-        (object) [
-            'id' => 1,
-            'image' => '/assets/courses/course1.png',
-            'type' => 'paid',
-            'title' => 'UI / UX Design Masterclass',
-            'description' =>
-                'Lorem ipsum dolor sit amet consectetur adipiscing elit. Consequat adipiscing elit quisque faucibus ex sapien.',
-            'star_point' => 4.8,
-            'hours' => 24,
-            'amount' => 49,
-            'get_category' => (object) [
-                'name' => 'Design',
-            ],
-        ],
-        (object) [
-            'id' => 2,
-            'image' => '/assets/courses/course1.png',
-            'type' => 'free',
-            'title' => 'Laravel for Beginners',
-            'description' =>
-                'Lorem ipsum dolor sit amet consectetur adipiscing elit. Consequat adipiscing elit quisque faucibus ex sapien.',
-            'star_point' => 4.6,
-            'hours' => 18,
-            'amount' => 0,
-            'get_category' => (object) [
-                'name' => 'Development',
-            ],
-        ],
-    ]);
-@endphp
-
-
 
 @section('content')
     <section class="my-container mt-10">
         <div class="grid grid-cols-12 gap-6">
 
             @foreach ($course as $courses)
-                <div class="col-span-12 lg:col-span-6">
-                    <div class="grid grid-cols-12 rounded-2xl gap-4 items-center"
-                        style="background: linear-gradient(114deg, #FFF 40.52%, #FFEDC3 69.26%);">
+                   <div class="col-span-12 lg:col-span-6">
+                <div class="grid grid-cols-12 rounded-2xl gap-4 items-center"
+                    style="background: linear-gradient(114deg, #FFF 40.52%, #FFEDC3 69.26%);">
 
-                        <!-- Image -->
-                        <div class="col-span-12 md:col-span-4 relative">
-                            <img src="/assets/courses/course1.png" class="w-full h-full object-cover rounded-xl"
-                                alt="{{ $courses->title }}">
+                    <!-- Image -->
+                    <div class="col-span-12 md:col-span-4 relative">
+                        <img src="{{ asset('storage/'.$courses->image) }}"
+                             class="w-full h-full object-cover rounded-xl"
+                             alt="{{ $courses->title }}">
 
-                            @if ($courses->type == 'paid')
-                                <span
-                                    class="absolute top-2 right-2 bg-[#FFC31F] text-[#014631]
-                                       text-xs px-4 py-1 rounded-full font-medium">
-                                    Premium
+                        @if ($courses->type === 'paid')
+                            <span
+                                class="absolute top-2 right-2 bg-[#FFC31F] text-[#014631]
+                                text-xs px-4 py-1 rounded-full font-medium">
+                                Premium
+                            </span>
+                        @endif
+                    </div>
+
+                    <!-- Content -->
+                    <div class="col-span-12 md:col-span-8 p-4">
+                        <h3 class="text-lg font-semibold text-[#014631] leading-snug">
+                            {{ $courses->title }}
+                        </h3>
+
+                        <p class="text-sm text-primary mt-1 leading-relaxed">
+                            {{ $courses->description }}
+                        </p>
+
+                        <div class="flex gap-3 mt-3">
+                            <div
+                                class="flex items-center gap-4 text-xs text-gray-600
+                                bg-white/40 rounded-lg w-max p-1 border border-white">
+
+                                <span class="flex items-center gap-1 text-[#014631]">
+                                    ⭐ {{ $courses->star_point }}
                                 </span>
-                            @endif
-                        </div>
 
-                        <!-- Content -->
-                        <div class="col-span-12 md:col-span-8 p-4">
-                            <h3 class="text-lg font-semibold text-[#014631] leading-snug">
-                                {{ $courses->title }}
-                            </h3>
+                                <span class="flex items-center gap-1">
+                                    👤 {{ number_format($courses->members) }}
+                                </span>
 
-                            <p class="text-sm text-primary mt-1 leading-relaxed">
-                                {{ $courses->description }}
-                            </p>
-
-                            <div class="flex gap-3 mt-3">
-                                <div
-                                    class="flex items-center gap-4 text-xs text-gray-600 bg-white/40 rounded-lg w-max p-1 border border-white">
-                                    <span class="flex items-center gap-1 text-[#014631]">
-                                        ⭐ {{ $courses->star_point }}
-                                    </span>
-                                    <span class="flex items-center gap-1">
-                                        👤 25,000
-                                    </span>
-                                    <span class="flex items-center gap-1">
-                                        ⏱ {{ $courses->hours }}hrs
-                                    </span>
-                                </div>
-                                <span class="text-lg font-semibold text-[#014631] my-auto">
-                                    ${{ $courses->amount }}
+                                <span class="flex items-center gap-1">
+                                    ⏱ {{ $courses->hours }}hrs
                                 </span>
                             </div>
+
+                            <span class="text-lg font-semibold text-[#014631] my-auto">
+                                @if($courses->type === 'free')
+                                    Free
+                                @else
+                                    ₹{{ number_format($courses->amount) }}
+                                @endif
+                            </span>
+                        </div>
 
 
                             <!-- Footer -->

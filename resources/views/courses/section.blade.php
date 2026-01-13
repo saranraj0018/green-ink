@@ -1,6 +1,6 @@
 <!-- banner section-->
 <a href="/feature">
-<img src="/assets/courses/coursebanner.png" class="w-full" alt="" />
+    <img src="/assets/courses/coursebanner.png" class="w-full" alt="" />
 </a>
 <!-- serach bar-->
 <section class="w-full my-10">
@@ -17,18 +17,18 @@
 
         <!-- Search Bar -->
         <div class="mt-8">
-            <div class="relative">
-                <input id="courseSearch" type="text" placeholder="Search Courses"
-                    class="w-full py-4 pl-12 pr-4 rounded-full shadow-sm focus:ring-2 focus:ring-blue-500 focus:outline-none border border-gray-200 text-gray-700" />
+            <form method="GET" action="{{ url('/courses') }}">
+                <div class="relative">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Search Courses"
+                        class="w-full py-4 pl-12 pr-4 rounded-full shadow-sm
+                focus:ring-2 focus:ring-blue-500 focus:outline-none
+                border border-gray-200 text-gray-700" />
 
-                <!-- Search Icon -->
-                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 search">
-                    🔍
-                </span>
-            </div>
+                    <span class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 search"></span>
+                </div>
+            </form>
         </div>
 
-        {{-- ADDED FILTER BUTTONS - NEED TO SET DYNAMIC --}}
         <div class="my-5">
             <div class="flex gap-1 my-5">
                 <span class="FilterIcon"></span>
@@ -38,32 +38,22 @@
             </div>
 
             <div class="flex flex-wrap gap-3">
-                <a href="#"
-                    class="bg-white focus:bg-primary-light py-1 px-2 rounded-full text-sm text-primary-light focus:text-white border border-primary-light">
-                    All Courses
-                </a>
-                <a href="#"
-                    class="bg-white focus:bg-primary-light py-1 px-2 rounded-full text-sm text-primary-light focus:text-white border border-primary-light">
-                    Design
-                </a>
-                <a href="#"
-                    class="bg-white focus:bg-primary-light py-1 px-2 rounded-full text-sm text-primary-light focus:text-white border border-primary-light">
-                    Marketing
-                </a>
-                <a href="#"
-                    class="bg-white focus:bg-primary-light py-1 px-2 rounded-full text-sm text-primary-light focus:text-white border border-primary-light">
-                    Programming
-                </a>
-                <a href="#"
-                    class="bg-white focus:bg-primary-light py-1 px-2 rounded-full text-sm text-primary-light focus:text-white border border-primary-light">
-                    Data Science
-                </a>
-                <a href="#"
-                    class="bg-white focus:bg-primary-light py-1 px-2 rounded-full text-sm text-primary-light focus:text-white border border-primary-light">
-                    Management
-                </a>
-            </div>
+                    <a href="{{ url('/courses?search='.request('search')) }}"
+       class="py-1 px-3 rounded-full text-sm border
+       {{ request('category') == null
+            ? 'bg-primary-light text-white'
+            : 'bg-white text-primary' }}">
+        All
+    </a>
+                @foreach ($categories as $cat)
+                    <a href="{{ url('/courses?category=' . $cat->id . '&search=' . request('search')) }}"
+                        class="py-1 px-3 rounded-full text-sm border
+                       {{ request('category') == $cat->id ? 'bg-primary-light text-white' : 'bg-white text-primary' }}">
+                        {{ $cat->name }}
+                    </a>
+                @endforeach
 
+            </div>
         </div>
     </div>
 </section>
