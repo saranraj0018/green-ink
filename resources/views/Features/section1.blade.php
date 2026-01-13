@@ -54,13 +54,14 @@
          </div>
      </section>
      <section class="my-container my-10 py-10 bg-[#fafafa] space-y-3">
-        <h2 class="text-2xl text-center font-medium">
-            Our Collaborations
-        </h2>
-        <p class="text-center text-sm">
-            Lorem ipsum dolor sit amet consectetur adipiscing elit.<br> Consectetur adipiscing elit quisque faucibus ex sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
-        </p>
-        <img src="/assets/features/collaborations.png" class="w-full md:w-4/5 mx-auto mt-3" alt="" />
+         <h2 class="text-2xl text-center font-medium">
+             Our Collaborations
+         </h2>
+         <p class="text-center text-sm">
+             Lorem ipsum dolor sit amet consectetur adipiscing elit.<br> Consectetur adipiscing elit quisque faucibus ex
+             sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
+         </p>
+         <img src="/assets/features/ocolab.png" class="w-full md:w-4/5 mx-auto mt-3" alt="" />
 
      </section>
 

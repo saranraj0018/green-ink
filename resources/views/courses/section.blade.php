@@ -1,6 +1,6 @@
 <!-- banner section-->
 <a href="/feature">
-    <img src="/assets/courses/coursebanner.png" class="w-full" alt="" />
+<img src="/assets/courses/crs-banner.png" class="w-full" alt="" />
 </a>
 <!-- serach bar-->
 <section class="w-full my-10">
