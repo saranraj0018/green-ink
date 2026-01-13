@@ -4,7 +4,7 @@
   @include('home.founder')
   @include('home.courses', ['courses' => $course])
 
-  <div class="my-container my-10 py-24 bg-cover bg-top bg-no-repeat space-y-4"
+  <div class="my-container my-10 pt-14 bg-cover bg-top bg-no-repeat space-y-4"
       style="background-image: url('{{ asset('assets/inspiringBg.png') }}');">
       <div class="grid grid-cols-12 gap-3">
           <div class="col-span-12 md:col-span-6 my-auto">
@@ -30,7 +30,7 @@
               </ul>
           </div>
           <div class="col-span-12 md:col-span-6 my-auto">
-              <img src="/assets/founder.png" alt="Founder Image" />
+              <img src="/assets/rjanandi.png" alt="Founder Image" />
           </div>
       </div>
   </div>
