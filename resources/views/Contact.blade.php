@@ -1,6 +1,6 @@
 <x-partials.header />
 <!-- banner section-->
-<img src="/assets/cont-banner.png" class="w-full" alt="" />
+<img src="/assets/cnt-banner.png" class="w-full" alt="" />
 
 <div class="my-container my-14 ">
 
@@ -12,10 +12,34 @@
         </p>
     </div>
     <div class="grid grid-cols-12 gap-3 md:gap-5">
-        <div class="col-span-12 md:col-span-6 bg-cover bg-center bg-no-repeat p-5 rounded-2xl"
-            style="background-image:url({{ asset('assets/cbg.png') }}) ">
-            <h3 class="text-2xl font-semibold text-primary mb-5">Contact Information</h3>
-            <p class="text-primary mb-6">
+        <div class="col-span-12 md:col-span-6">
+            <h3 class="text-2xl font-semibold mb-6">Send us a message</h3>
+            <form id="contactForm" action="{{ route('contact.submit') }}" method="POST">
+                @csrf
+
+                <!-- Name -->
+                <label class="block font-medium">Your Name</label>
+                <input type="text" name="name" placeholder="John Doe"
+                    class="w-full mt-2 mb-5 px-4 py-3 border border-[#DBDBDB] rounded-3xl focus:ring focus:ring-green-300">
+
+                <!-- Email -->
+                <label class="block font-medium">Email Address</label>
+                <input type="email" name="email" placeholder="john@example.com"
+                    class="w-full mt-2 mb-5 px-4 py-3 border border-[#DBDBDB] rounded-3xl focus:ring focus:ring-green-300">
+
+                <!-- Message -->
+                <label class="block font-medium">Message</label>
+                <textarea name="message" rows="5" placeholder="Tell us how we can help you..."
+                    class="w-full mt-2 mb-5 px-4 py-3 border  border-[#DBDBDB] rounded-3xl focus:ring focus:ring-green-300"></textarea>
+                <button type="submit"
+                    class="bg-linear-to-b from-[#008357] to-[#2BCD97] text-white px-8 py-3 rounded-full hover:bg-green-700 ">
+                    Send Message
+                </button>
+            </form>
+        </div>
+        <div class="col-span-12 md:col-span-6 bg-cover bg-center bg-no-repeat p-5 rounded-2xl">
+            <h3 class="text-2xl font-semibold mb-5">Contact Information</h3>
+            <p class="mb-6">
                 We're here to help! Reach out through any of these channels and our team will get back to you promptly.
             </p>
 
@@ -48,31 +72,7 @@
             </div>
 
         </div>
-        <div class="col-span-12 md:col-span-6">
-            <h3 class="text-2xl font-semibold mb-6">Send us a message</h3>
-            <form id="contactForm" action="{{ route('contact.submit') }}" method="POST">
-                @csrf
 
-                <!-- Name -->
-                <label class="block font-medium">Your Name</label>
-                <input type="text" name="name" placeholder="John Doe"
-                    class="w-full mt-2 mb-5 px-4 py-3 border border-[#DBDBDB] rounded-3xl focus:ring focus:ring-green-300">
-
-                <!-- Email -->
-                <label class="block font-medium">Email Address</label>
-                <input type="email" name="email" placeholder="john@example.com"
-                    class="w-full mt-2 mb-5 px-4 py-3 border border-[#DBDBDB] rounded-3xl focus:ring focus:ring-green-300">
-
-                <!-- Message -->
-                <label class="block font-medium">Message</label>
-                <textarea name="message" rows="5" placeholder="Tell us how we can help you..."
-                    class="w-full mt-2 mb-5 px-4 py-3 border  border-[#DBDBDB] rounded-3xl focus:ring focus:ring-green-300"></textarea>
-                <button type="submit"
-                    class="bg-linear-to-b from-[#008357] to-[#2BCD97] text-white px-8 py-3 rounded-full hover:bg-green-700 ">
-                    Send Message
-                </button>
-            </form>
-        </div>
 
     </div>
 

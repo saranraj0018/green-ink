@@ -1,9 +1,5 @@
 <x-partials.header />
-<section class="pt-20 md:pt-40 pb-20 md:pb-30 text-center text-2xl md:text-5xl font-bold text-white"
-    style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%), linear-gradient(90deg, #00BC7D 0%, #096 100%);">
-    SUBSCRIPTION
-
-</section>
+<img src="/assets/subscription/subs-banner.png" alt="ai-info" class="w-full">
 
 <section class="my-container my-10">
     <div class="grid grid-cols-12 gap-3">
