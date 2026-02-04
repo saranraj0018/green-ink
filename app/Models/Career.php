@@ -10,4 +10,9 @@ class Career extends Model
     {
         return $this->belongsTo(Admin::class, 'admin_id');
     }
+
+    public function applications()
+{
+    return $this->hasMany(CareerApplication::class, 'career_id');
+}
 }

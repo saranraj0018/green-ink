@@ -43,6 +43,13 @@ Route::prefix('admin')->group(function () {
             Route::post('/save', 'save')->name('save.career');
             Route::post('/delete', 'destroy')->name('delete.career');
             Route::get('/applications', 'index')->name('career.applications');
+            Route::get('/applications/{id}', 'show')->name('career.show');
+        });
+
+        Route::prefix('book')->controller(\App\Http\Controllers\admin\BookController::class)->group(function () {
+            Route::get('/list', 'view')->name('view.book');
+            Route::post('/save', 'save')->name('save.book');
+            Route::post('/delete', 'destroy')->name('delete.book');
         });
 
         Route::get('/course-list', [CourseController::class, 'index'])->name('course_list');

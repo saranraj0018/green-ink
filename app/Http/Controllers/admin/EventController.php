@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Event;
+use Illuminate\Support\Facades\Validator;
 use App\Models\EventRegistration;
 use Illuminate\Support\Facades\Auth;
 
@@ -26,13 +27,24 @@ class EventController extends Controller
         'title'       => 'required|string|max:255',
         'description' => 'required|string',
         'event_date'  => 'required|date',
-        'start_time'  => 'required|date_format:H:i',
-        'end_time'    => 'required|date_format:H:i|after:start_time',
+        'start_time'  => 'required|date_format:H:i:s',
+        'end_time'    => 'required|date_format:H:i:s|after:start_time',
         'mode'        => 'required|string|max:255',
         'status'      => 'required|boolean',
+        'fee_type'    => 'required|in:free,paid',
+        'amount'      => 'nullable|required_if:fee_type,paid|numeric|min:0'
             ];
 
-        $request->validate($rules);
+       $validator = Validator::make($request->all(), $rules);
+
+    // 🔴 HERE IS THE KEY PART
+    if ($validator->fails()) {
+        return response()->json([
+            'success' => false,
+            'errors'  => $validator->errors(),
+            'data'    => $request->all(), // 👈 what actually came
+        ], 422);
+    }
 
         // ===== Create / Update logic =====
         if (!empty($request->event_id)) {
@@ -51,6 +63,10 @@ class EventController extends Controller
         $event->end_time    = $request->end_time;
         $event->mode        = $request->mode;
         $event->status      = $request->status;
+        $event->fee_type = $request->fee_type;
+        $event->amount   = $request->fee_type === 'paid'
+                    ? $request->amount
+                    : null;
         $event->admin_id    = Auth::guard('admin')->id();
 
         $event->save();
@@ -99,5 +115,5 @@ class EventController extends Controller
 
         return view('admin.event.registrations', compact('registrations'));
     }
-    
+
 }
