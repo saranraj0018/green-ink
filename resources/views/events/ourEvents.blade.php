@@ -1,3 +1,4 @@
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <section class="my-container my-10 space-y-3">
     <h2 class="text-2xl text-center text-primary font-medium">
         OUR EVENTS
@@ -43,10 +44,20 @@
                     Mode: {{ ucfirst($event->mode) }}
                 </div>
 
-                <button
-                    class="register-btn w-full px-4 py-2 text-white rounded-full text-sm"
+                <div class="text-sm font-medium">
+                    @if ($event->fee_type === 'free')
+                        <span class="text-green-600"> Free Event</span>
+                    @else
+                        <span class="text-red-600">
+                            Paid Event — ₹{{ number_format($event->amount, 2) }}
+                        </span>
+                    @endif
+                </div>
+
+                <button class="register-btn w-full px-4 py-2 text-white rounded-full text-sm"
                     style="background: linear-gradient(180deg, #009468 0%, #1B4D3E 100%);"
-                    data-event-index="{{ $index }}">
+                    data-event-index="{{ $index }}" data-fee-type="{{ $event->fee_type }}"
+                    data-event-id="{{ $event->id }}">
                     Register Now
                 </button>
             </div>
@@ -56,10 +67,10 @@
     <!-- Registration Modals -->
     @foreach ($events as $index => $event)
         <div id="registerModal{{ $index }}"
-            class="fixed inset-0 hidden flex items-center justify-center z-1000 p-4 bg-black/50">
+            class="fixed inset-0 hidden flex justify-center items-start z-50 bg-black/50 overflow-y-auto">
 
             <div
-                class="bg-white rounded-2xl p-4 md:p-8 max-w-md w-full max-h-[90vh] overflow-y-auto border border-gray-300">
+                class="bg-white rounded-2xl p-4 md:p-8 max-w-md w-full mt-20 mb-10 max-h-[90vh] overflow-y-auto border border-gray-300">
 
                 <div class="flex justify-between items-center mb-6">
                     <h3 class="text-lg md:text-2xl font-bold">
@@ -80,6 +91,15 @@
 
                     <div>
                         <strong>Mode:</strong> {{ ucfirst($event->mode) }}
+                    </div>
+                    <div class="text-sm font-medium">
+                        @if ($event->fee_type === 'free')
+                            <span class="text-green-600">🎉 Free Event</span>
+                        @else
+                            <span class="text-red-600">
+                                💰 Paid Event — ₹{{ number_format($event->amount, 2) }}
+                            </span>
+                        @endif
                     </div>
                 </div>
 
@@ -114,6 +134,44 @@
             </div>
         </div>
     @endforeach
+
+    <!-- Paid Event Payment Modal -->
+    <div id="paymentModal" class="fixed inset-0 hidden bg-[#0000008f] items-center justify-center z-50">
+        <div class="bg-white w-96 p-6 rounded-xl space-y-4">
+            <h2 class="text-lg font-semibold text-center">Enter Your Details</h2>
+
+            <div>
+                <label class="text-sm">Full Name</label>
+                <input id="pay_name" name="pay_name" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 nameError"></p>
+            </div>
+            <div>
+                <label class="text-sm">Email</label>
+                <input id="pay_email" type="email" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 emailError"></p>
+            </div>
+            <div>
+                <label class="text-sm">Phone</label>
+                <input id="pay_phone" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 mobileError"></p>
+            </div>
+
+            <div class="flex gap-3 pt-3">
+                <button id="closeModal" class="w-1/2 border py-2 rounded">Cancel</button>
+                <button id="confirmPay" class="w-1/2 bg-[#FFB100] text-white py-2 rounded">Pay Now</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hidden Cashfree form -->
+    <form id="cashfreeForm" action="{{ route('cashfree.payment') }}" method="POST" class="hidden">
+        @csrf
+        <input type="hidden" name="event_id" id="cf_event_id">
+        <input type="hidden" name="name" id="cf_name">
+        <input type="hidden" name="email" id="cf_email">
+        <input type="hidden" name="phone" id="cf_phone">
+    </form>
+
     <div class="p-5 md:p-10 rounded-3xl my-10 space-y-3"
         style="background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), linear-gradient(83deg, #009468 1.56%, #1B4D3E 91.85%);">
         <h2 class="text-xl md:text-4xl font-medium text-white text-center">
@@ -131,7 +189,17 @@
     </div>
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+    function closeAllModals() {
+        document.querySelectorAll('[id^="registerModal"], #paymentModal')
+            .forEach(modal => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            });
+
+        document.body.style.overflow = 'auto';
+    }
     document.addEventListener("DOMContentLoaded", () => {
         // Icons setup
         const dateIcon = `<svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 22 22" fill="none">
@@ -152,106 +220,137 @@
         document.querySelectorAll('.timeIcon').forEach(el => el.innerHTML = timeIcon);
 
         // Modal functionality
-        const registerButtons = document.querySelectorAll('.register-btn');
-        registerButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                const eventIndex = e.currentTarget.getAttribute('data-event-index');
-                const modal = document.getElementById(`registerModal${eventIndex}`);
-                modal.classList.remove('hidden');
-                document.body.style.overflow = 'hidden'; // Prevent background scroll
+        document.querySelectorAll('.register-btn').forEach(button => {
+            button.addEventListener('click', () => {
+
+                closeAllModals(); // always close others first
+
+                const eventIndex = button.dataset.eventIndex;
+                const feeType = button.dataset.feeType;
+                const eventId = button.dataset.eventId;
+
+                if (feeType === 'free') {
+                    const modal = document.getElementById(`registerModal${eventIndex}`);
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+                } else {
+                    const modal = document.getElementById('paymentModal');
+                    modal.classList.remove('hidden');
+                    modal.classList.add('flex');
+
+                    $('#cf_event_id, #pay_name, #pay_email, #pay_phone').val('');
+                    $('#cf_event_id').val(eventId);
+                }
+
+                document.body.style.overflow = 'hidden';
             });
         });
 
         // Close modals
-        document.querySelectorAll('.close-modal, .fixed.inset-0').forEach(closeBtn => {
-            closeBtn.addEventListener('click', (e) => {
-                if (e.target.classList.contains('close-modal') || e.target.classList.contains(
-                        'fixed')) {
-                    document.querySelectorAll('[id^="registerModal"]').forEach(modal => {
+        document.querySelectorAll('.close-modal, #closeModal').forEach(btn => {
+            btn.addEventListener('click', () => {
+                document.querySelectorAll('[id^="registerModal"], #paymentModal').forEach(
+                    modal => {
                         modal.classList.add('hidden');
+                        modal.classList.remove('flex');
                     });
-                    document.body.style.overflow = 'auto';
+                document.body.style.overflow = 'auto';
+            });
+        });
+
+        // Free registration form submission
+        document.querySelectorAll('[id^="registerForm"]').forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const formData = new FormData(form);
+                const eventIndex = formData.get('event_index');
+                const messageEl = document.getElementById(`formMessage${eventIndex}`);
+                const modal = document.getElementById(`registerModal${eventIndex}`);
+                const submitBtn = form.querySelector('button[type="submit"]');
+                const originalText = submitBtn.innerHTML;
+
+                submitBtn.innerHTML = 'Registering...';
+                submitBtn.disabled = true;
+
+                try {
+                    const response = await fetch("{{ route('event.register') }}", {
+                        method: "POST",
+                        headers: {
+                            "X-CSRF-TOKEN": document.querySelector(
+                                'meta[name="csrf-token"]').content
+                        },
+                        body: formData
+                    });
+                    const result = await response.json();
+                    if (!result.success) {
+                        messageEl.className =
+                            'mt-4 p-3 rounded-lg text-center bg-yellow-100 text-yellow-800';
+                        messageEl.innerHTML = result.message;
+                        messageEl.classList.remove('hidden');
+                        return;
+                    }
+                    messageEl.className =
+                        'mt-4 p-3 rounded-lg text-center bg-green-100 text-green-800';
+                    messageEl.innerHTML = '✅ Registration successful!';
+                    messageEl.classList.remove('hidden');
+                    form.reset();
+                    setTimeout(() => {
+                        modal.classList.add('hidden');
+                        document.body.style.overflow = 'auto';
+                    }, 1500);
+                } catch (error) {
+                    messageEl.className =
+                        'mt-4 p-3 rounded-lg text-center bg-red-100 text-red-800';
+                    messageEl.innerHTML = '❌ Something went wrong';
+                    messageEl.classList.remove('hidden');
+                } finally {
+                    submitBtn.innerHTML = originalText;
+                    submitBtn.disabled = false;
+                    setTimeout(() => {
+                        messageEl.classList.add('hidden');
+                    }, 4000);
                 }
             });
         });
 
-        // Form submissions
-       document.querySelectorAll('[id^="registerForm"]').forEach(form => {
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
+        // Paid payment form
+        $('#confirmPay').on('click', function() {
+            $('.nameError, .emailError, .mobileError').text('');
+            const name = $('#pay_name').val().trim();
+            const email = $('#pay_email').val().trim();
+            const phone = $('#pay_phone').val().trim();
+            let hasError = false;
 
-        const formData = new FormData(form);
-        const eventIndex = formData.get('event_index');
-
-        const messageEl = document.getElementById(`formMessage${eventIndex}`);
-        const modal = document.getElementById(`registerModal${eventIndex}`);
-
-        const submitBtn = form.querySelector('button[type="submit"]');
-        const originalText = submitBtn.innerHTML;
-
-        submitBtn.innerHTML = 'Registering...';
-        submitBtn.disabled = true;
-
-        try {
-            const response = await fetch("{{ route('event.register') }}", {
-                method: "POST",
-                headers: {
-                    "X-CSRF-TOKEN": document
-                        .querySelector('meta[name="csrf-token"]')
-                        .content
-                },
-                body: formData
-            });
-
-            const result = await response.json();
-
-            // ❌ Duplicate case
-            if (!result.success) {
-                messageEl.className =
-                    'mt-4 p-3 rounded-lg text-center bg-yellow-100 text-yellow-800';
-                messageEl.innerHTML = result.message;
-                messageEl.classList.remove('hidden');
-                return;
+            if (!name) {
+                $('.nameError').text('Name is required');
+                hasError = true;
             }
+            if (!email || !/^\S+@\S+\.\S+$/.test(email)) {
+                $('.emailError').text('Valid email required');
+                hasError = true;
+            }
+            if (!phone || !/^\d{10}$/.test(phone)) {
+                $('.mobileError').text('Valid 10-digit phone');
+                hasError = true;
+            }
+            if (hasError) return;
 
-            // ✅ Success
-            messageEl.className =
-                'mt-4 p-3 rounded-lg text-center bg-green-100 text-green-800';
-            messageEl.innerHTML = '✅ Registration successful!';
-            messageEl.classList.remove('hidden');
+            $('#cf_name').val(name);
+            $('#cf_email').val(email);
+            $('#cf_phone').val(phone);
+            $('#cashfreeForm').submit();
+        });
 
-            form.reset();
-
-            // 🔥 Auto close modal after 1.5 sec
-            setTimeout(() => {
-                modal.classList.add('hidden');
-                document.body.style.overflow = 'auto';
-            }, 1500);
-
-        } catch (error) {
-            messageEl.className =
-                'mt-4 p-3 rounded-lg text-center bg-red-100 text-red-800';
-            messageEl.innerHTML = '❌ Something went wrong';
-            messageEl.classList.remove('hidden');
-        } finally {
-            submitBtn.innerHTML = originalText;
-            submitBtn.disabled = false;
-
-            setTimeout(() => {
-                messageEl.classList.add('hidden');
-            }, 4000);
-        }
-    });
-});
-
-        // Close modal on Escape key
-        document.addEventListener('keydown', (e) => {
+        // Close modal on Escape
+        document.addEventListener('keydown', e => {
             if (e.key === 'Escape') {
-                document.querySelectorAll('[id^="registerModal"]').forEach(modal => {
+                document.querySelectorAll('[id^="registerModal"], #paymentModal').forEach(modal => {
                     modal.classList.add('hidden');
+                    modal.classList.remove('flex');
                 });
                 document.body.style.overflow = 'auto';
             }
         });
+
     });
 </script>
