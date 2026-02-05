@@ -112,7 +112,13 @@
 
 <div class="success-section">
     <img src="{{ asset('images/success.png') }}" class="success-icon" alt="Success">
-    <div class="message">Payment Successful</div>
+    <div class="message">
+        Payment Successful
+        @if(session('student_id'))
+            <br><br>
+            Your Payment ID for this course: <strong>{{ session('student_id') }}</strong>
+        @endif
+    </div>
 </div>
 
 <x-partials.footer />

@@ -117,57 +117,20 @@ new Swiper(".mySwiper", {
                     Coaching for TNPSC, Banking, SSC, Railways, <br>TET & TNUSRB with concept clarity, exam-oriented
                     practice and personalised support.
                 </p>
-
-                @php
-                    $categories = [
-                        [
-                            'icon' => '/assets/in1.png',
-                            'title' => 'TNPSC (Group I, II, IIA, IV)',
-                            'courses' => 'Complete syllabus coverage, test series, revision plans & 1-to-1 guidance.',
-                        ],
-                        [
-                            'icon' => '/assets/in2.png',
-                            'title' => 'Banking (IBPS | SBI | Others)',
-                            'courses' =>
-                                'Aptitude speed, mock tests & interview readiness for national-level recruitment.',
-                        ],
-                        [
-                            'icon' => '/assets/in3.png',
-                            'title' => 'SSC (Central government staff selection exams)',
-                            'courses' => 'Foundation strengthening, accuracy training & time-managed revision.',
-                        ],
-                        [
-                            'icon' => '/assets/in4.png',
-                            'title' => 'Railways (RRB)',
-                            'courses' => 'Pattern analysis, regular practice & performance-based mocks.',
-                        ],
-                        [
-                            'icon' => '/assets/in5.png',
-                            'title' => 'TET (Teacher Eligibility Test)',
-                            'courses' => 'Pedagogy, child psychology & exam-specific preparation.',
-                        ],
-                        [
-                            'icon' => '/assets/in6.png',
-                            'title' => 'TNUSRB (Police, Jail Warder, and Fire & Rescue Services exams)',
-                            'courses' => 'Written tests, physical test guidance & mental readiness.',
-                        ],
-                    ];
-                @endphp
-
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
                     @foreach ($categories as $category)
                         <div
                             class="flex items-center gap-3 md:gap-8 bg-white p-6 rounded-2xl shadow-md hover:shadow-xl transition-all duration-300 border border-gray-100">
                             <div class="bg-green-50 p-2 rounded-full">
-                                <img src="{{ $category['icon'] }}"/>
+                                <img src="{{ asset('storage/'.$category->icon) }}" alt="{{ $category->title }}" />
                             </div>
 
                             <div class="space-y-2">
                                 <h3 class="text-[13px] font-semibold text-[#533B04]">
-                                    {{ $category['title'] }}
+                                      {{ $category->title }}
                                 </h3>
                                 <p class="text-sm font-medium">
-                                    {{ $category['courses'] }}
+                                     {{ $category->description }}
                                 </p>
                             </div>
                         </div>

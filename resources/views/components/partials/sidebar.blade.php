@@ -6,9 +6,14 @@
         <x-menu.item route="admin.dashboard" name="Dashboard" icon="fa-home"/>
         <x-menu.item route="view.category" name="Category" icon="fa-layer-group"/>
         <x-menu.item route="course_list" name="Course" icon="fa-book-open"/>
+        <x-menu.item route="course.registrations" name="Course Registrations" icon="fa-users"/>
         <x-menu.item route="view.event" name="Event" icon="fa-calendar-days"/>
         <x-menu.item route="view.career" name="Career" icon="fa-briefcase"/>
         <x-menu.item route="event.registrations" name="Event Registrations" icon="fa-users"/>
         <x-menu.item route="career.applications" name="Career Applications" icon="fa-file-alt"/>
+        <x-menu.item route="view.book" name="Books" icon="fa-book"/>
+        <x-menu.item route="view.marquee" name="Marquee" icon="fa-scroll"/>
+        <x-menu.item route="view.examcategory" name="Exam Category" icon="fa-list"/>
+        <x-menu.item route="view.settings" name="Settings" icon="fa-gear"/>
     </ul>
 </aside>
