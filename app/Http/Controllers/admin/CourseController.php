@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Course;
 use App\Models\CourseVideo;
+use App\Models\CourseRegistration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
@@ -205,4 +206,24 @@ class CourseController extends Controller
             ], 500);
         }
     }
+
+   public function list()
+    {
+        $registrations = CourseRegistration::with('payment')
+            ->whereHas('payment', function ($q) {
+                $q->where('status', 1); 
+            })
+            ->latest()
+            ->paginate(10);
+
+        return view('admin.courses.registrations', compact('registrations'));
+    }
+
+    public function show($id)
+{
+    $registration = CourseRegistration::with('payment')->findOrFail($id);
+
+    return view('admin.courses.show', compact('registration'));
+}
+
 }
