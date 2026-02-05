@@ -45,8 +45,8 @@
             <li><a href="/features" class="block hover:text-green-600">features</a></li>
             <li><a href="/events" class="block hover:text-green-600">Events</a></li>
             <li><a href="/careers" class="block hover:text-green-600">Careers</a></li>
-            <li><a href="/subscription" class="block hover:text-green-600">GreenInk LMS</a></li>
-            <li><a href="/contact" class="block hover:text-green-600">Contact</a></li>
+            <li>< href="/subscription" class="block hover:text-green-600">GreenInk LMS</ a></li>
+           <li><a href="/contact" class="block hover:text-green-600">Contact</a></li>
         </ul>
     </aside>
 </nav>

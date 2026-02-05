@@ -81,6 +81,8 @@ class HomeController extends Controller
 
         $this->data['course'] = Course::with('get_category')->get();
 
+         $this->data['categories'] = \App\Models\ExamCategory::where('status', 1)->get();
+         
         return view('home.main')->with($this->data);
     }
 

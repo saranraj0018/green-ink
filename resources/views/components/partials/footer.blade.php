@@ -36,17 +36,17 @@
                 Top Courses
             </h3>
             <div>
-                <ul class="space-y-3">
-                    <li><a href="/view-course?id=eyJpdiI6IkRXelhmNnRsMjQyUDkyY1pOZVNEb3c9PSIsInZhbHVlIjoieXBacDZjYzMzTE02eURlUHpvYXdBUT09IiwibWFjIjoiZjVjODI4YmMxOWNiNWE2OTAyNzQzYzI3Y2ZlY2E3Y2NhNDU2MWM2OWE4M2ZkNzM2MDgxNmE2YTIyN2ExMDhmNSIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Tnpsc Platinum</a></li>
-                    <li><a href="/view-course?id=eyJpdiI6Ik00RGFhUmx1SFh3UFJ6RGJaR20yTlE9PSIsInZhbHVlIjoiOVJlN00vYVVUZ1JHTmFQNDRrdHp6Zz09IiwibWFjIjoiZjg4NjEyZjI2MzQ0NzY5ZDM5ZDY3NDkwMzYyZmFhZTNjZTEzODdmZDU5ZWRmOGVjMmFmOTFhYjI2ZmY3MzllMyIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Tnpsc Premium</a></li>
-                    <li><a href="/view-course?id=eyJpdiI6Ik0rTU5MeENnV2hiODZROHVvRXQvRnc9PSIsInZhbHVlIjoiQXBnakZqbFBXOTh6eGI0dkNYZ0VjZz09IiwibWFjIjoiODZmMzc5NTUwNTgwYWVmYjk5YWM3MDE3OGNmNWE2Njc3NzExNzE0Njg4NTU5OWYyNmUxOGQ3MzRiODFkZWQ5NSIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Banking</a></li>
-                    <li><a href="/view-course?id=eyJpdiI6Im1YSVJxSDd2djByeEppNHhkZVU1Z3c9PSIsInZhbHVlIjoiWndCemZ1b2daS3EycXo4WVRGME5XUT09IiwibWFjIjoiNzc0ODBhNzU1YjEwZDkyZTg1YjVlZTRiNDM3ZDg5OWNjMjU0OTlkM2RmN2I2NDk4ZTZiYWEyOTRlMzQyZWI3YiIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Railways</a></li>
+              <ul class="space-y-3">
+    @foreach ($latestCourses as $course)
+        <li>
+            <a href="{{ url('/view-course?id=' . Crypt::encrypt($course->id)) }}"
+               class="text-white text-sm">
+                {{ $course->title }}
+            </a>
+        </li>
+    @endforeach
+</ul>
 
-                </ul>
             </div>
 
         </div>
