@@ -4,10 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Course;
 use App\Models\Payment;
-use Dflydev\DotAccessData\Data;
 use Illuminate\Http\Request;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Log;
 use App\Mail\PaymentInvoiceMail;
+use App\Models\CourseRegistration;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -27,6 +28,31 @@ class CashfreeController extends Controller
                 'message' => $validator->errors()->first(),
             ], 409);
         }
+         $aadhaarPath = null;
+ if ($request->hasFile('aadhaar')) {
+    $aadhaarPath = $request->file('aadhaar')->store('aadhaar', 'public');
+}
+    // ✅ Save student form FIRST
+    $registration = CourseRegistration::create([
+        'name'        => $request->name,
+        'email'       => $request->email,
+        'phone'       => $request->phone,
+        'alt_phone'   => $request->alt_phone,
+        'course_type' => $request->course_type,
+        'dob'         => $request->dob,
+        'roll_no'     => $request->roll_no,
+        'community'   => $request->community,
+        'employed'    => $request->employed,
+        'aadhaar_path'=> $aadhaarPath,
+    ]);
+
+    $studentPrefix = Setting::where('key', 'student_prefix')->first()->value ?? 'STU-';
+$studentID = $studentPrefix . str_pad($registration->id, 5, '0', STR_PAD_LEFT); 
+
+$registration->update(['student_id' => $studentID]);
+
+    $course  = Course::findOrFail($request->course_id);
+        
 
         $orderId = 'order_' . time();
 
@@ -80,15 +106,19 @@ class CashfreeController extends Controller
             dd($responseData); // debug if order fails
         }
 
-            Payment::create([
+          $payment = Payment::create([
             'order_id' => $orderId,
             'amount' => $course->amount,
             'status' => 0,
             'name' =>  $request['name'],
             'email' => $request['email'],
             'phone' => $request['phone'],
+            'student_id' => $studentID 
         ]);
 
+         $registration->update([
+        'payment_id' => $payment->id
+    ]);
         return redirect()->away($responseData['payment_link']);
 
     }
@@ -153,7 +183,15 @@ public function success(Request $request)
 
     // ✅ SUCCESS
     if ($paymentStatus === 'SUCCESS') {
-
+   $registration = CourseRegistration::where('payment_id', $payment->id)->first();
+    if ($registration && !$registration->student_id) {
+        $prefix = Setting::where('key', 'student_prefix')->first()->value ?? 'STU-';
+        $studentID = $prefix . str_pad($registration->id, 5, '0', STR_PAD_LEFT);
+        $registration->update(['student_id' => $studentID]);
+        $payment->update(['student_id' => $studentID]);
+    } else {
+        $studentID = $registration->student_id;
+    }
         try {
             Mail::to($payment->email)
                 ->send(new PaymentInvoiceMail($payment));
@@ -162,7 +200,7 @@ public function success(Request $request)
         }
 
         return redirect('/success/payment/page')
-            ->with('success', 'Payment Successful');
+            ->with('success', 'Payment Successful')->with('student_id', $studentID);
     }
 
     // ❌ FAILED

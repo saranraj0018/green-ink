@@ -40,6 +40,7 @@
         </div>
     </div>
     <div class="py-0.5 my-container" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%), linear-gradient(90deg, #00BC7D 0%, #096 100%);">
+        @if($activeMarquee)
         <marquee
         behavior="scroll"
         direction="left"
@@ -48,9 +49,9 @@
         onmouseout="this.start();"
         style="font-family: 'Poppins', sans-serif; font-size:15px; color:#fff;"
         >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam maiores dolores neque esse accusamus expedita facere cumque id, minus perferendis, dolorum rerum delectus, alias recusandae. Maxime sint totam maiores iusto.
+       {{ $activeMarquee->content }}
         </marquee>
-
+   @endif
 
     </div>
 </section>

@@ -52,9 +52,29 @@ Route::prefix('admin')->group(function () {
             Route::post('/delete', 'destroy')->name('delete.book');
         });
 
+        Route::prefix('marquee')->controller(\App\Http\Controllers\admin\MarqueeController::class)->group(function () {
+            Route::get('/list', 'view')->name('view.marquee');
+            Route::post('/save', 'save')->name('save.marquee');
+            Route::post('/delete', 'delete')->name('delete.marquee');
+        });
+
+        Route::prefix('exam-category')->controller(\App\Http\Controllers\admin\ExamCategoryController::class)->group(function () {
+            Route::get('/list', 'view')->name('view.examcategory');
+            Route::post('/save', 'save')->name('save.examcategory');
+            Route::post('/delete', 'delete')->name('delete.examcategory');
+        });
+
+        Route::prefix('settings')->controller(\App\Http\Controllers\admin\SettingsController::class)->group(function () {
+            Route::get('/list', 'view')->name('view.settings');
+            Route::post('/save', 'save')->name('save.settings');
+        });
+
+          
         Route::get('/course-list', [CourseController::class, 'index'])->name('course_list');
         Route::post('/course-save', [CourseController::class, 'courseSave'])->name('course_save');
         Route::post('/course-delete', [CourseController::class, 'courseDelete'])->name('course_delete');
+        Route::get('/course-registrations', [CourseController::class, 'list'])->name('course.registrations');
+        Route::get('/course-registrations/{id}', [CourseController::class, 'show'])->name('course.registrations.show');
 
     });
 

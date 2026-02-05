@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 use App\Models\Course;
+use App\Models\Marquee;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
@@ -26,7 +27,14 @@ class AppServiceProvider extends ServiceProvider
             ->limit(4)
             ->get();
 
-        $view->with('latestCourses', $latestCourses);
+              $activeMarquee = Marquee::where('status', 1)
+                ->latest()
+                ->first();
+
+       $view->with([
+                'latestCourses' => $latestCourses,
+                'activeMarquee' => $activeMarquee,
+            ]);
     });
     }
 }

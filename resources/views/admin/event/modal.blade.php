@@ -1,4 +1,5 @@
-<div id="eventModal" x-data="{
+<div id="eventModal" x-data="{ previewUrl: '',
+    existing_image: '',
     form: {
         event_id: 0,
         title: '',
@@ -27,6 +28,8 @@
         <form id="eventForm" class="space-y-6">
             @csrf
             <input type="hidden" name="event_id" x-model="form.event_id">
+            <input type="hidden" name="existing_image" x-model="existing_image">
+
 
             <!-- Title + Status -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -75,6 +78,28 @@
                 </div>
 
             </div>
+
+            <div>
+    <label class="block font-medium mb-2">Event Image</label>
+
+    <input type="file" name="event_image" accept=".jpg,.jpeg,.png"
+        x-ref="fileInput"
+        @change="
+            const file = $refs.fileInput.files[0];
+            if(file){
+                const reader = new FileReader();
+                reader.onload = e => previewUrl = e.target.result;
+                reader.readAsDataURL(file);
+            }
+        "
+        class="w-full border rounded-lg p-2 bg-gray-50">
+
+    <div class="mt-3" x-show="previewUrl">
+        <img :src="previewUrl"
+            class="w-full max-h-[250px] object-cover rounded-lg border">
+    </div>
+</div>
+
 
             <!-- Description -->
             <div>

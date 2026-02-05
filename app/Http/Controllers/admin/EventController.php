@@ -27,22 +27,28 @@ class EventController extends Controller
         'title'       => 'required|string|max:255',
         'description' => 'required|string',
         'event_date'  => 'required|date',
-        'start_time'  => 'required|date_format:H:i:s',
-        'end_time'    => 'required|date_format:H:i:s|after:start_time',
+        'start_time'  => 'required',
+        'end_time'    => 'required|after:start_time',
         'mode'        => 'required|string|max:255',
         'status'      => 'required|boolean',
         'fee_type'    => 'required|in:free,paid',
         'amount'      => 'nullable|required_if:fee_type,paid|numeric|min:0'
             ];
 
+      if (empty($request->event_id) && empty($request->existing_image)) {
+        $rules['event_image'] = 'required|image|mimes:jpg,jpeg,png';
+    } elseif ($request->hasFile('event_image')) {
+        $rules['event_image'] = 'image|mimes:jpg,jpeg,png';
+    }
+
        $validator = Validator::make($request->all(), $rules);
 
-    // 🔴 HERE IS THE KEY PART
+
     if ($validator->fails()) {
         return response()->json([
             'success' => false,
             'errors'  => $validator->errors(),
-            'data'    => $request->all(), // 👈 what actually came
+            'data'    => $request->all(),
         ], 422);
     }
 
@@ -68,6 +74,14 @@ class EventController extends Controller
                     ? $request->amount
                     : null;
         $event->admin_id    = Auth::guard('admin')->id();
+
+       if ($request->hasFile('event_image')) {
+        $img = time().'_'.$request->event_image->getClientOriginalName();
+        $request->event_image->storeAs('events', $img, 'public');
+        $event->image = 'events/'.$img;
+    } elseif (!empty($request->existing_image)) {
+        $event->image = $request->existing_image;
+    }
 
         $event->save();
 

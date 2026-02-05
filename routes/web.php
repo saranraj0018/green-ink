@@ -10,6 +10,7 @@ use App\Http\Controllers\CashfreeController;
 use App\Http\Controllers\EventController;
 use App\Http\Controllers\BookCashfreeController;
 use App\Http\Controllers\EventCashfreeController;
+use App\Http\Controllers\Frontend\ExamCategoryController;
 
 Route::get('/', [HomeController::class, 'home'])->name('home');
 Route::view('/about', 'about.main')->name('about');
@@ -32,6 +33,7 @@ Route::post('/career/apply', [CareerController::class, 'store'])
     ->name('career.apply');
 Route::view('/verify-email', 'auth.verify-email')->name('verify.email');
 Route::view('/dashboard', 'dashboard.main')->name('dashboard');
+
 
 Route::get('/courses', [CourseController::class, 'index'])->name('courses');
 Route::get('/view-course', [CourseController::class, 'viewCourse'])->name('view_course');
