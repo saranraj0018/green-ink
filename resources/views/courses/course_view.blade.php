@@ -84,12 +84,130 @@
 
                 <!-- Buttons -->
                 <div class="mx-8 space-y-3">
-                    <form id="cashfreeForm" action="/cashfree/payments/store" method="POST" class="hidden">
+                    <form id="cashfreeForm" action="/cashfree/payments/store" method="POST"  enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" name="course_id" value="{{ $course->id }}">
                         <input type="hidden" name="name" id="cf_name">
                         <input type="hidden" name="email" id="cf_email">
                         <input type="hidden" name="phone" id="cf_phone">
+
+                        <input type="hidden" name="course_type" id="cf_course_type">
+                        <input type="hidden" name="alt_phone" id="cf_alt_phone">
+                        <input type="hidden" name="dob" id="cf_dob">
+                        <input type="hidden" name="roll_no" id="cf_roll_no">
+                        <input type="hidden" name="community" id="cf_community">
+                        <input type="hidden" name="employed" id="cf_employed">
+                        {{-- <input id="aadhaar" name="aadhaar" type="file"
+                        class="w-full border rounded px-3 py-2"> --}}
+
+                        <div id="paymentModal"
+    class="fixed inset-0 hidden flex items-center justify-center bg-black/60 z-[9999]">
+
+    <!-- Modal Box -->
+  <div class="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto p-8 rounded-xl">
+
+        <h2 class="text-xl font-semibold text-center mb-6">
+            Enter Your Details
+        </h2>
+
+        <!-- FORM GRID -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+            <!-- Full Name -->
+            <div>
+                <label class="text-sm">Full Name</label>
+                <input id="pay_name" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 nameError"></p>
+            </div>
+
+            <!-- Email -->
+            <div>
+                <label class="text-sm">Email</label>
+                <input id="pay_email" type="email" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 emailError"></p>
+            </div>
+
+            <!-- Phone -->
+            <div>
+                <label class="text-sm">Phone</label>
+                <input id="pay_phone" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 mobileError"></p>
+            </div>
+
+            <!-- Alternate Phone -->
+            <div>
+                <label class="text-sm">Alternate Phone</label>
+                <input id="alt_phone" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 altPhoneError"></p>
+            </div>
+
+            <!-- Course Type -->
+            <div>
+                <label class="text-sm">Course Type</label>
+          <input
+           id="course_type"
+           class="w-full border rounded px-3 py-2"
+           value="{{ $course->title ?? '' }}"
+           readonly>
+                <p class="text-red-500 text-xs mt-1 courseTypeError"></p>
+            </div>
+
+            <!-- DOB -->
+            <div>
+                <label class="text-sm">Date of Birth</label>
+                <input id="dob" type="date" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 dobError"></p>
+            </div>
+
+            <!-- Roll No -->
+            <div>
+                <label class="text-sm">Roll No. (if available)</label>
+                <input id="roll_no" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 rollNoError"></p>
+            </div>
+
+            <!-- Community -->
+            <div>
+                <label class="text-sm">Community</label>
+                <input id="community" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 communityError"></p>
+            </div>
+
+            <!-- Employed -->
+            <div>
+                <label class="text-sm">Employed (Yes / No)</label>
+                <input id="employed" class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 employedError"></p>
+            </div>
+
+            <!-- Aadhaar (FULL WIDTH) -->
+            <div class="md:col-span-2">
+                <label class="text-sm">Aadhaar Upload</label>
+               <input
+            id="aadhaar"
+            name="aadhaar"
+            type="file"
+            class="w-full border rounded px-3 py-2">
+                <p class="text-red-500 text-xs mt-1 aadhaarError"></p>
+            </div>
+
+        </div>
+
+        <!-- Buttons -->
+        <div class="flex justify-end gap-4 pt-6">
+            <button id="closeModal" type="button" class="px-6 py-2 border rounded">
+                Cancel
+            </button>
+
+            <button id="confirmPay"  type="button"
+                class="px-6 py-2 bg-[#FFB100] text-white rounded">
+                Pay Now
+            </button>
+        </div>
+
+    </div>
+</div>
+
                     </form>
 
                     <button id="payBtn" class="bg-[#FFB100] px-2 py-1 rounded-full text-white w-full">
@@ -128,41 +246,6 @@
     </div>
 </section>
 
-<!-- PAYMENT MODAL -->
-<div id="paymentModal" class="fixed inset-0 hidden bg-[#0000008f] bg-opacity-50 items-center justify-center z-50">
-    <div class="bg-white w-96 p-6 rounded-xl space-y-4">
-        <h2 class="text-lg font-semibold text-center">Enter Your Details</h2>
-
-        <div>
-            <label class="text-sm">Full Name</label>
-            <input id="pay_name" name="pay_name" class="w-full border rounded px-3 py-2">
-            <p class="text-red-500 text-xs mt-1 nameError"></p>
-        </div>
-
-        <div>
-            <label class="text-sm">Email</label>
-            <input id="pay_email" type="email" class="w-full border rounded px-3 py-2">
-            <p class="text-red-500 text-xs mt-1 emailError"></p>
-        </div>
-
-        <div>
-            <label class="text-sm">Phone</label>
-            <input id="pay_phone" class="w-full border rounded px-3 py-2">
-            <p class="text-red-500 text-xs mt-1 mobileError"></p>
-        </div>
-
-        <div class="flex gap-3 pt-3">
-            <button id="closeModal" class="w-1/2 border py-2 rounded">
-                Cancel
-            </button>
-
-            <button id="confirmPay" class="w-1/2 bg-[#FFB100] text-white py-2 rounded">
-                Pay Now
-            </button>
-        </div>
-    </div>
-</div>
-
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://sdk.cashfree.com/js/ui/2.0.0/cashfree.js"></script>
@@ -174,52 +257,115 @@
         });
 
         // CLOSE MODAL
-        $('#closeModal').on('click', function() {
+        $('#closeModal').on('click', function(e) {
+            e.preventDefault();
             $('#paymentModal').addClass('hidden').removeClass('flex');
         });
 
         // CONFIRM PAYMENT
-        $('#confirmPay').on('click', function() {
-
-
+        $('#confirmPay').on('click', function(e) {
+            e.preventDefault(); 
             let hasError = false;
-            $('.nameError, .emailError, .mobileError').text('');
-            const name = $('#pay_name').val().trim();
-            const email = $('#pay_email').val().trim();
-            const phone = $('#pay_phone').val().trim();
+             $('.nameError, .emailError, .mobileError, .courseTypeError, .altMobileError, .dobError, .rollError, .communityError, .employedError, .aadhaarError').text('');
+             const name = $('#pay_name').val().trim();
+        const email = $('#pay_email').val().trim();
+        const phone = $('#pay_phone').val().trim();
+        const courseType = $('#course_type').val().trim();
+        const altPhone = $('#alt_phone').val().trim();
+        const dob = $('#dob').val();
+        const roll = $('#roll_no').val().trim();
+        const community = $('#community').val().trim();
+        const employed = $('#employed').val().trim();
+       const aadhaarInput = document.getElementById('aadhaar');
+const aadhaar = aadhaarInput && aadhaarInput.files.length > 0
+    ? aadhaarInput.files[0]
+    : null;
 
-            // Name validation
-            if (!name) {
-                $('.nameError').text('Name is required');
-                hasError = true;
-            }
-            // Email validation
-            if (!email) {
-                $('.emailError').text('Email is required');
-                hasError = true;
-            } else if (!/^\S+@\S+\.\S+$/.test(email)) {
-                $('.emailError').text('Enter a valid email');
-                hasError = true;
-            }
-            // Phone validation
-            if (!phone) {
-                $('.mobileError').text('Phone number is required');
-                hasError = true;
-            } else if (!/^\d{10}$/.test(phone)) {
-                $('.mobileError').text('Enter valid 10 digit phone number');
-                hasError = true;
-            }
+        // NAME
+        if (!name) {
+            $('.nameError').text('Name is required');
+            hasError = true;
+        }
 
-            if (hasError) return;
+        // EMAIL
+        if (!email) {
+            $('.emailError').text('Email is required');
+            hasError = true;
+        } else if (!/^\S+@\S+\.\S+$/.test(email)) {
+            $('.emailError').text('Enter a valid email');
+            hasError = true;
+        }
 
-            // Fill hidden Cashfree form
-            $('#cf_name').val(name);
-            $('#cf_email').val(email);
-            $('#cf_phone').val(phone);
+        // PHONE
+        if (!phone) {
+            $('.mobileError').text('Phone number is required');
+            hasError = true;
+        } else if (!/^\d{10}$/.test(phone)) {
+            $('.mobileError').text('Enter valid 10 digit phone number');
+            hasError = true;
+        }
+
+        // COURSE TYPE
+        if (!courseType) {
+            $('.courseTypeError').text('Course type is required');
+            hasError = true;
+        }
+
+        // ALT PHONE
+        if (altPhone && !/^\d{10}$/.test(altPhone)) {
+            $('.altMobileError').text('Enter valid 10 digit number');
+            hasError = true;
+        }
+
+        // DOB
+        if (!dob) {
+            $('.dobError').text('Date of birth is required');
+            hasError = true;
+        }
+
+        // ROLL NO
+        if (!roll) {
+            $('.rollError').text('Roll number is required');
+            hasError = true;
+        }
+
+        // COMMUNITY
+        if (!community) {
+            $('.communityError').text('Community is required');
+            hasError = true;
+        }
+
+        // EMPLOYED
+        if (!employed) {
+            $('.employedError').text('Please enter Yes or No');
+            hasError = true;
+        }
+
+        // AADHAAR
+        if (!aadhaar) {
+            $('.aadhaarError').text('Aadhaar file is required');
+            hasError = true;
+        }
+
+        if (hasError) return;
+
+        // attach to cashfree form
+        $('#cf_name').val(name);
+        $('#cf_email').val(email);
+        $('#cf_phone').val(phone);
+        $('#cf_course_type').val(courseType);
+        $('#cf_alt_phone').val(altPhone);
+        $('#cf_dob').val(dob);
+        $('#cf_roll_no').val(roll);
+        $('#cf_community').val(community);
+        $('#cf_employed').val(employed);
 
             // Prevent double click
             $(this).prop('disabled', true);
 
+       if (hasError) {
+        return false; 
+    }
             // Submit form
             $('#cashfreeForm').submit();
         });

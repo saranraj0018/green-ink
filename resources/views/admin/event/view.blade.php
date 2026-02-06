@@ -14,6 +14,7 @@
                 <thead>
                     <tr class="bg-[#006400] text-white text-sm uppercase tracking-wider">
                         <th class="px-3 py-2">ID</th>
+                        <th class="px-3 py-2">Image</th>
                         <th class="px-3 py-2">Title</th>
                         <th class="px-3 py-2">Date</th>
                         <th class="px-3 py-2">Time</th>
@@ -29,7 +30,14 @@
                     @foreach($events as $event)
                         <tr class="hover:bg-gray-50 transition-colors">
                             <td class="px-4 py-3 font-medium">{{ $event->id }}</td>
-
+                     <td class="px-4 py-3">
+                            @if($event->image)
+                                <img src="{{ asset('storage/'.$event->image) }}"
+                                     class="h-10 w-10 object-cover rounded-lg shadow-sm border" />
+                            @else
+                                <span class="text-gray-400 italic">No Image</span>
+                            @endif
+                         </td>
                             <td class="px-4 py-3">
                                 {{ $event->title }}
                             </td>
@@ -69,6 +77,7 @@
                                     class="text-blue-600 hover:text-blue-800 transition editEventBtn"
                                     data-id="{{ $event->id }}"
                                     data-title="{{ $event->title }}"
+                                    data-image="{{ $event->image }}"
                                     data-description="{{ $event->description }}"
                                     data-date="{{ $event->event_date }}"
                                     data-start="{{ $event->start_time }}"

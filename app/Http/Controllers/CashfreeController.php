@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Course;
 use App\Models\Payment;
 use Illuminate\Http\Request;
+use App\Models\Setting;
 use Illuminate\Support\Facades\Log;
 use App\Mail\PaymentInvoiceMail;
+use App\Models\CourseRegistration;
 use Illuminate\Support\Facades\Mail;
 use Illuminate\Support\Facades\Validator;
 
@@ -26,6 +28,31 @@ class CashfreeController extends Controller
                 'message' => $validator->errors()->first(),
             ], 409);
         }
+         $aadhaarPath = null;
+ if ($request->hasFile('aadhaar')) {
+    $aadhaarPath = $request->file('aadhaar')->store('aadhaar', 'public');
+}
+    // ✅ Save student form FIRST
+    $registration = CourseRegistration::create([
+        'name'        => $request->name,
+        'email'       => $request->email,
+        'phone'       => $request->phone,
+        'alt_phone'   => $request->alt_phone,
+        'course_type' => $request->course_type,
+        'dob'         => $request->dob,
+        'roll_no'     => $request->roll_no,
+        'community'   => $request->community,
+        'employed'    => $request->employed,
+        'aadhaar_path'=> $aadhaarPath,
+    ]);
+
+    $studentPrefix = Setting::where('key', 'student_prefix')->first()->value ?? 'STU-';
+$studentID = $studentPrefix . str_pad($registration->id, 5, '0', STR_PAD_LEFT); 
+
+$registration->update(['student_id' => $studentID]);
+
+    $course  = Course::findOrFail($request->course_id);
+        
 
         $orderId = 'order_' . time();
 
@@ -79,70 +106,107 @@ class CashfreeController extends Controller
             dd($responseData); // debug if order fails
         }
 
-        return response()->json($responseData);
-    }
+          $payment = Payment::create([
+            'order_id' => $orderId,
+            'amount' => $course->amount,
+            'status' => 0,
+            'name' =>  $request['name'],
+            'email' => $request['email'],
+            'phone' => $request['phone'],
+            'student_id' => $studentID 
+        ]);
 
-
-    public function success(Request $request)
-    {
-        $orderId = $request->input('order_id');
-
-        if (!$orderId) {
-            return redirect('/')->with('error', 'Payment verification failed: Missing order ID');
-        }
-
-        // Verify payment status with Cashfree API
-        $url = (env('CASHFREE_ENV') === 'sandbox'
-                ? "https://sandbox.cashfree.com/pg/orders/"
-                : "https://api.cashfree.com/pg/orders/$orderId/payments");
-
-        $headers = [
-            "Content-Type: application/json",
-            "x-api-version: 2022-01-01",
-            "x-client-id: ".env('CASHFREE_APP_ID'),
-            "x-client-secret: ".env('CASHFREE_SECRET_KEY')
-        ];
-
-        $curl = curl_init($url);
-        curl_setopt($curl, CURLOPT_URL, $url);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
-
-        $response = curl_exec($curl);
-        $err = curl_error($curl);
-        curl_close($curl);
-
-        if ($err) {
-            return redirect('/')->with('error', 'Payment verification failed: '.$err);
-        }
-
-        $responseData = json_decode($response);
-
-        // Update payment status in database
-        $payment = Payment::where('order_id', $orderId)->first();
-
-        if ($payment) {
-            Log::info('API Request:', ['test' => $responseData]);
-            $status = ($responseData->order_status === 'PAID') ? 1 : 0;
-
-            $payment->update([
-                'status' => $status,
-                'other' => $responseData,
-                'payment_id' => $responseData->cf_order_id ?? null,
-                'payment_method' => $responseData->payment_method ?? null
-            ]);
-
-            if ($status === 1) {
-                Mail::to($payment->email)->send(new PaymentInvoiceMail($payment));
-                return redirect('/success/payment/page')->with([
-                    'success' => 'Payment Successful!',
-                    'payment' => $payment,
-                ]);
-            }
-        }
-
-        return redirect('/failure/payment/page')->with('error', 'Payment verification failed for Order ID: ' . $orderId);
+         $registration->update([
+        'payment_id' => $payment->id
+    ]);
+        return redirect()->away($responseData['payment_link']);
 
     }
+
+
+public function success(Request $request)
+{
+    $orderId = $request->query('order_id');
+
+    if (!$orderId) {
+        return redirect('/')->with('error', 'Missing order ID');
+    }
+
+    $url = env('CASHFREE_ENV') === 'sandbox'
+        ? "https://sandbox.cashfree.com/pg/orders/{$orderId}/payments"
+        : "https://api.cashfree.com/pg/orders/{$orderId}/payments";
+
+    $headers = [
+        "Content-Type: application/json",
+        "x-api-version: 2022-01-01",
+        "x-client-id: " . env('CASHFREE_APP_ID'),
+        "x-client-secret: " . env('CASHFREE_SECRET_KEY'),
+    ];
+
+    $curl = curl_init($url);
+    curl_setopt_array($curl, [
+        CURLOPT_RETURNTRANSFER => true,
+        CURLOPT_HTTPHEADER => $headers,
+    ]);
+
+    $response = curl_exec($curl);
+    curl_close($curl);
+
+    $payments = json_decode($response, true); // ✅ decode as array
+
+    Log::info('Cashfree Payments Response', $payments);
+
+    if (empty($payments) || !is_array($payments)) {
+        return redirect('/failure/payment/page')
+            ->with('error', 'No payment found for this order');
+    }
+
+    // ✅ Take latest payment
+    $latestPayment = collect($payments)->last();
+
+    $paymentStatus = $latestPayment['payment_status'] ?? 'FAILED';
+
+    $payment = Payment::where('order_id', $orderId)->first();
+
+    if (!$payment) {
+        return redirect('/failure/payment/page')
+            ->with('error', 'Payment record not found');
+    }
+
+    // ✅ Update DB
+    $payment->update([
+        'status' => $paymentStatus === 'SUCCESS' ? 1 : 0,
+        'payment_id' => $latestPayment['cf_payment_id'] ?? null,
+        'payment_method' => $latestPayment['payment_method'] ?? null,
+        'other' => json_encode($latestPayment),
+    ]);
+
+    // ✅ SUCCESS
+    if ($paymentStatus === 'SUCCESS') {
+   $registration = CourseRegistration::where('payment_id', $payment->id)->first();
+    if ($registration && !$registration->student_id) {
+        $prefix = Setting::where('key', 'student_prefix')->first()->value ?? 'STU-';
+        $studentID = $prefix . str_pad($registration->id, 5, '0', STR_PAD_LEFT);
+        $registration->update(['student_id' => $studentID]);
+        $payment->update(['student_id' => $studentID]);
+    } else {
+        $studentID = $registration->student_id;
+    }
+        try {
+            Mail::to($payment->email)
+                ->send(new PaymentInvoiceMail($payment));
+        } catch (\Exception $e) {
+            Log::error('Invoice mail failed', ['error' => $e->getMessage()]);
+        }
+
+        return redirect('/success/payment/page')
+            ->with('success', 'Payment Successful')->with('student_id', $studentID);
+    }
+
+    // ❌ FAILED
+    return redirect('/failure/payment/page')
+        ->with('error', 'Payment Failed');
+}
+
 
 }

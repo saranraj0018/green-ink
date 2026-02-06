@@ -15,7 +15,7 @@
                         <th class="px-3 py-2">Name</th>
                         <th class="px-3 py-2">Email</th>
                         <th class="px-3 py-2">Phone</th>
-                        <th class="px-3 py-2">Applied Career</th>
+                       <th class="px-3 py-2">Applied Career</th>
                         <th class="px-3 py-2">Applied At</th>
                         <th class="px-3 py-2">Action</th>
                     </tr>
@@ -45,7 +45,7 @@
                             <td class="px-4 py-3">
                                 {{ $row->created_at->format('d M Y, h:i A') }}
                             </td>
-                            
+
                             <td class="px-4 py-3">
                                 <a href="{{ route('career.show', $row->id) }}"
                                     class="px-3 py-1 text-sm bg-[#006400] text-white rounded hover:bg-green-700">

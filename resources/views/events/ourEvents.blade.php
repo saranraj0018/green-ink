@@ -7,62 +7,84 @@
         Explore the latest insights and trends in education
     </p>
 
-    <div class="grid grid-cols-12 gap-3">
-        @foreach ($events as $index => $event)
-            <div class="col-span-12 md:col-span-4 p-3 md:p-5 rounded-3xl shadow space-y-3 border border-gray-300"
-                data-event-index="{{ $index }}">
+   <div class="grid grid-cols-12 gap-4 mt-6">
+@foreach ($events as $index => $event)
 
-                <h2 class="text-[16px] font-medium">
+    <div class="col-span-12 md:col-span-4 lg:col-span-3">
+        <div class="rounded-xl shadow hover:shadow-lg transition overflow-hidden bg-white">
+
+            <!-- EVENT IMAGE -->
+            <img
+                src="{{ $event->image
+                        ? asset('storage/'.$event->image)
+                        : asset('images/event-placeholder.jpg') }}"
+                alt="{{ $event->title }}"
+                class="w-full h-48 object-cover">
+
+            <!-- EVENT CONTENT -->
+            <div class="p-3 md:p-4 space-y-2 bg-[#f4f4f4]">
+
+                <!-- TITLE -->
+                <h3 class="font-semibold text-sm md:text-lg line-clamp-1">
                     {{ $event->title }}
-                </h2>
+                </h3>
 
-                <p class="text-gray-600 text-sm">
+                <!-- DESCRIPTION -->
+                <p class="text-xs md:text-sm text-gray-600 line-clamp-2">
                     {{ $event->description }}
                 </p>
 
-                <hr class="text-zinc-300">
+                <!-- DATE + TIME -->
+                <div class="flex flex-wrap gap-3 text-[11px] text-gray-600 mt-2">
 
-                <div class="flex flex-wrap gap-2">
-                    <div class="flex gap-2">
-                        <span class="my-auto dateIcon"></span>
-                        <div class="text-[11px] font-medium text-gray-600">
-                            {{ \Carbon\Carbon::parse($event->event_date)->format('d F Y') }}
-                        </div>
+                    <div class="flex items-center gap-1">
+                        <span class="dateIcon"></span>
+                        {{ \Carbon\Carbon::parse($event->event_date)->format('d F Y') }}
                     </div>
 
-                    <div class="flex gap-2">
-                        <span class="my-auto timeIcon"></span>
-                        <div class="text-[11px] font-medium text-gray-600">
-                            {{ \Carbon\Carbon::parse($event->start_time)->format('h:i A') }}
-                            -
-                            {{ \Carbon\Carbon::parse($event->end_time)->format('h:i A') }}
-                        </div>
+                    <div class="flex items-center gap-1">
+                        <span class="timeIcon"></span>
+                        {{ \Carbon\Carbon::parse($event->start_time)->format('h:i A') }}
+                        –
+                        {{ \Carbon\Carbon::parse($event->end_time)->format('h:i A') }}
                     </div>
+
                 </div>
 
-                <div class="text-sm text-gray-600">
-                    Mode: {{ ucfirst($event->mode) }}
+                <!-- MODE -->
+                <div class="text-xs text-gray-600">
+                    Mode: <span class="font-medium">{{ ucfirst($event->mode) }}</span>
                 </div>
 
-                <div class="text-sm font-medium">
+                <!-- PRICE -->
+                <div class="text-sm font-semibold mt-1">
                     @if ($event->fee_type === 'free')
-                        <span class="text-green-600"> Free Event</span>
+                        <span class="text-green-600">Free Event</span>
                     @else
-                        <span class="text-red-600">
-                            Paid Event — ₹{{ number_format($event->amount, 2) }}
+                        <span class="text-red-600">Paid Event
+                            ₹{{ number_format($event->amount, 2) }}
                         </span>
                     @endif
                 </div>
 
-                <button class="register-btn w-full px-4 py-2 text-white rounded-full text-sm"
+                <!-- REGISTER BUTTON -->
+                <button
+                    class="register-btn mt-3 w-full text-white py-1.5 rounded-full text-xs md:text-sm transition"
                     style="background: linear-gradient(180deg, #009468 0%, #1B4D3E 100%);"
-                    data-event-index="{{ $index }}" data-fee-type="{{ $event->fee_type }}"
-                    data-event-id="{{ $event->id }}">
+                    data-event-id="{{ $event->id }}"
+                    data-fee-type="{{ $event->fee_type }}"
+                    data-event-index="{{ $index }}"
+                >
                     Register Now
                 </button>
+
             </div>
-        @endforeach
+        </div>
     </div>
+
+@endforeach
+</div>
+
 
     <!-- Registration Modals -->
     @foreach ($events as $index => $event)
@@ -164,7 +186,7 @@
     </div>
 
     <!-- Hidden Cashfree form -->
-    <form id="cashfreeForm" action="/event/cashfree/payments/store" method="POST" class="hidden">
+    <form id="cashfreeForm" action="{{ route('cashfree.payment') }}" method="POST" class="hidden">
         @csrf
         <input type="hidden" name="event_id" id="cf_event_id">
         <input type="hidden" name="name" id="cf_name">

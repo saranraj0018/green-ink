@@ -11,4 +11,9 @@ class Payment extends Model
     protected $casts = [
         'other' => 'array'
     ];
+
+    public function registration()
+{
+    return $this->hasOne(\App\Models\CourseRegistration::class, 'payment_id');
+}
 }

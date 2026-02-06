@@ -94,8 +94,17 @@ class CareerController extends Controller
 
     public function index()
     {
-        $applications = CareerApplication::latest()->paginate(10);
+         $applications = CareerApplication::with('career')
+        ->latest()
+        ->paginate(10);
 
         return view('admin.career.applications', compact('applications'));
     }
+
+    public function show($id)
+{
+    $application = CareerApplication::findOrFail($id);
+
+    return view('admin.career.show', compact('application'));
+}
 }

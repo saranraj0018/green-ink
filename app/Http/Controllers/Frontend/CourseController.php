@@ -45,6 +45,7 @@ class CourseController extends Controller
         $courseId = decrypt($request->id);
         $this->data['course'] = Course::with('get_category')->where('id', $courseId)->first();
         $this->data['course_videos'] = CourseVideo::where('course_id', $courseId)->first();
+         $this->data['categories'] = Category::where('status', 1)->get();
         return view('courses.course_view')->with($this->data);
     }
 
