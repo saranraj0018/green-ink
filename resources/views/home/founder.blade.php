@@ -1,9 +1,9 @@
-<div class="my-10">
+<div class="my-10 ">
     <div class="grid grid-cols-12 gap-5">
         <div class="col-span-12 md:col-span-5">
             <img src={{ asset('/assets/bharathi.png') }} alt="icon">
         </div>
-        <div class="col-span-12 md:col-span-7 space-y-3 md:me-20 my-auto">
+        <div class="col-span-12 md:col-span-7 space-y-3 md:me-20 my-auto p-3 md:p-0">
             <h2 class="text-3xl font-medium">
                 Meet our Ambassador
             </h2>

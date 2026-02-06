@@ -1,8 +1,8 @@
 <section class="my-10">
-    <h2 class="text-center text-3xl font-medium">
+    <h2 class="text-center text-lg md:text-3xl font-medium">
         Why Work With Greenink?
     </h2>
-    <div class="my-container bg-cover bg-no-repeat my-10 bg-center py-10"
+    <div class="my-container bg-cover bg-no-repeat my-5 md:my-10 bg-center py-10"
         style="background-image:url({{ asset('assets/careers/keypointBg.png') }});">
         <div class="grid grid-cols-12 gap-3">
             <div class="col-span-12 md:col-span-3">

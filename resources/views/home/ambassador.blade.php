@@ -80,7 +80,7 @@
 </style>
 
 <section class="my-container mt-10">
-    <h2 class="text-primary text-3xl text-center font-medium mb-10"> Real voices. Remarkable journeys. Limitless inspiration. </h2>
+    <h2 class="text-primary text-lg md:text-3xl text-center font-medium mb-10"> Real voices. Remarkable journeys. Limitless inspiration. </h2>
 <div class="swiper video-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
     <div class="swiper-wrapper" id="swiper-wrapper-1c101c779f7a3c526" aria-live="polite">
                     

@@ -9,22 +9,22 @@
         </div>
         <div class="col-span-12 md:col-span-6 my-auto space-y-2">
             <h2
-                class="text-xl md:text-3xl font-semibold text-primary mb-5 text-white rounded-3xl py-5 md:py-10 px-2" style="background: linear-gradient(179deg, #1B4D3E 50.07%, #3FB390 99.09%);">
+                class="text-center md:text-start text-xl md:text-3xl font-semibold text-primary mb-5 text-white rounded-3xl py-5 md:py-10 px-2" style="background: linear-gradient(179deg, #1B4D3E 50.07%, #3FB390 99.09%);">
                 About GreenInk Academy
             </h2>
-            <p class="text-sm">
+            <p class="text-sm text-justify md:text-start">
                 Founded in 2019 in collaboration with Mahendras, GreenInk Academy began as a high-performing hybrid institute and has evolved into a technology-driven online academy built for results.
             </p>
-            <p class="text-sm">
+            <p class="text-sm text-justify md:text-start">
                 At GreenInk, learning is structured for success—from well-planned live classes to mentorship by top ex-government officials such as Sylendra Babu sir, 10+ serving officers, and 100+ subject experts across disciplines.
             </p>
-            <p class="text-sm">
+            <p class="text-sm text-justify md:text-start">
                 Our courses are designed by leading exam and industry experts, including Mohan Kumar sir, an ex-banker specializing in banking and central government exams, and Ilayaraja Kannan sir, a renowned TNPSC author who crafted our TNPSC programs.
             </p>
-            <p class="text-sm">
+            <p class="text-sm text-justify md:text-start">
                 With collaborations spanning government schemes, SRM University, and 50+ colleges, GreenInk has empowered thousands of aspirants nationwide. Powered by an AI-driven LMS that tracks progress and builds confidence, GreenInk ensures the right methodology, consistent practice, and predictable success.
             </p>
-            <p class="text-sm">
+            <p class="text-sm text-justify md:text-start">
                 GreenInk Academy—where expert guidance meets smart technology to turn ambition into achievement.
             </p>
             <div class="">
@@ -91,7 +91,7 @@
     </div>
 </section>
 <section class="my-container my-10 py-10" style="background: linear-gradient(99deg, #1B4D3E 41.58%, #3FB390 97.77%);">
-    <div class="grid grid-cols-12 md:gap-18">
+    <div class="grid grid-cols-12 gap-3 md:gap-18">
         <div class="col-span-12 md:col-span-6">
             <img src="/assets/about/ponchitra.jpeg" class="w-full" alt="pic" />
         </div>
@@ -137,7 +137,7 @@
             <img src="/assets/about/vision.png" alt="Vision Icon">
         </div>
         <div class="my-auto">
-            <h3 class="font-semibold text-gray-800 text-2xl">Our Vision</h3>
+            <h3 class="font-semibold text-gray-800 text-lg md:text-2xl">Our Vision</h3>
             <p class="text-sm text-gray-700">
                 To build confident, future-ready learners through meaningful education that balances academic depth, practical relevance, and human mentorship.
             </p>
@@ -150,7 +150,7 @@
                 <img src="/assets/about/mission.png" alt="Vision Icon">
             </div>
             <div class="my-auto">
-                <h3 class="font-semibold text-gray-800 text-2xl">Our Mission</h3>
+                <h3 class="font-semibold text-gray-800 text-lg md:text-2xl">Our Mission</h3>
                 <p class="text-sm text-gray-700">
                     To create research-led, technology-enabled learning systems that guide every learner with clarity, consistency, and personalized support—transforming effort into outcomes.
                 </p>
@@ -162,7 +162,7 @@
             <img src="/assets/about/value.png" alt="Vision Icon">
         </div>
         <div class="my-auto">
-            <h3 class="font-semibold text-gray-800 text-2xl">Our Core Values</h3>
+            <h3 class="font-semibold text-gray-800 text-lg md:text-2xl">Our Core Values</h3>
             <p class="text-sm text-gray-700">
                 Student-First Thinking | Integrity & Trust | Consistency Over Shortcuts | Purposeful Innovation | Collaboration & Mentorship | Lifelong Learning
             </p>

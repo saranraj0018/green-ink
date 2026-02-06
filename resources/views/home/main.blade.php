@@ -8,7 +8,7 @@
       style="background-image: url('{{ asset('assets/inspiringBg.png') }}');">
       <div class="grid grid-cols-12 gap-3">
           <div class="col-span-12 md:col-span-6 my-auto">
-              <h2 class="text-white text-4xl font-semibold">
+              <h2 class="text-white text-2xl md:text-4xl font-semibold">
                   Awarded “Best Coaching Institute for Research & Innovation”
               </h2>
               <p class="text-lg text-white my-5">

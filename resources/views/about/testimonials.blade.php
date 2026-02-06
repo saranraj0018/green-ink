@@ -101,8 +101,8 @@ $videos = [
 ];
 @endphp
 
-<section class="my-container mt-20">
-    <h2 class="text-primary text-3xl text-center font-medium mb-10"> Real voices. Remarkable journeys. Limitless inspiration. </h2>
+<section class="my-container mt-10 md:mt-20">
+    <h2 class="text-primary text-lg md:text-3xl text-center font-medium mb-10"> Real voices. Remarkable journeys. Limitless inspiration. </h2>
 <div class="swiper video-swiper">
     <div class="swiper-wrapper">
         @foreach($videos as $id)

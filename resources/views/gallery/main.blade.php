@@ -1,23 +1,28 @@
     @php
     $galleryImages = [
-        '/assets/gallery/img (1).jpg',
-        '/assets/gallery/img (2).jpg',
-        '/assets/gallery/img (3).jpg',
-        '/assets/gallery/img (4).jpg',
-        '/assets/gallery/img (5).jpg',
-        '/assets/gallery/img (6).jpg',
-        '/assets/gallery/img (7).jpg',
-        '/assets/gallery/img (8).jpg',
-        '/assets/gallery/img (9).jpg',
-        '/assets/gallery/img (10).jpg',
-        '/assets/gallery/img (11).jpg',
-        '/assets/gallery/img (12).jpg',
-        '/assets/gallery/img (13).jpg',
-        '/assets/gallery/img (14).jpg',
-        '/assets/gallery/img (15).jpg',
-        '/assets/gallery/img (16).jpg',
-        '/assets/gallery/img (17).jpg',
-        '/assets/gallery/img (18).jpg',
+        
+        '/assets/gallery/second-updates/imgs (1).jpg',
+        '/assets/gallery/second-updates/imgs (2).jpg',
+        '/assets/gallery/second-updates/imgs (3).jpg',
+        '/assets/gallery/second-updates/imgs (4).jpg',
+        '/assets/gallery/second-updates/imgs (5).jpg',
+        '/assets/gallery/second-updates/imgs (6).jpg',
+        '/assets/gallery/second-updates/imgs (7).jpg',
+        '/assets/gallery/second-updates/imgs (8).jpg',
+        '/assets/gallery/second-updates/imgs (9).jpg',
+        '/assets/gallery/second-updates/imgs (10).jpg',
+        '/assets/gallery/second-updates/imgs (11).jpg',
+        '/assets/gallery/second-updates/imgs (12).jpg',
+        '/assets/gallery/second-updates/imgs (13).jpg',
+        '/assets/gallery/second-updates/imgs (14).jpg',
+        '/assets/gallery/second-updates/imgs (15).jpg',
+        '/assets/gallery/second-updates/imgs (16).jpg',
+        '/assets/gallery/second-updates/imgs (17).jpg',
+        '/assets/gallery/second-updates/imgs (18).jpg',
+        '/assets/gallery/second-updates/imgs (19).jpg',
+        '/assets/gallery/second-updates/imgs (20).jpg',
+        '/assets/gallery/second-updates/imgs (21).jpg',
+        '/assets/gallery/second-updates/imgs (22).jpg',        
     ];
 @endphp
 
@@ -33,9 +38,9 @@
 
 <!--gallery-->
 <section class="my-container py-10 bg-white">
-    <p class="text-center text-sm text-gray-500 py-2">
+    <!-- <p class="text-center text-sm text-gray-500 py-2">
         Snapshots of our vibrant learning community
-    </p>
+    </p> -->
 
     <!-- Masonry -->
     <div class="columns-2 md:columns-3 gap-4 py-6">

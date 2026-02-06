@@ -7,6 +7,27 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
 
+<style>
+    .social-float-wrapper {
+    position: fixed;
+    top: 0;
+    right: 0;
+    z-index: 2147483647; /* maximum safe z-index */
+    pointer-events: auto;
+}
+
+.social-float {
+    position: fixed;
+    right: 0;
+    top: 60%;
+    transform: translateY(-50%);
+    width: 40px;
+    background: #fff;
+    padding: 6px;
+    border-radius: 9999px;
+    z-index: 2147483647;
+}
+</style>
 
 <!-- NAVBAR -->
 <section class="lg:fixed md:top-0 bg-gray-200/90 shadow-sm z-100">
@@ -56,6 +77,14 @@
 
     </div>
 </section>
+<section class="social-float-wrapper">
+    <div class="social-float">
+        <a href="https://www.youtube.com/@greeninkcce587"><img src="/assets/youtube.png" alt=""></a>
+        <a href="https://www.facebook.com/greeninkcce/"><img src="/assets/facebook.png" class="my-2" alt=""></a>
+        <a href="https://www.instagram.com/greenink_academy_official/"><img src="/assets/instagram.png" alt=""></a>
+    </div>
+</section>
+
 
 <!-- ★★★★★ POPUP SECTION ★★★★★ -->
 <div id="signupOverlay" class="hidden fixed inset-0 bg-black/50 z-1000"></div>

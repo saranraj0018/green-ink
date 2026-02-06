@@ -3,7 +3,7 @@
 
         <!-- Section Header -->
         <div class="text-center mb-12">
-            <span class="px-4 py-2 bg-[#F4F4F4] rounded-full text-sm font-medium border-t-2 border-primary-light">
+            <span class="md:px-4 md:py-2 md:bg-[#F4F4F4] rounded-full text-xs md:text-sm font-medium md:border-t-2 md:border-primary-light">
                What makes GreenInk different: AI-Powered Practice with Expert-Led Live Classes
 
             </span>

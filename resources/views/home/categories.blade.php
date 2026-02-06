@@ -5,7 +5,7 @@
 />
 
 <!-- Slider -->
-<div class="swiper mySwiper w-full relative lg:mt-[100px]">
+<div class="swiper mySwiper w-full relative lg:mt-[60px]">
     <div class="swiper-wrapper">
         <a href="/courses" class="swiper-slide">
             <img src="/assets/banner1.png" alt="banner">

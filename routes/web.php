@@ -18,6 +18,7 @@ Route::view('/features', 'Features.main')->name('features');
 Route::view('/contact', 'Contact')->name('contact');
 Route::view('/subscription', 'subscription.main')->name('subscription');
 Route::view('/cart', 'cart.main')->name('cart');
+Route::view('/gallery', 'gallery.main')->name('gallery');
 Route::view('/checkout-page', 'cart.checkout.main')->name('checkout-page');
 Route::view('/checkout', 'checkout.main')->name('checkout');
 Route::view('/privacy-policy', 'legal-pages.privacy-policy')->name('privacy-policy');
