@@ -5,7 +5,7 @@
 />
 
 <!-- Slider -->
-<div class="swiper mySwiper w-full relative">
+<div class="swiper mySwiper w-full relative lg:mt-[100px]">
     <div class="swiper-wrapper">
         <a href="/courses" class="swiper-slide">
             <img src="/assets/banner1.png" alt="banner">
@@ -13,7 +13,7 @@
         <a href="/courses" class="swiper-slide">
             <img src="/assets/banner2.png" alt="banner">
         </a>
-        <a href="/courses" class="swiper-slide">
+        <a href="/features" class="swiper-slide">
             <img src="/assets/banner3.png" alt="banner">
         </a>
     </div>
@@ -22,6 +22,7 @@
     <button class="swiper-btn prev-btn">‹</button>
     <button class="swiper-btn next-btn">›</button>
 </div>
+
 
 <style>
 .mySwiper {
@@ -76,22 +77,34 @@
 </style>
 
 <!-- Swiper JS -->
+<!-- Swiper JS -->
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
 <script>
-new Swiper(".mySwiper", {
+  const swiper = new Swiper(".mySwiper", {
     slidesPerView: 1,
     loop: true,
     autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
+      delay: 3000,
+      disableOnInteraction: false,
     },
     navigation: {
-        nextEl: ".next-btn",
-        prevEl: ".prev-btn",
+      nextEl: ".next-btn",
+      prevEl: ".prev-btn",
     },
-});
-</script><!-- Tabs Wrapper -->
+  });
+
+  // Pause on hover
+  const swiperEl = document.querySelector(".mySwiper");
+
+  swiperEl.addEventListener("mouseenter", () => {
+    swiper.autoplay.stop();
+  });
+
+  swiperEl.addEventListener("mouseleave", () => {
+    swiper.autoplay.start();
+  });
+</script><!-- Tabs Wrapper --><!-- Tabs Wrapper -->
 <section class="mt-10 lg:mt-10 mb-10">
 
     <!-- Tabs -->

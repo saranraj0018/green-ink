@@ -124,7 +124,7 @@
 <!--end scetion-->
 <section class="my-container pt-5 pb-10">
     <h2 class="text-center text-black text-2xl font-semibold">Can't Find What You're Looking For ?</h2>
-    <p class="text-center text-black text-sm font-normal py-3">we're constantly adding new courses. Contact us with
+    <p class="text-center text-black text-sm font-normal py-3">We're constantly adding new courses. Contact us with
         your suggestions!</p>
     <div class="flex justify-center pt-3">
         <a href="/contact" class="text-center text-white text-lg rounded-3xl py-2 px-10 bg-[#008357] ">GET IN

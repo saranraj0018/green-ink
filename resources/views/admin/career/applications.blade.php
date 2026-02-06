@@ -38,13 +38,14 @@
                                 {{ $row->phone }}
                             </td>
 
-                            <td class="px-4 py-3 font-medium">
+                           <td class="px-4 py-3 font-medium">
                             {{ $row->career->title ?? '—' }}
                            </td>
 
                             <td class="px-4 py-3">
                                 {{ $row->created_at->format('d M Y, h:i A') }}
                             </td>
+
                             <td class="px-4 py-3">
                                 <a href="{{ route('career.show', $row->id) }}"
                                     class="px-3 py-1 text-sm bg-[#006400] text-white rounded hover:bg-green-700">

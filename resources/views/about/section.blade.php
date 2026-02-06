@@ -1,5 +1,7 @@
 <!-- banner section-->
+<a href="/features">
 <img src="/assets/about/abt-banner.png" class="w-full" alt="" />
+</a>
 <div class="my-10 my-container">
     <div class="grid grid-cols-12 gap-3 my-10 ">
         <div class="col-span-12 md:col-span-6">
@@ -40,11 +42,11 @@
                     <div class="col-span-12 md:col-span-6">
                         <div class="flex gap-3 pt-2">
                             <img src="/assets/features/circle.png" class="w-3 h-3 mt-4" alt="" />
-                            <p class="text-sm font-normal pt-3">1,500+ trained aspirants across Tamil Nadu</p>
+                            <p class="text-sm font-normal pt-3">7500+ Trained Students across Tamil Nadu</p>
                         </div>
                         <div class="flex gap-3 pt-2">
                             <img src="/assets/features/circle.png" class="w-3 h-3 mt-4" alt="" />
-                            <p class="text-sm font-normal pt-3">Grown to 200+ students in a batch</p>
+                            <p class="text-sm font-normal pt-3">Grown to 200+ students in a batch & 2000+ Active Learners</p>
                         </div>
                     </div>
                 </div>
@@ -59,7 +61,7 @@
             <img src="/assets/about/babu.png" class="w-full" alt="pic" />
         </div>
         <div class="col-span-12 md:col-span-6 my-auto">
-            <h2 class="text-2xl text-primary-light font-semibold ">what we offer</h2>
+            <h2 class="text-2xl text-primary-light font-semibold uppercase">Why GreenInk Is Different</h2>
             <div class="flex gap-2 py-2">
                 <img src="/assets/about/Vector.png" class="" alt="arrow" />
                 <p class="text-justify text-black font-normal">Learn. Grow. Transform.</p>
@@ -68,14 +70,21 @@
                 achievement through structured online coaching and personal mentoring. We are a trusted platform for
                 government exam aspirants who seek clarity, consistency and confidence.</p>
             <p class="text-justify text-black font-normal">Why Choose us:</p>
-            <p class="text-justify text-black font-normal pt-5 text-sm"><b>Wide Exam Coverage: </b> TNPSC, Banking, SSC,
-                Railways, TET, TNUSRB, Technical & Junior IAS.</p>
-            <p class="text-justify text-black font-normal pt-5 text-sm"><b>Flexible Online Learning: </b>Study anytime,
-                anywhere, on any device.</p>
-            <p class="text-justify text-black font-normal pt-5 text-sm"><b>Mentor-Driven Support: </b>Learn from
-                experienced trainers who have cleared exams. </p>
-            <p class="text-justify text-black font-normal pt-5 text-sm"><b>Skill-Focused Prep: </b> Build aptitude,
-                reasoning, confidence and exam readiness.</p>
+            <p class="text-justify text-black font-normal pt-5 text-sm">
+                We believe 3–4 focused hours a day are enough to crack any government exam—without quitting your job or putting life on hold.
+            </p>
+            <p class="text-justify text-black font-normal pt-5 text-sm">
+                We believe preparation isn’t one-size-fits-all—it should adapt to the aspirant, not the other way around.
+            </p>
+            <p class="text-justify text-black font-normal pt-5 text-sm">
+                We believe every aspirant needs a personal coach, because doubts don’t wait for class schedules.
+            </p>
+            <p class="text-justify text-black font-normal pt-5 text-sm">
+                We believe technology should work for students, making preparation smarter, trackable, and measurable.
+            </p>
+            <p class="text-justify text-black font-normal pt-5 text-sm">
+                We believe early skill exposure—aligned with NEP for schools and UGC for colleges—is essential to build strong foundations, career clarity, and real-world readiness.
+            </p>
             <p class="text-justify text-black font-normal py-2">Your goal is success - we help you reach it!</p>
 
         </div>
@@ -84,23 +93,23 @@
 <section class="my-container my-10 py-10" style="background: linear-gradient(99deg, #1B4D3E 41.58%, #3FB390 97.77%);">
     <div class="grid grid-cols-12 md:gap-18">
         <div class="col-span-12 md:col-span-6">
-            <img src="/assets/about/ponchitra.png" class="w-full" alt="pic" />
+            <img src="/assets/about/ponchitra.jpeg" class="w-full" alt="pic" />
         </div>
         <div class="col-span-12 md:col-span-6 my-auto bg-white p-5 rounded-2xl space-y-3 md:space-y-6">
             <div class="space-y-2">
             <h2 class="text-3xl font-medium">
-                Meet our Founders
+                Meet our Founder
             </h2>
             <hr class="w-20 border-2 border-primary">
             </div>
             <h3 class="text-xl font-medium">
-                Ponchithira
+                Mrs. Ponchitra Sathyanarayanan
             </h3>
             <p class="text-sm font-medium">
-                Lorem ipsum dolor sit amet
+               Educationalist | Industrialist | Certified Career Counselor | Motivational Speaker
             </p>
             <p class="text-sm border-l-3 border-primary ps-2">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                Inspired by Dr. A.P.J. Abdul Kalam’s vision, our founder empowers students through education, industry insight, and expert career guidance to build purposeful futures. Known for building student-centric academic systems that blend mentorship, technology, and measurable outcomes, she brings 15+ years of experience in education and leadership.
             </p>
             <div class="flex w-1/3 gap-2 bg-[#DEF6EE] p-1 rounded-xl">
                 <div class="experience bg-primary rounded-lg p-1 h-max my-auto">
@@ -110,7 +119,7 @@
                         Experience
                     </p>
                     <p class="text-xs font-medium">
-                        10 Years
+                       15+ Years
                     </p>
                 </div>
 
@@ -130,8 +139,7 @@
         <div class="my-auto">
             <h3 class="font-semibold text-gray-800 text-2xl">Our Vision</h3>
             <p class="text-sm text-gray-700">
-                Redefining competitive exam coaching with research, tech, and human mentorship — so every student learns
-                with clarity, confidence, and direction.
+                To build confident, future-ready learners through meaningful education that balances academic depth, practical relevance, and human mentorship.
             </p>
         </div>
     </div>
@@ -144,8 +152,7 @@
             <div class="my-auto">
                 <h3 class="font-semibold text-gray-800 text-2xl">Our Mission</h3>
                 <p class="text-sm text-gray-700">
-                    Our mission is research-driven, tech-enabled coaching that turns practice into progress powered by
-                    AI tools and personal mentor guidance.
+                    To create research-led, technology-enabled learning systems that guide every learner with clarity, consistency, and personalized support—transforming effort into outcomes.
                 </p>
             </div>
         </div>
@@ -157,8 +164,7 @@
         <div class="my-auto">
             <h3 class="font-semibold text-gray-800 text-2xl">Our Core Values</h3>
             <p class="text-sm text-gray-700">
-                Student-Centricity | Integrity & Trust | Consistency Over Shortcut | Innovation in Learning |
-                Collaboration & Mentorship | Empowerment Through Knowledge
+                Student-First Thinking | Integrity & Trust | Consistency Over Shortcuts | Purposeful Innovation | Collaboration & Mentorship | Lifelong Learning
             </p>
         </div>
     </div>

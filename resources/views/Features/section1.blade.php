@@ -1,29 +1,8 @@
      <section class="my-container py-8">
          <div class="grid grid-cols-12 gap-2 md:gap-5">
              <div class="col-span-12 md:col-span-7 pt-10">
-                 <div class="flex gap-6 ">
-                     <img src="/assets/features/icon8.png" class="w-6 h-6 mt-4" alt="" />
-                     <h2 class="text-black text-xl font-semibold pt-3">Weekly Mentor Support</h2>
-                 </div>
-
-                 <div class="flex gap-3 pt-2 ">
-                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Fixed mentor call every week</p>
-                 </div>
-                 <div class="flex gap-3 pt-2 ">
-                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Extra support whenever needed</p>
-                 </div>
-                 <div class="flex gap-3 pt-2 ">
-                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Focused on correcting mistakes and improving
-                         performance</p>
-                 </div>
-                 <div class="flex gap-3 pt-2 ">
-                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Builds confidence and removes doubts</p>
-                 </div>
-
+                 
+             
                  <div class="flex gap-6 pt-2">
                      <img src="/assets/features/icon9.png" class="w-6 h-6 mt-4" alt="" />
                      <h2 class="text-black text-xl font-semibold pt-3">Structured Academic System</h2>
@@ -31,24 +10,58 @@
 
                  <div class="flex gap-3 pt-2 ">
                      <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Syllabus completed as per strict schedule</p>
+                     <p class="text-black text-sm font-normal pt-3 ">Syllabus is completed as per a strict academic schedule without delays or shortcuts.</p>
                  </div>
                  <div class="flex gap-3 pt-2 ">
                      <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Bilingual teaching (English + Tamil)</p>
+                     <p class="text-black text-sm font-normal pt-3 ">Teaching is conducted in bilingual mode (English + Tamil) for clear and comfortable understanding.</p>
                  </div>
                  <div class="flex gap-3 pt-2 ">
                      <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Each batch follows a structured test plan</p>
+                     <p class="text-black text-sm font-normal pt-3 ">Each batch follows a well-defined, structured test plan aligned with syllabus progress.</p>
                  </div>
+                <div class="flex gap-6 pt-2">
+                    <h2 class="text-black text-md font-semibold pt-3">Daily, weekly, and monthly tests</h2>
+                </div>
+                <div class="flex gap-6 pt-2">
+                    <h2 class="text-black text-md font-semibold pt-3">Unit tests and monthly revisions</h2>
+                </div>
+                <div class="flex gap-6 pt-2">
+                    <h2 class="text-black text-md font-semibold pt-3">Full-length mock exams and grand mock exams</h2>
+                </div>
+                <div class="flex gap-3 pt-2 ">
+                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+                     <p class="text-black text-sm font-normal pt-3 ">Classes are conducted by the most experienced teachers in the industry.</p>
+                </div>
+                <div class="flex gap-3 pt-2 ">
+                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+                     <p class="text-black text-sm font-normal pt-3 ">Questions are handpicked by an expert R&D team based on exam patterns and difficulty levels.</p>
+                </div>
+                <div class="flex gap-3 pt-2 ">
+                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+                     <p class="text-black text-sm font-normal pt-3 ">Daily mentors are available at fixed timings to clear doubts and guide students consistently.</p>
+                </div>
+                <div class="flex gap-3 pt-2 ">
+                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+                     <p class="text-black text-sm font-normal pt-3 ">GreenInk LMS App, a technology-enabled learning system, drives serious, consistent, and result-oriented preparation.</p>
+                </div>
+                <div class="flex gap-3 pt-2 ">
+                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+                     <p class="text-black text-sm font-normal pt-3 ">GreenInk CCE App ensures smooth and structured management of ongoing batches.</p>
+                </div>
+                <div class="flex gap-3 pt-2 ">
+                     <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
+                     <p class="text-black text-sm font-normal pt-3 ">Subject-wise special classes are arranged as a value-added feature to strengthen root-level understanding on high-weightage topics.</p>
+                </div>
                  <div class="flex gap-3 pt-2">
                      <img src="/assets/features/circle.png" class="w-2 h-2 mt-4 " alt="" />
-                     <p class="text-black text-sm font-normal pt-3 ">Includes weekly, unit, monthly revision,
-                         full-length, mock and grand mock tests</p>
+                     <p class="text-black text-sm font-normal pt-3 ">
+                        The academic system includes:
+                     </p>
                  </div>
 
              </div>
-             <div class="col-span-12 md:col-span-5 py-10">
+             <div class="col-span-12 md:col-span-5 py-10 my-auto">
                  <img src="/assets/features/fct.png" alt="pic" />
              </div>
          </div>
@@ -57,10 +70,7 @@
          <h2 class="text-2xl text-center font-medium">
              Our Collaborations
          </h2>
-         <p class="text-center text-sm">
-             Lorem ipsum dolor sit amet consectetur adipiscing elit.<br> Consectetur adipiscing elit quisque faucibus ex
-             sapien vitae. Ex sapien vitae pellentesque sem placerat in id.
-         </p>
+         
          <img src="/assets/features/ocolab.png" class="w-full md:w-4/5 mx-auto mt-3" alt="" />
 
      </section>
