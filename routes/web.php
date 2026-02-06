@@ -20,6 +20,11 @@ Route::view('/subscription', 'subscription.main')->name('subscription');
 Route::view('/cart', 'cart.main')->name('cart');
 Route::view('/checkout-page', 'cart.checkout.main')->name('checkout-page');
 Route::view('/checkout', 'checkout.main')->name('checkout');
+Route::view('/privacy-policy', 'legal-pages.privacy-policy')->name('privacy-policy');
+Route::view('/terms-and-conditions', 'legal-pages.terms-and-conditions')->name('terms-and-conditions');
+Route::view('/banking-and-insurance-exams', 'legal-pages.banking-and-insurance-exams')->name('banking-and-insurance-exams');
+Route::view('/prepare-for-ssc-exams', 'legal-pages.prepare-for-ssc-exams')->name('prepare-for-ssc-exams');
+Route::view('/rrb-exam-postings-and-eligibility', 'legal-pages.rrb-exam-postings-and-eligibility')->name('rrb-exam-postings-and-eligibility');
 
 Route::get('/store', [BookController::class, 'store'])->name('store');
     // Event Routes

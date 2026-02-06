@@ -124,7 +124,6 @@ $(function () {
         );
     };
 
-
     // ===== Helpers =====
     function reloadCategoryList() {
         $.get("/admin/category/list", function (html) {

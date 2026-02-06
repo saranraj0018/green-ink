@@ -106,6 +106,11 @@
 
     <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
 </head>
+<script>
+    setTimeout(() => {
+        window.location.href = "{{ url('/') }}";
+    }, 5000); // 10 seconds
+</script>
 <body>
 
 <div class="header">Payment</div>

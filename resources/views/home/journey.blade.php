@@ -96,7 +96,7 @@
         <div class="grid grid-cols-12 gap-3 md:gap-10">
             <div class="col-span-12 md:col-span-6 p-5 rounded-lg" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%);">
                 <h3 class="text-xl font-medium text-white">
-                    GREEN INK - JR IAS
+                    GREEN INK – GOVT JOBS
                 </h3>
                 <p class="text-sm text-white my-4">
                     For Students of Classes 6 to 12
@@ -110,10 +110,10 @@
                     GREEN INK - JR IAS
                 </h3>
                 <p class="text-sm text-white my-4">
-                    For Students of Classes 6 to 12
+                    For College Students – From 1st Year to Final Year
                 </p>
                 <p class="text-sm text-white">
-                    Build the foundation early. Dream big. Start your IAS journey now!
+                    Step-by-step training dedicated to cracking Government Exams. Your career, secured!
                 </p>
             </div>
         </div>

@@ -54,7 +54,7 @@
 
                 <!-- Hours -->
                 <div>
-                    <label class="block mb-1 font-medium">Hours</label>
+                    <label class="block mb-1 font-medium">Months</label>
                     <input id="hours" name="hours" type="number"
                         class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2">
                 </div>

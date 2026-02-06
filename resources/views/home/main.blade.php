@@ -14,7 +14,7 @@
               <p class="text-lg text-white my-5">
                   for redefining exam preparation through technology, data, and mentorship.
               </p>
-              <p class="text-white text-lg">
+              <p class="text-white text-lg mb-1">
                   This award recognizes GreenInk's continuous research on
               </p>
               <ul class="text-white list-disc text-sm">
@@ -22,7 +22,7 @@
                       how students fail,
                   </li>
                   <li>
-                      how toppers practiceand
+                      how toppers practice and
                   </li>
                   <li>
                       how technology can guide daily preparation.

@@ -49,6 +49,8 @@
                 <div>
                     <h4 class="font-semibold">Email Us</h4>
                     <p class="text-gray-600">admin@greeninkcce.com</p>
+                    <h4 class="font-semibold">Complaints & Feedback:</h4>
+                    <p class="text-gray-600">feedback@greeninkcce.com</p>
                 </div>
             </div>
 
@@ -57,7 +59,7 @@
                 <img src="/assets/phone.png" class="w-10 h-10">
                 <div>
                     <h4 class="font-semibold">Call Us</h4>
-                    <p class="text-gray-600">+91 8110967668 / 9345191031 </p>
+                    <p class="text-gray-600">9500405047 / 8428775012 / 9003303439</p>
                 </div>
             </div>
 
@@ -66,8 +68,9 @@
                 <img src="/assets/location.png" class="w-10 h-10">
                 <div>
                     <h4 class="font-semibold">Visit Us</h4>
-                    <p class="text-gray-600">AIC RAISE, Rathinam Techzone Campus, Pollachi Main road, Eachanari,
-                        Coimbatore 641021.</p>
+                    <p class="text-gray-600">
+                        42/23, Ahuja Towers, 4th Floor, TV Samy Road West, R.S. Puram, Coimbatore - 641002
+                    </p>
                 </div>
             </div>
 
@@ -89,10 +92,10 @@
         <p class="text-center text-lg font-normal text-black py-5">Check out our section for quick to common questions.
         </p>
         <div class="flex justify-center">
-            <button type="button"
+            <a href="/about" type="button"
                 class="text-sm text-center font-semibold text-white bg-linear-to-b from-[#008357] to-[#2BCD97] py-3 px-8 rounded-3xl  transition">
                 Learn More About Us
-            </button>
+            </a>
         </div>
     </div>
 
