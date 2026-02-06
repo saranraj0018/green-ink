@@ -1,9 +1,9 @@
-<section class="my-container my-10 space-y-3">
-    <h2 class="text-2xl text-center text-primary font-medium">
+<section class="my-container my-10 space-y-1 md:space-y-3">
+    <h2 class="text-lg md:text-2xl text-center text-primary font-medium">
         Current Openings
     </h2>
 
-    <p class="text-lg text-center">
+    <p class="text-sm md:text-lg text-center">
         Discover your next career opportunity and growth with us
     </p>
 

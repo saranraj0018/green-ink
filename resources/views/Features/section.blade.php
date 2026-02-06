@@ -1,6 +1,6 @@
  <!-- banner section-->
  <a href="/courses">
-     <img src="/assets/features/frs-banner.png" class="" alt="" />
+     <img src="/assets/features/frs-banner.png" class="md:mt-10" alt="" />
  </a>
 
  <!-- second section-->

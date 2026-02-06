@@ -8,7 +8,7 @@
         <!-- Left Content -->
         <div class="col-span-12 md:col-span-9 space-y-3">
             <img src="/assets/subscription/ai-info.png" alt="ai-info">
-            <h2 class="text-center text-2xl font-medium">
+            <h2 class="text-center text-lg md:text-2xl font-medium">
                 Choose Your Subscription Plan
             </h2>
 
@@ -19,7 +19,7 @@
             <div class="grid grid-cols-12 gap-3">
                 <div class="col-span-12 lg:col-span-4">
                     <div class="p-4 rounded-2xl shadow-lg bg-white space-y-2">
-                        <h3 class="text-2xl font-semibold mb-2">
+                        <h3 class="text-lg md:text-2xl font-semibold mb-2">
                             3 Months Plan
                         </h3>
                         <p class="text-sm text-gray-500">
@@ -76,13 +76,13 @@
                 </div>
                 <div class="col-span-12 lg:col-span-4">
                     <div class="p-4 rounded-2xl shadow-lg bg-white space-y-2">
-                        <h3 class="text-2xl font-semibold mb-2">
+                        <h3 class="text-lg md:text-2xl font-semibold mb-2">
                             6 Months Plan
                         </h3>
                         <p class="text-sm text-gray-500">
                             Half-Yearly Access
                         </p>
-                        <h3 class="text-4xl font-bold mb-2">
+                        <h3 class="text-xl md:text-4xl font-bold mb-2">
                             ₹4,999 <sub class="text-gray-400 text-sm font-normal line-through">₹7,999</sub>
                         </h3>
                         <p class="text-sm font-medium text-primary-light">
@@ -140,13 +140,13 @@
                 </div>
                 <div class="col-span-12 lg:col-span-4">
                     <div class="p-4 rounded-2xl shadow-lg bg-white space-y-2">
-                        <h3 class="text-2xl font-semibold mb-2">
+                        <h3 class="text-lg md:text-2xl font-semibold mb-2">
                             Combo Plan
                         </h3>
                         <p class="text-sm text-gray-500">
                             Ultimate Package
                         </p>
-                        <h3 class="text-4xl font-bold mb-2">
+                        <h3 class="text-xl md:text-4xl font-bold mb-2">
                             ₹7,999 <sub class="text-gray-400 text-sm font-normal line-through">₹12,999</sub>
                         </h3>
                         <p class="text-sm font-medium text-primary-light">
@@ -208,7 +208,7 @@
                 </div>
             </div>
 
-            <h2 class="text-center text-2xl font-medium">
+            <h2 class="text-center text-lg md:text-2xl font-medium">
                 Rules and Regulations
             </h2>
 
@@ -217,7 +217,7 @@
             </p>
 
             <img src="/assets/subscription/rr.png" alt="rr">
-            <h2 class="text-center text-2xl font-medium">
+            <h2 class="text-center text-lg md:text-2xl font-medium">
                 Frequently Asked Questions
             </h2>
 
@@ -338,13 +338,13 @@
             <div class="sticky top-24">
                 <!-- Your sticky content -->
                 <div class="p-4 rounded-2xl shadow-lg bg-white space-y-2">
-                    <h3 class="text-2xl font-semibold mb-2">
+                    <h3 class="text-lg md:text-2xl font-semibold mb-2">
                         3 Months Plan
                     </h3>
                     <p class="text-sm text-gray-500">
                         Quarterly Access
                     </p>
-                    <h3 class="text-4xl font-bold mb-2">
+                    <h3 class="text-xl md:text-4xl font-bold mb-2">
                         ₹2,999 <sub class="text-gray-400 text-sm font-normal line-through">₹4,499</sub>
                     </h3>
                     <p class="text-sm font-medium text-primary-light">

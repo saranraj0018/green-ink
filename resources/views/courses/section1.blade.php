@@ -1,18 +1,19 @@
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <section class="my-container py-10">
-    <h2 class="text-black text-lg font-medium mb-6">
+    <h2 class="text-black text-lg font-medium mb-6 text-center">
         Hear From Our Achievers
     </h2>
+    <script defer async src='https://cdn.trustindex.io/loader.js?018693264862207ee436b58c405'></script>
 
-    <div class="rounded-3xl bg-cover bg-center bg-no-repeat relative py-10 px-5 h-max"
+    <!-- <div class="rounded-3xl bg-cover bg-center bg-no-repeat relative py-10 px-5 h-max"
         style="background-image:url('{{ asset('assets/courses/test-bg.png') }}');">
 
-        <!-- Swiper -->
+
         <div class="swiper achieverSwiper">
             <div class="swiper-wrapper">
 
-                <!-- Slide 1 -->
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -26,7 +27,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 2 -->
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -40,7 +41,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 3 -->
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -54,7 +55,7 @@
                     </div>
                 </div>
 
-                <!-- Slide 4 -->
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -67,7 +68,7 @@
                         </p>
                     </div>
                 </div>
-                <!-- Slide 4 -->
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -82,11 +83,12 @@
                 </div>
             </div>
 
-            <!-- Pagination -->
+
             <div class="swiper-pagination mt-6"></div>
         </div>
-    </div>
+    </div> -->
 </section>
+
 
 <script>
     new Swiper(".achieverSwiper", {

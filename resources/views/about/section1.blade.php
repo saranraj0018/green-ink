@@ -1,37 +1,39 @@
 @php
-    $mentors = [
-        [
-            'img' => '/assets/about/mohan.png',
-            'role' => 'Ex-Banker | Guest Faculty - RBI & Indian Bank',
-            'name' => 'Mohan Kumar',
-            'designation' => 'Research Scientist',
-            'description' =>
-                'With service at BOI, IPPB, and BOM—and a Finance Ministry award to his credit—Mohan Kumar sir has designed GreenInk’s Central Government Exams curriculum, mentoring students to crack exams with confidence.',
-            // 'star' => 4.9,
-            // 'students' => '25,000+ Students',
-            // 'courses' => '8+ Courses',
-        ],
-        [
-            'img' => '/assets/about/profile.png',
-            'role' => 'Author | Competitive Exams Expert',
-            'name' => 'Ilayaraja Kannan',
-            'designation' => 'Research Scientist',
-            'description' =>
-                ' Renowned TNPSC author and mentor to 200+ government officers, Ilayaraja Kannan sir brings deep exam insight and proven strategies to help aspirants excel. Recipient of the Dr. A.P.J. Abdul Kalam Award.',
-            // 'star' => 4.9,
-            // 'students' => '25,000+ Students',
-            // 'courses' => '8+ Courses',
-        ],
-    ];
-    $galleryImages = [
-        '/assets/gallery/img (1).jpg',
-        '/assets/gallery/img (2).jpg',
-        '/assets/gallery/img (3).jpg',
-        '/assets/gallery/img (4).jpg',
-        '/assets/gallery/img (5).jpg',
-        '/assets/gallery/img (6).jpg',
-        
-    ];
+$mentors = [
+[
+'img' => '/assets/about/mohan.png',
+'role' => 'Ex-Banker | Guest Faculty - RBI & Indian Bank',
+'name' => 'Mohan Kumar',
+'designation' => 'Research Scientist',
+'description' =>
+'With service at BOI, IPPB, and BOM—and a Finance Ministry award to his credit—Mohan Kumar sir has designed GreenInk’s Central Government Exams curriculum, mentoring students to crack exams with confidence.',
+// 'star' => 4.9,
+// 'students' => '25,000+ Students',
+// 'courses' => '8+ Courses',
+],
+[
+'img' => '/assets/about/ilayaraja-kannan.png',
+'role' => 'Author | Competitive Exams Expert',
+'name' => 'Ilayaraja Kannan',
+'designation' => 'Research Scientist',
+'description' =>
+' Renowned TNPSC author and mentor to 200+ government officers, Ilayaraja Kannan sir brings deep exam insight and proven strategies to help aspirants excel. Recipient of the Dr. A.P.J. Abdul Kalam Award.',
+// 'star' => 4.9,
+// 'students' => '25,000+ Students',
+// 'courses' => '8+ Courses',
+],
+];
+$galleryImages = [
+'/assets/gallery/second-updates/imgs (1).jpg',
+'/assets/gallery/second-updates/imgs (2).jpg',
+'/assets/gallery/second-updates/imgs (3).jpg',
+'/assets/gallery/second-updates/imgs (4).jpg',
+'/assets/gallery/second-updates/imgs (5).jpg',
+'/assets/gallery/second-updates/imgs (6).jpg',
+'/assets/gallery/second-updates/imgs (7).jpg',
+'/assets/gallery/second-updates/imgs (8).jpg',
+
+];
 @endphp
 
 
@@ -114,34 +116,34 @@
 
     <div class="grid grid-cols-12 gap-6">
         <div class="col-span-12">
-                <div class="relative bg-white rounded-xl md:flex gap-5 items-start">
-                    <!-- Profile Image -->
-                    <div class="relative z-10">
-                        <span
-                            class="absolute left-30 bg-green-900 text-white text-sm px-8 py-1
+            <div class="relative bg-white rounded-xl md:flex gap-5 items-start">
+                <!-- Profile Image -->
+                <div class="relative z-10">
+                    <span
+                        class="md:absolute left-30 bg-green-900 text-white text-xs md:text-sm px-2 md:px-8 py-1
                     rounded-tl-xl rounded-br-xl z-50 w-max">
-                            Mentor
-                        </span>
-                        <div class="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 rounded-xl"></div>
-                        <img src="/assets/about/sylendra.png" class="relative w-50 h-50 object-cover rounded-xl"
-                            alt="Sylendra Babu IPS">
-                    </div>
+                        Mentor
+                    </span>
+                    <div class="hidden md:block md:absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 rounded-xl"></div>
+                    <img src="/assets/about/sylendra.png" class="relative w-50 h-50 object-cover rounded-xl"
+                        alt="Sylendra Babu IPS">
+                </div>
 
-                    <!-- Content -->
-                    <div class="flex-1 pt-6">
-                        <h3 class="text-lg font-semibold mt-2">
-                            Sylendra Babu IPS
-                        </h3>
+                <!-- Content -->
+                <div class="flex-1 pt-6">
+                    <h3 class="text-lg font-semibold mt-2">
+                        Sylendra Babu IPS
+                    </h3>
 
-                        <p class="text-sm">
-                           Ex-DGP, Tamil Nadu
-                        </p>
+                    <p class="text-sm">
+                        Ex-DGP, Tamil Nadu
+                    </p>
 
-                        <p class="text-sm mt-2">
-                            A guiding force at GreenInk, Sylendra Babu sir inspires aspirants through powerful webinars and mentoring sessions—instilling discipline, clarity, and the mindset to aim higher.
-                        </p>
+                    <p class="text-sm mt-2">
+                        A guiding force at GreenInk, Sylendra Babu sir inspires aspirants through powerful webinars and mentoring sessions—instilling discipline, clarity, and the mindset to aim higher.
+                    </p>
 
-                        {{-- <!-- Rating -->
+                    {{-- <!-- Rating -->
                         <div class="flex items-center gap-2 mt-3 bg-[#FFD77B] rounded-full px-3 py-1 w-max">
                             <span class="starIcon"></span>
                             <span class="text-sm font-medium">4.9</span>
@@ -158,61 +160,61 @@
                                 <span class="text-[#BE8400]">8+ Courses</span>
                             </div>
                         </div> --}}
-                    </div>
-
                 </div>
+
             </div>
+        </div>
         @foreach ($mentors as $mentor)
-            <div class="col-span-12 lg:col-span-6">
-                <div class="relative bg-white rounded-xl md:flex gap-5 items-start">
-                    <!-- Profile Image -->
-                    <div class="relative z-10">
-                        <span
-                            class="absolute left-30 bg-green-900 text-white text-sm px-8 py-1
+        <div class="col-span-12 lg:col-span-6">
+            <div class="relative bg-white rounded-xl md:flex gap-5 items-start">
+                <!-- Profile Image -->
+                <div class="relative z-10">
+                    <span
+                        class="md:absolute left-30 bg-green-900 text-white text-xs md:text-sm px-2 md:px-8 py-1
                     rounded-tl-xl rounded-br-xl z-50 w-max">
-                            {{ $mentor['role'] }}
-                        </span>
-                        <div class="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 rounded-xl"></div>
-                        <img src="{{ asset($mentor['img']) }}" class="relative w-50 h-50 object-cover rounded-xl"
-                            alt="{{ $mentor['name'] }}">
-                    </div>
+                        {{ $mentor['role'] }}
+                    </span>
+                    <div class="hidden md:block md:absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 rounded-xl"></div>
+                    <img src="{{ asset($mentor['img']) }}" class="relative w-50 h-50 object-cover rounded-xl"
+                        alt="{{ $mentor['name'] }}">
+                </div>
 
-                    <!-- Content -->
-                    <div class="flex-1 pt-6">
-                        <h3 class="text-lg font-semibold mt-2">
-                            {{ $mentor['name'] }}
-                        </h3>
+                <!-- Content -->
+                <div class="flex-1 pt-6">
+                    <h3 class="text-lg font-semibold mt-2">
+                        {{ $mentor['name'] }}
+                    </h3>
 
-                        <p class="text-sm">
-                            {{ $mentor['designation'] }}
-                        </p>
+                    <p class="text-sm">
+                        {{ $mentor['designation'] }}
+                    </p>
 
-                        <p class="text-sm mt-2">
-                            {{ $mentor['description'] }}
-                        </p>
+                    <p class="text-sm mt-2">
+                        {{ $mentor['description'] }}
+                    </p>
 
-                        {{-- <!-- Rating -->
+                    {{-- <!-- Rating -->
                         <div class="flex items-center gap-2 mt-3 bg-[#FFD77B] rounded-full px-3 py-1 w-max">
                             <span class="starIcon"></span>
                             <span class="text-sm font-medium">{{ $mentor['star'] }}</span>
-                        </div>
-
-                        <!-- Stats -->
-                        <div class="flex gap-6 mt-4 text-sm text-gray-600">
-                            <div class="flex flex-col items-center gap-2">
-                                <span class="user"></span>
-                                <span class="text-[#BE8400]">{{ $mentor['students'] }}</span>
-                            </div>
-                            <div class="flex flex-col items-center gap-2">
-                                <span class="courses"></span>
-                                <span class="text-[#BE8400]">{{ $mentor['courses'] }}</span>
-                            </div>
-                        </div> --}}
-                    </div>
-
                 </div>
+
+                <!-- Stats -->
+                <div class="flex gap-6 mt-4 text-sm text-gray-600">
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="user"></span>
+                        <span class="text-[#BE8400]">{{ $mentor['students'] }}</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <span class="courses"></span>
+                        <span class="text-[#BE8400]">{{ $mentor['courses'] }}</span>
+                    </div>
+                </div> --}}
             </div>
-        @endforeach
+
+        </div>
+    </div>
+    @endforeach
     </div>
 
 
@@ -225,19 +227,19 @@
         <h2 class="text-center text-2xl font-semibold text-primary-light">
             Our Strengths
         </h2>
-        <p class="text-center text-sm font-normal text-black pt-2">
+        <p class="text-justify md:text-center text-sm font-normal text-black pt-2">
             Expert-Designed Programs: Every course is thoughtfully designed by experienced educators, subject experts, and industry mentors to ensure academic depth and real-world relevance.
         </p>
-        <p class="text-center text-sm font-normal text-black pt-2">
+        <p class="text-justify md:text-center text-sm font-normal text-black pt-2">
             Strong Academic & Industry Network: Collaboration with leading educators, industry professionals, and serving officers, supported by a robust national academic network.
         </p>
-        <p class="text-center text-sm font-normal text-black pt-2">
+        <p class="text-justify md:text-center text-sm font-normal text-black pt-2">
             Research-Driven Learning: A dedicated R&D team develops exam-relevant, application-oriented practice questions aligned with evolving exam patterns.
         </p>
-        <p class="text-center text-sm font-normal text-black pt-2">
+        <p class="text-justify md:text-center text-sm font-normal text-black pt-2">
             Technology-Enabled Education: Continuous innovation using AI-enabled practice tools and smart learning systems to enhance efficiency, tracking, and outcomes.
         </p>
-        <p class="text-center text-sm font-normal text-black pt-2">
+        <p class="text-justify md:text-center text-sm font-normal text-black pt-2">
             System-Centric Quality Delivery: Structured programs, experienced faculty, and continuous feedback ensure consistency, quality, and skill development.
         </p>
     </div>
@@ -250,17 +252,17 @@
     <h2 class="text-center text-lg md:text-5xl font-bold text-primary-light">
         GALLERY
     </h2>
-    <p class="text-center text-sm text-gray-500 py-2">
+    <!-- <p class="text-center text-sm text-gray-500 py-2">
         Snapshots of our vibrant learning community
-    </p>
+    </p> -->
 
     <!-- Masonry -->
     <div class="columns-2 md:columns-3 gap-4 py-6">
         @foreach ($galleryImages as $index => $image)
-            <div class="mb-4 break-inside-avoid">
-                <img src="{{ $image }}" onclick="openGallery({{ $index }})"
-                    class="w-full rounded-xl cursor-zoom-in transition hover:opacity-90" alt="Gallery image" />
-            </div>
+        <div class="mb-4 break-inside-avoid">
+            <img src="{{ $image }}" onclick="openGallery({{ $index }})"
+                class="w-full rounded-xl cursor-zoom-in transition hover:opacity-90" alt="Gallery image" />
+        </div>
         @endforeach
     </div>
     <div class="flex justify-center my-6">

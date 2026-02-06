@@ -80,13 +80,13 @@
 </style>
 
 <section class="my-container mt-10">
-    <h2 class="text-primary text-3xl text-center font-medium mb-10"> Real voices. Remarkable journeys. Limitless inspiration. </h2>
+    <h2 class="text-primary text-lg md:text-3xl text-center font-medium mb-10"> Real voices. Remarkable journeys. Limitless inspiration. </h2>
 <div class="swiper video-swiper swiper-initialized swiper-horizontal swiper-backface-hidden">
     <div class="swiper-wrapper" id="swiper-wrapper-1c101c779f7a3c526" aria-live="polite">
-                    
-                    
-                    
-                    
+
+
+
+
             <div class="swiper-slide swiper-slide-active" style="width: 285.75px; margin-right: 16px;" role="group" aria-label="1 / 4" data-swiper-slide-index="0">
                 <div class="shorts-box">
                     <iframe src="https://www.youtube.com/embed/Jx-L3qz7gRI?rel=0&amp;modestbranding=1" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="">

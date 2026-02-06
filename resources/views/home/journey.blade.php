@@ -1,7 +1,7 @@
 <script src="{{ asset('users/js/home.js') }}"></script>
 
 <!-- Hero Section -->
-<section class="py-20 bg-gray-100 ">
+<section class="py-10 md:py-20 bg-gray-100 ">
     <div class="container mx-auto text-center px-6">
 
         <!-- Badge -->
@@ -10,7 +10,7 @@
         </div>
 
         <!-- Heading -->
-        <h2 class="text-2xl md:text-5xl font-bold text-green-700 leading-tight">
+        <h2 class="text-lg md:text-5xl font-bold text-green-700 leading-tight">
             Join the First Tech-Enabled <br>Institute Shaping Exam Success
         </h2>
 
@@ -64,7 +64,7 @@
 <!-- count section-->
 <section class="py-16 bg-linear-to-b from-white to-[#F6CC6D] rounded-b-xl">
 
-    <h2 class="text-4xl md:text-5xl font-bold text-yellow-900 leading-tight text-center">
+    <h2 class="text-2xl md:text-5xl font-bold text-yellow-900 leading-tight text-center">
         GREENINK ACADEMY
     </h2>
     <p class="my-3 max-w-3xl mx-auto text-center">
