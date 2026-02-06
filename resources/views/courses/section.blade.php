@@ -1,5 +1,5 @@
 <!-- banner section-->
-<a href="/feature">
+<a href="/features">
 <img src="/assets/courses/crs-banner.png" class="w-full" alt="" />
 </a>
 <!-- serach bar-->

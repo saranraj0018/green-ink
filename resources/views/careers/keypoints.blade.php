@@ -12,9 +12,8 @@
                         <div class="text-lg font-medium my-auto">Innovation First</div>
                     </div>
                     <p class="text-sm mt-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris .
+                       We encourage new ideas and modern teaching methods that improve learning outcomes, creativity, and professional growth across the organization.
+
                     </p>
                 </div>
             </div>
@@ -25,9 +24,8 @@
                         <div class="text-lg font-medium my-auto">Collaborative Culture</div>
                     </div>
                     <p class="text-sm mt-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris .
+                        Join a supportive team where collaboration, open communication, and shared responsibility help everyone grow and succeed together.
+
                     </p>
                 </div>
             </div>
@@ -38,9 +36,8 @@
                         <div class="text-lg font-medium my-auto">Continues Growth </div>
                     </div>
                     <p class="text-sm mt-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris .
+                        We support career development through regular training, mentorship, and clear advancement opportunities for long-term professional success.
+
                     </p>
                 </div>
             </div>
@@ -51,9 +48,7 @@
                         <div class="text-lg font-medium my-auto">Work Life Balance</div>
                     </div>
                     <p class="text-sm mt-3">
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                        labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco
-                        laboris .
+                        We value employee well-being by promoting flexible work practices and healthy schedules that support productivity and personal life balance.
                     </p>
                 </div>
             </div>

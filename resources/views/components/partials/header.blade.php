@@ -2,6 +2,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="csrf-token" content="{{ csrf_token() }}">
 <title>Greenink</title>
+<link rel="icon" href="/assets/fav.png" type="image/x-icon">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 @vite(['resources/css/app.css', 'resources/js/app.js'])
@@ -28,9 +29,9 @@
                         class="px-2 py-1 bg-primary border text-white rounded-full hover:bg-green-700 text-sm flex gap-1">
                         <span class="callIcon my-auto"></span><span class="my-auto">+91 84287 75012</span>
                     </a>
-                    <a href="/cart" class="rounded-full p-2 bg-[#f2f2f2]">
-                        <span class="BagIcon"></span>
-                    </a>
+                    <!--<a href="/cart" class="rounded-full p-2 bg-[#f2f2f2]">-->
+                    <!--    <span class="BagIcon"></span>-->
+                    <!--</a>-->
                     {{-- <button id="openSignupDesktop"
                         class="px-2 py-1 bg-primary border text-white rounded-full hover:bg-green-700 text-sm">
                         Sign In
@@ -40,15 +41,15 @@
         </div>
     </div>
     <div class="py-0.5 my-container" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%), linear-gradient(90deg, #00BC7D 0%, #096 100%);">
-        <marquee
+       <marquee
         behavior="scroll"
         direction="left"
         scrollamount="5"
         onmouseover="this.stop();"
         onmouseout="this.start();"
-        style="font-family: 'Poppins', sans-serif; font-size:15px; color:#fff;"
+        style="font-family: 'Poppins', sans-serif; font-size:15px; color:#fff; font-size:18px;"
         >
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam maiores dolores neque esse accusamus expedita facere cumque id, minus perferendis, dolorum rerum delectus, alias recusandae. Maxime sint totam maiores iusto.
+TNPSC 2026 Annual Calendar is Released | TNPSC 2026 Batch 1 "வாகை சூடவா" Admission is going on | SSC, Banking & Railways Admission 2026 is going on - Batch starts shortly!
         </marquee>
 
 

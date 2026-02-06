@@ -16,7 +16,7 @@
                         <th class="px-3 py-2">Course Name</th>
                         <th class="px-3 py-2">Category</th>
                         <th class="px-3 py-2">Type</th>
-                        <th class="px-3 py-2">Hours</th>
+                        <th class="px-3 py-2">Months</th>
                         <th class="px-3 py-2">Amount</th>
                         <th class="px-3 py-2">Status</th>
                         <th class="px-3 py-2">Created At</th>
