@@ -1,17 +1,6 @@
 @php
     $mentors = [
         [
-            'img' => '/assets/about/sylendra.png',
-            'role' => 'Mentor',
-            'name' => 'Sylendra Babu IPS',
-            'designation' => 'Ex-DGP, Tamil Nadu',
-            'description' =>
-                'A guiding force at GreenInk, Sylendra Babu sir inspires aspirants through powerful webinars and mentoring sessions—instilling discipline, clarity, and the mindset to aim higher.',
-            // 'star' => 4.9,
-            // 'students' => '25,000+ Students',
-            // 'courses' => '8+ Courses',
-        ],
-        [
             'img' => '/assets/about/mohan.png',
             'role' => 'Ex-Banker | Guest Faculty - RBI & Indian Bank',
             'name' => 'Mohan Kumar',
@@ -35,13 +24,13 @@
         ],
     ];
     $galleryImages = [
-        '/assets/about/gallery1.png',
-        '/assets/about/gallery2.png',
-        '/assets/about/gallery3.png',
-        '/assets/about/gallery4.png',
-        '/assets/about/gallery5.png',
-        '/assets/about/gallery6.png',
-        '/assets/about/gallery7.png',
+        '/assets/gallery/img (1).jpg',
+        '/assets/gallery/img (2).jpg',
+        '/assets/gallery/img (3).jpg',
+        '/assets/gallery/img (4).jpg',
+        '/assets/gallery/img (5).jpg',
+        '/assets/gallery/img (6).jpg',
+        
     ];
 @endphp
 
@@ -88,9 +77,7 @@
 <section class="my-container py-10" style="background: linear-gradient(0deg, #F8FFFE 0%, #FDD57B 100%);">
     <h2 class="text-center text-xl md:text-3xl font-bold text-primary">Featured on Television
     </h2>
-    <p class="text-center text-black text-[16px] my-2">A trusted name in competitive exam coaching—recognized on TV for
-        impact, innovation, and results that matter.
-    </p>
+    <p class="text-center text-black text-[16px] my-2">A trusted name in outcome-driven education—recognized on TV for impact, innovation, and results that matter. </p>
     <div class="grid grid-cols-12 gap-3 md:gap-5 mt-10">
         <div class="col-span-12 md:col-span-2 bg-white rounded-2xl p-4 my-auto">
             <p class="text-[15px]">
@@ -106,13 +93,12 @@
         </div>
         <div class="col-span-12 md:col-span-2 bg-white rounded-2xl p-4 my-auto">
             <p class="text-[15px]">
-                GreenInk Academy was featured on Vijay Super Channel, showcasing our dedication to transforming
-                education and empowering students across the nation.
+                GreenInk Academy was featured on News 7 Channel for its innovative approach to competitive exam coaching & The award highlights GreenInk’s commitment to research-driven and result-oriented education.
             </p>
         </div>
     </div>
 </section>
-
+@include('about.testimonials')
 <section class="my-container my-10 space-y-3">
 
     <h2
@@ -127,6 +113,55 @@
     </p>
 
     <div class="grid grid-cols-12 gap-6">
+        <div class="col-span-12">
+                <div class="relative bg-white rounded-xl md:flex gap-5 items-start">
+                    <!-- Profile Image -->
+                    <div class="relative z-10">
+                        <span
+                            class="absolute left-30 bg-green-900 text-white text-sm px-8 py-1
+                    rounded-tl-xl rounded-br-xl z-50 w-max">
+                            Mentor
+                        </span>
+                        <div class="absolute -bottom-2 -right-2 w-full h-full bg-yellow-400 rounded-xl"></div>
+                        <img src="/assets/about/sylendra.png" class="relative w-50 h-50 object-cover rounded-xl"
+                            alt="Sylendra Babu IPS">
+                    </div>
+
+                    <!-- Content -->
+                    <div class="flex-1 pt-6">
+                        <h3 class="text-lg font-semibold mt-2">
+                            Sylendra Babu IPS
+                        </h3>
+
+                        <p class="text-sm">
+                           Ex-DGP, Tamil Nadu
+                        </p>
+
+                        <p class="text-sm mt-2">
+                            A guiding force at GreenInk, Sylendra Babu sir inspires aspirants through powerful webinars and mentoring sessions—instilling discipline, clarity, and the mindset to aim higher.
+                        </p>
+
+                        {{-- <!-- Rating -->
+                        <div class="flex items-center gap-2 mt-3 bg-[#FFD77B] rounded-full px-3 py-1 w-max">
+                            <span class="starIcon"></span>
+                            <span class="text-sm font-medium">4.9</span>
+                        </div>
+
+                        <!-- Stats -->
+                        <div class="flex gap-6 mt-4 text-sm text-gray-600">
+                            <div class="flex flex-col items-center gap-2">
+                                <span class="user"></span>
+                                <span class="text-[#BE8400]">25,000+ Students</span>
+                            </div>
+                            <div class="flex flex-col items-center gap-2">
+                                <span class="courses"></span>
+                                <span class="text-[#BE8400]">8+ Courses</span>
+                            </div>
+                        </div> --}}
+                    </div>
+
+                </div>
+            </div>
         @foreach ($mentors as $mentor)
             <div class="col-span-12 lg:col-span-6">
                 <div class="relative bg-white rounded-xl md:flex gap-5 items-start">
@@ -185,15 +220,26 @@
 
 <!-- Welcome to GreenInk Academy section-->
 <section class="w-full mx-auto py-5 bg-cover bg-center bg-no-repeat"
-    style="background-image: url('{{ asset('assets/about/ab2bg.png') }}');">
+    style="background-image: url('{{ asset('/assets/about/ab2bg.png') }}');">
     <div class="my-container py-10">
-        <h2 class="text-center text-2xl font-semibold text-primary-light">Welcome to GreenInk Academy, where knowledge
-            transforms futures!</h2>
-        <p class="text-center text-sm font-medium text-black pt-2">Whether you’re preparing, restarting or upskilling,
-            this is where dreamers become achievers!</p>
-        <p class="text-center text-sm font-normal text-black pt-2">We are a student-centric online learning institution
-            offering expert faculty, structured guidance and smart educational technology.Our programs are flexible,
-            exam-oriented and designed to build confidence, clarity, and real-world results.</p>
+        <h2 class="text-center text-2xl font-semibold text-primary-light">
+            Our Strengths
+        </h2>
+        <p class="text-center text-sm font-normal text-black pt-2">
+            Expert-Designed Programs: Every course is thoughtfully designed by experienced educators, subject experts, and industry mentors to ensure academic depth and real-world relevance.
+        </p>
+        <p class="text-center text-sm font-normal text-black pt-2">
+            Strong Academic & Industry Network: Collaboration with leading educators, industry professionals, and serving officers, supported by a robust national academic network.
+        </p>
+        <p class="text-center text-sm font-normal text-black pt-2">
+            Research-Driven Learning: A dedicated R&D team develops exam-relevant, application-oriented practice questions aligned with evolving exam patterns.
+        </p>
+        <p class="text-center text-sm font-normal text-black pt-2">
+            Technology-Enabled Education: Continuous innovation using AI-enabled practice tools and smart learning systems to enhance efficiency, tracking, and outcomes.
+        </p>
+        <p class="text-center text-sm font-normal text-black pt-2">
+            System-Centric Quality Delivery: Structured programs, experienced faculty, and continuous feedback ensure consistency, quality, and skill development.
+        </p>
     </div>
 
 </section>
@@ -218,8 +264,8 @@
         @endforeach
     </div>
     <div class="flex justify-center my-6">
-        <a href="/contact" class="text-lg text-white font-medium py-2 px-10 bg-[#202020] rounded-3xl">
-            Connect with us
+        <a href="/gallery" class="text-lg text-white font-medium py-2 px-10 bg-[#202020] rounded-3xl">
+            View more
         </a>
     </div>
 </section>

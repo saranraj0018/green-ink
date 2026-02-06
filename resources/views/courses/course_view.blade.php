@@ -95,33 +95,33 @@
                     <button id="payBtn" class="bg-[#FFB100] px-2 py-1 rounded-full text-white w-full">
                         Enroll Now
                     </button>
-                    <button class="bg-white px-2 py-1 rounded-full text-[#FFB100] w-full border border-[#FFB100]">
-                        Add to Wishlist
-                    </button>
+                    <!--<button class="bg-white px-2 py-1 rounded-full text-[#FFB100] w-full border border-[#FFB100]">-->
+                    <!--    Add to Wishlist-->
+                    <!--</button>-->
                 </div>
 
 
                 <!-- Course Details -->
-                <p class="text-md font-medium">
-                    This course includes:
-                </p>
-                <ul class="space-y-2 text-sm">
-                    <li>
-                        <div class="flex gap-2">
-                            <span class="play my-auto"></span> {{ $course->hours ?? '' }} hrs on-demand video
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex gap-2">
-                            <span class="doc my-auto"></span>Downloadable resources
-                        </div>
-                    </li>
-                    <li>
-                        <div class="flex gap-2">
-                            <span class="certificate my-auto"></span>Certificate of completion
-                        </div>
-                    </li>
-                </ul>
+                <!--<p class="text-md font-medium">-->
+                <!--    This course includes:-->
+                <!--</p>-->
+                <!--<ul class="space-y-2 text-sm">-->
+                <!--    <li>-->
+                <!--        <div class="flex gap-2">-->
+                <!--            <span class="play my-auto"></span> {{ $course->hours ?? '' }} hrs on-demand video-->
+                <!--        </div>-->
+                <!--    </li>-->
+                <!--    <li>-->
+                <!--        <div class="flex gap-2">-->
+                <!--            <span class="doc my-auto"></span>Downloadable resources-->
+                <!--        </div>-->
+                <!--    </li>-->
+                <!--    <li>-->
+                <!--        <div class="flex gap-2">-->
+                <!--            <span class="certificate my-auto"></span>Certificate of completion-->
+                <!--        </div>-->
+                <!--    </li>-->
+                <!--</ul>-->
             </div>
             <!-- Payment Modal -->
         </div>

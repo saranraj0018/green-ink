@@ -103,32 +103,26 @@ $(function () {
       // ==== DELETE =====
     $(document).on("click", ".btnDeleteCategory", function () {
         let id = $(this).data("id");
-        let modalScope = document.querySelector('#deleteCategoryModal').__x.$data;
-        modalScope.deleteId = id;
-        modalScope.open = true;
-    });
+        let modal = document.querySelector('#deleteCategoryModal');
+        let alpine = modal.__x.$data;
+
+    alpine.deleteId = id;
+    alpine.open = true;
+});
 
     window.deleteCategory = function (id) {
         sendRequest(
             "/admin/category/delete",
             { id: id },
             "POST",
-            function (res) {
-                if (res.success) {
+            function() {
                     showToast("Category deleted successfully!", "success", 2000);
-                    reloadCategoryList();
-                } else {
-                    showToast(res.message, "error", 2000);
-                }
-                document.querySelector('#deleteCategoryModal').__x.$data.open = false;
-            },
-            function (err) {
-                showToast(err.message || "Delete failed", "error", 2000);
-                document.querySelector('#deleteCategoryModal').__x.$data.open = false;
+                 let modal = document.getElementById("deleteCategoryModal");
+            modal.__x.$data.open = false;
+                reloadCategoryList();
             }
         );
     };
-
 
     // ===== Helpers =====
     function reloadCategoryList() {

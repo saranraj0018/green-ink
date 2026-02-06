@@ -10,5 +10,6 @@
         <x-menu.item route="view.career" name="Career" icon="fa-briefcase"/>
         <x-menu.item route="event.registrations" name="Event Registrations" icon="fa-users"/>
         <x-menu.item route="career.applications" name="Career Applications" icon="fa-file-alt"/>
+        <x-menu.item route="view.book" name="Books" icon="fa-book"/>
     </ul>
 </aside>

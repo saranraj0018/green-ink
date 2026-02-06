@@ -1,8 +1,8 @@
 <footer class="my-container bg-cover bg-center bg-no-repeat pt-10 pb-5 space-y-3"
-    style="background-image: url({{ asset('assets/fbg.png') }})">
+    style="background-image: url({{ asset('/assets/fbg.png') }})">
     <div class="grid grid-cols-12 gap-2 lg:gap-18">
         <div class="col-span-12 md:col-span-4 space-y-3">
-            <img src={{ asset('assets/flogo.png') }} alt="logo">
+            <img src="{{ asset('assets/flogo.png') }}" alt="logo">
             <p class="text-white text-sm font-medium">
                 Transform your career with world-class education. Learn industry experts and gain skills that matter.
             </p>
@@ -10,9 +10,9 @@
                 Follow us
             </p>
             <div class="flex gap-3">
-                <a href="#" class="instagram"></a>
-                <a href="#" class="Facebook"></a>
-                <a href="#" class="linkedin"></a>
+                <a href="https://www.instagram.com/greenink_academy_official/" class="instagram"></a>
+                <a href="https://www.facebook.com/greeninkcce/" class="Facebook"></a>
+                <a href="https://www.youtube.com/@greeninkcce587" class="youtube"></a>
             </div>
         </div>
         <div class="col-span-12 md:col-span-2 space-y-3"></div>
@@ -28,7 +28,6 @@
                     <li><a href="/contact" class="text-white text-sm">Contact</a></li>
                 </ul>
             </div>
-
         </div>
 
         <div class="col-span-12 md:col-span-3 space-y-3">
@@ -36,35 +35,43 @@
                 Top Courses
             </h3>
             <div>
-                <ul class="space-y-3">
-                    <li><a href="/view-course?id=eyJpdiI6IkRXelhmNnRsMjQyUDkyY1pOZVNEb3c9PSIsInZhbHVlIjoieXBacDZjYzMzTE02eURlUHpvYXdBUT09IiwibWFjIjoiZjVjODI4YmMxOWNiNWE2OTAyNzQzYzI3Y2ZlY2E3Y2NhNDU2MWM2OWE4M2ZkNzM2MDgxNmE2YTIyN2ExMDhmNSIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Tnpsc Platinum</a></li>
-                    <li><a href="/view-course?id=eyJpdiI6Ik00RGFhUmx1SFh3UFJ6RGJaR20yTlE9PSIsInZhbHVlIjoiOVJlN00vYVVUZ1JHTmFQNDRrdHp6Zz09IiwibWFjIjoiZjg4NjEyZjI2MzQ0NzY5ZDM5ZDY3NDkwMzYyZmFhZTNjZTEzODdmZDU5ZWRmOGVjMmFmOTFhYjI2ZmY3MzllMyIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Tnpsc Premium</a></li>
-                    <li><a href="/view-course?id=eyJpdiI6Ik0rTU5MeENnV2hiODZROHVvRXQvRnc9PSIsInZhbHVlIjoiQXBnakZqbFBXOTh6eGI0dkNYZ0VjZz09IiwibWFjIjoiODZmMzc5NTUwNTgwYWVmYjk5YWM3MDE3OGNmNWE2Njc3NzExNzE0Njg4NTU5OWYyNmUxOGQ3MzRiODFkZWQ5NSIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Banking</a></li>
-                    <li><a href="/view-course?id=eyJpdiI6Im1YSVJxSDd2djByeEppNHhkZVU1Z3c9PSIsInZhbHVlIjoiWndCemZ1b2daS3EycXo4WVRGME5XUT09IiwibWFjIjoiNzc0ODBhNzU1YjEwZDkyZTg1YjVlZTRiNDM3ZDg5OWNjMjU0OTlkM2RmN2I2NDk4ZTZiYWEyOTRlMzQyZWI3YiIsInRhZyI6IiJ9"
-                            class="text-white text-sm">Railways</a></li>
-
-                </ul>
+                    <!-- IT COMES HERE -->
             </div>
-
         </div>
-
-
     </div>
     <div>
         <div class="flex flex-col md:flex-row justify-between">
             <p class="text-white text-sm">
-                @ 2025 GreenInk Academy. All rights reserved.
+                @ 2026 GreenInk Academy. All rights reserved. Designed & Developed by Rankuhigher
             </p>
-            <div class="flex flex-col md:flex-row gap-2">
-                <a href="#" class="text-white text-sm">
-                    Privacy Policy
-                </a>
-                <a href="#" class="text-white text-sm">
-                    Terms of Service
-                </a>
+            <div class="flex flex-col md:flex-row gap-2 flex-wrap justify-end">
+               <a href="/privacy-policy" class="text-white text-sm my-auto">
+                   Privacy Policy
+               </a>
+               <div class="text-white">
+                |
+               </div>
+               <a href="/terms-and-conditions" class="text-white text-sm my-auto">
+                   Terms of Service
+               </a>
+               <div class="text-white">
+                |
+               </div>
+               <a href="/banking-and-insurance-exams" class="text-white text-sm my-auto">
+                   Banking and Insurance Exams
+               </a>
+               <div class="text-white">
+                |
+               </div>
+               <a href="/prepare-for-ssc-exams" class="text-white text-sm my-auto">
+                   Prepare For Ssc Exams
+               </a>
+               <div class="text-white">
+                |
+               </div>
+               <a href="/rrb-exam-postings-and-eligibility" class="text-white text-sm my-auto">
+                   RRB Exam Postings and Eligibility
+               </a>
             </div>
         </div>
     </div>
@@ -100,6 +107,16 @@
         const tickElements3 = document.getElementsByClassName('linkedin');
         for (let i = 0; i < tickElements3.length; i++) {
             tickElements3[i].innerHTML = linkedin;
+        }
+        
+        const youtube = `
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="16" viewBox="0 0 20 16" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M10 0C10.855 0 11.732 0.0220001 12.582 0.0580001L13.586 0.106L14.547 0.163L15.447 0.224L16.269 0.288C17.1612 0.355891 18.0008 0.736434 18.64 1.3626C19.2791 1.98877 19.6768 2.8204 19.763 3.711L19.803 4.136L19.878 5.046C19.948 5.989 20 7.017 20 8C20 8.983 19.948 10.011 19.878 10.954L19.803 11.864L19.763 12.289C19.6768 13.1798 19.2789 14.0115 18.6396 14.6377C18.0002 15.2639 17.1604 15.6443 16.268 15.712L15.448 15.775L14.548 15.837L13.586 15.894L12.582 15.942C11.7218 15.9793 10.861 15.9986 10 16C9.13902 15.9986 8.27817 15.9793 7.418 15.942L6.414 15.894L5.453 15.837L4.553 15.775L3.731 15.712C2.83881 15.6441 1.9992 15.2636 1.36004 14.6374C0.720888 14.0112 0.323191 13.1796 0.237 12.289L0.197 11.864L0.122 10.954C0.0458327 9.97112 0.00513964 8.98581 0 8C0 7.017 0.052 5.989 0.122 5.046L0.197 4.136L0.237 3.711C0.323157 2.82055 0.720712 1.98905 1.35966 1.36291C1.99861 0.736759 2.83799 0.356116 3.73 0.288L4.551 0.224L5.451 0.163L6.413 0.106L7.417 0.0580001C8.2775 0.0207272 9.13869 0.00138958 10 0ZM8 5.575V10.425C8 10.887 8.5 11.175 8.9 10.945L13.1 8.52C13.1914 8.46739 13.2673 8.39162 13.3201 8.30033C13.3729 8.20904 13.4007 8.10545 13.4007 8C13.4007 7.89455 13.3729 7.79096 13.3201 7.69967C13.2673 7.60838 13.1914 7.53261 13.1 7.48L8.9 5.056C8.80876 5.00332 8.70526 4.9756 8.5999 4.97562C8.49455 4.97563 8.39106 5.00339 8.29983 5.0561C8.20861 5.1088 8.13287 5.1846 8.08024 5.27587C8.02761 5.36713 7.99993 5.47065 8 5.576V5.575Z" fill="white"/>
+            </svg>
+        `;
+        const tickElements4 = document.getElementsByClassName('youtube');
+        for (let i = 0; i < tickElements4.length; i++) {
+            tickElements4[i].innerHTML = youtube;
         }
 
     });

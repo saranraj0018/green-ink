@@ -74,6 +74,8 @@
                                     data-start="{{ $event->start_time }}"
                                     data-end="{{ $event->end_time }}"
                                     data-mode="{{ $event->mode }}"
+                                    data-fee_type="{{ $event->fee_type }}"
+                                    data-amount="{{ $event->amount }}"
                                     data-status="{{ $event->status }}">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </button>

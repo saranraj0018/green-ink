@@ -25,7 +25,7 @@
 
                     <!-- Content -->
                     <div class="col-span-12 md:col-span-8 p-4">
-                        <h3 class="text-lg font-semibold text-[#014631] leading-snug">
+                        <h3 class="text-lg font-semibold text-[#014631] leading-snug uppercase">
                             {{ $courses->title }}
                         </h3>
 
@@ -47,7 +47,7 @@
                                 </span>
 
                                 <span class="flex items-center gap-1">
-                                    ⏱ {{ $courses->hours }}hrs
+                                    ⏱ {{ $courses->hours }}Month
                                 </span>
                             </div>
 
