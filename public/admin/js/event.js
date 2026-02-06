@@ -6,6 +6,9 @@ $(function () {
         let modal  = document.getElementById("eventModal");
         let alpine = modal.__x.$data;
 
+     alpine.previewUrl = '';
+    alpine.existing_image = '';
+
         alpine.form = {
             event_id: 0,
             title: '',
@@ -33,7 +36,7 @@ $(function () {
 
         let modal  = document.getElementById("eventModal");
         let alpine = modal.__x.$data;
-
+       let image = $(this).data("image");
           let feeType = $(this).data("fee_type");
         let amount  = $(this).data("amount");
 
@@ -48,6 +51,9 @@ $(function () {
          $("#event_date").val($(this).data("date"));
         $("#start_time").val($(this).data("start"));
         $("#end_time").val($(this).data("end"));
+
+         alpine.previewUrl = image ? `/storage/${image}` : '';
+         alpine.existing_image = image || '';
 
          $("input[name='fee_type'][value='" + feeType + "']").prop("checked", true);
 
@@ -83,6 +89,20 @@ $(function () {
 }
  }
 
+  let eventId       = $("input[name='event_id']").val();
+    let existingImage = $("input[name='existing_image']").val();
+    let imageFile     = $("input[name='event_image']")[0].files.length;
+
+     if (!eventId && imageFile === 0) {
+        showToast("Event image is required", "error", 2000);
+        return;
+    }
+
+    if (eventId && !existingImage && imageFile === 0) {
+        showToast("Event image is required", "error", 2000);
+        return;
+    }
+
   let feeType = $("input[name='fee_type']:checked").val();
         let amount  = $("input[name='amount']").val();
 
@@ -102,9 +122,16 @@ $(function () {
                 $("#eventModal").hide();
                 reloadEventList();
             },
-              function (err) {
-        console.log("VALIDATION ERROR:", err.responseJSON);
-        showToast("Validation failed", "error", 3000);
+               function (err) {
+            if (err.responseJSON?.errors) {
+                let msg = "";
+                $.each(err.responseJSON.errors, function (k, v) {
+                    msg += v[0] + "<br>";
+                });
+                showToast(msg, "error", 3000);
+            } else {
+                showToast("Something went wrong", "error", 2000);
+            }
     }
         );
     });

@@ -1,13 +1,16 @@
 <meta name="csrf-token" content="{{ csrf_token() }}">
+
 <div class="my-container my-10 space-y-3">
     <h2 class="text-center text-xl font-medium uppercase">
         Best Selling Books
     </h2>
+
     <p class="text-center text-sm text-gray-600">
         Dive into the most talked about books of the season
     </p>
 
-     <div class="text-right">
+    <!-- BUY SELECTED BUTTON -->
+    <div class="text-right">
         <button id="buySelected"
             class="bg-primary text-white px-4 py-2 rounded text-sm">
             Buy Selected
@@ -19,15 +22,15 @@
             <div class="col-span-6 md:col-span-4 lg:col-span-3">
                 <div class="rounded-xl shadow hover:shadow-lg transition overflow-hidden">
 
-                   
+                    <!-- BOOK IMAGE -->
                     <img src="{{ asset('storage/'.$book->image) }}"
                          alt="{{ $book->name }}"
                          class="w-full lg:h-60">
 
-                   
+                    <!-- BOOK CONTENT -->
                     <div class="p-2 md:p-4 space-y-1 bg-[#f4f4f4]">
 
-                       
+                        <!-- NAME + RATING -->
                         <div class="flex justify-between items-start">
                             <div>
                                 <h3 class="font-semibold text-xs md:text-lg line-clamp-1">
@@ -46,7 +49,7 @@
                             </div>
                         </div>
 
-            
+                        <!-- PRICE + CHECKBOX -->
                         <div class="flex justify-between items-center mt-2">
 
                             <div class="flex items-center gap-1">
@@ -58,7 +61,7 @@
                                 </span>
                             </div>
 
-                        
+                            <!-- CHECKBOX -->
                             <label class="flex items-center gap-1 cursor-pointer">
                                 <input type="checkbox"
                                        class="bookCheckbox"
@@ -70,7 +73,7 @@
 
                         </div>
 
-                     
+                        <!-- BUY NOW -->
                         <button
                             class="buyNowBtn mt-3 bg-primary text-white py-1 px-2
                                    rounded-full text-xs md:text-sm transition w-full"
@@ -130,7 +133,7 @@
 <!-- ================= CASHFREE FORM ================= -->
 
 <form id="cashfreeForm"
-      action="/book/cashfree/payments/store"
+      action="/cashfree/payments/store"
       method="POST"
       class="hidden">
     @csrf

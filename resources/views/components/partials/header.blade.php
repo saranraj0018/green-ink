@@ -41,7 +41,8 @@
         </div>
     </div>
     <div class="py-0.5 my-container" style="background: linear-gradient(90deg, #1B4D3E 0%, #3FB390 100%), linear-gradient(90deg, #00BC7D 0%, #096 100%);">
-       <marquee
+        @if($activeMarquee)
+        <marquee
         behavior="scroll"
         direction="left"
         scrollamount="5"
@@ -49,9 +50,9 @@
         onmouseout="this.start();"
         style="font-family: 'Poppins', sans-serif; font-size:15px; color:#fff; font-size:18px;"
         >
-TNPSC 2026 Annual Calendar is Released | TNPSC 2026 Batch 1 "வாகை சூடவா" Admission is going on | SSC, Banking & Railways Admission 2026 is going on - Batch starts shortly!
+       {{ $activeMarquee->content }}
         </marquee>
-
+   @endif
 
     </div>
 </section>
