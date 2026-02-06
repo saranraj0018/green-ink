@@ -9,11 +9,11 @@
     <!-- <div class="rounded-3xl bg-cover bg-center bg-no-repeat relative py-10 px-5 h-max"
         style="background-image:url('{{ asset('assets/courses/test-bg.png') }}');">
 
-     
+
         <div class="swiper achieverSwiper">
             <div class="swiper-wrapper">
 
-             
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -27,7 +27,7 @@
                     </div>
                 </div>
 
-             
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -41,7 +41,7 @@
                     </div>
                 </div>
 
-             
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -55,7 +55,7 @@
                     </div>
                 </div>
 
-             
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -68,7 +68,7 @@
                         </p>
                     </div>
                 </div>
-             
+
                 <div class="swiper-slide">
                     <div class="p-8 rounded-3xl border border-white bg-black/40 min-h-50">
                         <div class="flex gap-4 items-center">
@@ -83,7 +83,7 @@
                 </div>
             </div>
 
-         
+
             <div class="swiper-pagination mt-6"></div>
         </div>
     </div> -->

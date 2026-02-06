@@ -1,4 +1,4 @@
-<div class="my-10 ">
+<div class="my-10">
     <div class="grid grid-cols-12 gap-5">
         <div class="col-span-12 md:col-span-5">
             <img src={{ asset('/assets/bharathi.png') }} alt="icon">

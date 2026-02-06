@@ -1,7 +1,7 @@
      <section class="my-container py-3 md:py-8">
          <div class="grid grid-cols-12 gap-2 md:gap-5">
              <div class="col-span-12 md:col-span-7 md:pt-10">
-                             
+
                  <div class="flex gap-6 pt-2">
                      <img src="/assets/features/icon9.png" class="w-6 h-6 mt-4" alt="" />
                      <h2 class="text-black text-xl font-semibold pt-3">Structured Academic System</h2>
@@ -69,7 +69,7 @@
          <h2 class="text-2xl text-center font-medium">
              Our Collaborations
          </h2>
-         
+
          <img src="/assets/features/ocolab.png" class="w-full md:w-4/5 mx-auto mt-3" alt="" />
 
      </section>

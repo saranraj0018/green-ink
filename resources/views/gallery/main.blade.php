@@ -1,6 +1,6 @@
     @php
     $galleryImages = [
-        
+
         '/assets/gallery/second-updates/imgs (1).jpg',
         '/assets/gallery/second-updates/imgs (2).jpg',
         '/assets/gallery/second-updates/imgs (3).jpg',
@@ -22,19 +22,19 @@
         '/assets/gallery/second-updates/imgs (19).jpg',
         '/assets/gallery/second-updates/imgs (20).jpg',
         '/assets/gallery/second-updates/imgs (21).jpg',
-        '/assets/gallery/second-updates/imgs (22).jpg',        
+        '/assets/gallery/second-updates/imgs (22).jpg',
     ];
 @endphp
 
 <x-partials.header/>
-   
+
     <section class="bg-primary py-10 md:py-20">
-       
+
        <div class="text-center text-white font-bold text-5xl uppercase lg:mt-20">
         Gallery
        </div>
    </section>
-   
+
 
 <!--gallery-->
 <section class="my-container py-10 bg-white">
