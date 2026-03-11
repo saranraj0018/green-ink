@@ -43,6 +43,7 @@
             </div>
             @php
                 $outcomes = explode("\n", $course->learning_outcomes);
+                $instantContents = explode("\n", $course->instant_access_content);
             @endphp
 
             <div class="shadow-md border border-gray-200 p-4 rounded-3xl space-y-3">
@@ -62,6 +63,26 @@
                     @endforeach
                 </ul>
             </div>
+
+              @if (!empty($course->instant_access_content))
+            <div class="shadow-md border border-gray-200 p-4 rounded-3xl space-y-3">
+                <h3 class="font-medium text-xl text-primary-light">
+                    Instant Access
+                </h3>
+
+                <ul class="space-y-2 text-sm">
+                    @foreach ($instantContents as $content)
+                        @if (trim($content) != '')
+                            <li>
+                                <div class="flex gap-2">
+                                    <span class="tick my-auto"></span>{{ $content }}
+                                </div>
+                            </li>
+                        @endif
+                    @endforeach
+                </ul>
+            </div>
+            @endif
 
         </div>
         <div class="col-span-12 md:col-span-4">

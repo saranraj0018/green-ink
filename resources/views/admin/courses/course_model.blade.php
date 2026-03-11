@@ -82,6 +82,13 @@
                     <textarea id="description" name="description" class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2"></textarea>
                 </div>
 
+             <div class="col-span-2">
+              <label class="block mb-1 font-medium">Instant Access Content</label>
+              <textarea id="instant_access_content" name="instant_access_content"
+                placeholder="Enter each point in new line..."
+                class="w-full border border-gray-300 hover:bg-gray-100 rounded-lg p-2 h-32"></textarea>
+             </div>
+
                 <!-- Overview -->
                 <div class="col-span-2">
                     <label class="block mb-1 font-medium">Course Overview</label>

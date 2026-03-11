@@ -9,6 +9,7 @@ use App\Models\CourseVideo;
 use App\Models\CourseRegistration;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\Storage;
 
 class CourseController extends Controller
@@ -39,7 +40,8 @@ class CourseController extends Controller
                 'course_overview' => 'required',
                 'learning_outcomes' => 'required',
                 'status' => 'required',
-                'instructor' => 'required'
+                'instructor' => 'required',
+                'instant_access_content' => 'nullable'
             ];
 
             if (empty($request->course_id) && !$request->has('existing_image')) {
@@ -48,7 +50,14 @@ class CourseController extends Controller
                 $rules['course_image'] = 'image|mimes:jpeg,png,jpg';
             }
 
-            $request->validate($rules);
+          $validator = Validator::make($request->all(), $rules);
+
+if ($validator->fails()) {
+    return response()->json([
+        'success' => false,
+        'message' => $validator->errors()->first()
+    ]);
+}
 
             /* ================= CREATE / UPDATE ================= */
 
@@ -74,6 +83,7 @@ class CourseController extends Controller
             $course->learning_outcomes = $request['learning_outcomes'];
             $course->status = $request['status'];
             $course->instructor = $request['instructor'];
+            $course->instant_access_content = $request['instant_access_content'];
 
             /* ================= COVER VIDEO ================= */
 
@@ -211,7 +221,7 @@ class CourseController extends Controller
     {
         $registrations = CourseRegistration::with('payment')
             ->whereHas('payment', function ($q) {
-                $q->where('status', 1); 
+                $q->where('status', 1);
             })
             ->latest()
             ->paginate(10);

@@ -61,6 +61,7 @@ $(function () {
         $("#learning_outcomes").val($(this).data("outcomes"));
         $("#status").val($(this).data("status"));
         $("#instructor").val($(this).data("instructor"));
+        $("#instant_access_content").val($(this).data("instant_access_content"));
 
         let image = $(this).data("image");
         if (image) {
@@ -204,6 +205,7 @@ $(function () {
             { id: "#star_point", message: "Star Point is required" },
             { id: "#course_overview", message: "Course Overview is required" },
             { id: "#instructor", message: "Course Instructor is required" },
+            { id: "#instant_access_content", message: "Instant Access Content is required" },
             {
                 id: "#learning_outcomes",
                 message: "Learning Outcome is required",

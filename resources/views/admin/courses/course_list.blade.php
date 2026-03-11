@@ -65,6 +65,7 @@
                                     data-outcomes="{{ $course->learning_outcomes }}"
                                     data-status="{{ $course->status }}" data-cover_video="{{ $course->cover_video }}"
                                     data-course_videos="{{ $course->get_videos }}"
+                                    data-instant_access_content="{{ $course->instant_access_content }}"
                                     data-instructor="{{ $course->instructor }}">
                                     <i class="fa-solid fa-pen-to-square"></i>
                                 </button>
